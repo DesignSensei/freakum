@@ -1,5 +1,8 @@
+# Environment
 .env
 
+# Dependencies
 /node_modules
 
-/logs
+# Runtime logs
+logs/
