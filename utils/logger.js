@@ -14,7 +14,9 @@ const logger = createLogger({
     // Define the message format
     format.printf(({ timestamp, level, message, ...meta }) => {
       const metaString = Object.keys(meta).length ? JSON.stringify(meta) : "";
-      return `logger [${level}]: ${message} ${metaString}`;
+      return `[${timestamp}] ${level
+        .toUpperCase()
+        .padEnd(5)} ${message} ${metaString}`;
     })
   ),
   transports: [

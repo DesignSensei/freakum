@@ -1,0 +1,73 @@
+<!-- Form Column -->
+<div
+  data-w-id="9fa109aa-712e-b709-7fec-65d08001e45f"
+  class="content-center-tablet"
+  style="opacity: 0; transform: translate3d(0, 10%, 0) scale3d(1, 1, 1)"
+>
+  <h2
+    class="display-8 mg-top-default"
+    style="color: rgb(14, 24, 16); margin-bottom: 20px"
+  >
+    Two-Factor Verification
+  </h2>
+
+  <div>
+    <p class="paragraph-large" style="margin-bottom: 40px">
+      Enter the verification code we sent to your email or your authenticator
+      app
+    </p>
+  </div>
+
+  <p class="paragraph-large">Type your 6-digit security code</p>
+  <div id="login-form-wrapper" class="form-wrapper width-320px w-form">
+    <form
+      id="auth-form"
+      name="otp-form"
+      action="/verify-otp"
+      method="POST"
+      aria-label="Log in"
+      novalidate
+    >
+      <!-- CSRF Token -->
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+      <!-- OTP Input -->
+      <div class="inner-container _487px _100-tablet">
+        <div class="otp-container">
+          <% for (let i = 0; i < 6; i++) { %>
+          <input
+            class="otp-input"
+            type="text"
+            inputmode="numeric"
+            maxlength="1"
+            name="digit<%= i %>"
+            aria-label="Digit <%= i+1 %>"
+            required
+          />
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="buttons-row left mg-top-default">
+        <button
+          type="submit"
+          id="primary-button"
+          class="primary-button w-button"
+        >
+          Verify
+        </button>
+      </div>
+
+      <p class="paragraph-large" style="text-align: center; margin-top: 20px">
+        Didn't get an email?
+        <a
+          href="/send-otp"
+          class="link-primary"
+          style="text-decoration: none; color: #d25782"
+          >Resend</a
+        >
+      </p>
+    </form>
+  </div>
+</div>

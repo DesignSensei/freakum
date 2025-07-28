@@ -1,0 +1,86 @@
+<!-- Form Column -->
+<div
+  data-w-id="9fa109aa-712e-b709-7fec-65d08001e45f"
+  class="content-center-tablet"
+  style="opacity: 0; transform: translate3d(0, 10%, 0) scale3d(1, 1, 1)"
+>
+  <h2
+    class="display-9 mg-top-default"
+    style="color: rgb(14, 24, 16); margin-bottom: 64px"
+  >
+    Login to
+    <span class="freakum-brand">Freakum</span>
+  </h2>
+  <div id="login-form-wrapper" class="form-wrapper width-320px w-form">
+    <form
+      id="auth-form"
+      name="login-form"
+      action="/login"
+      method="POST"
+      aria-label="Log in"
+      novalidate
+    >
+      <!-- CSRF Token -->
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+      <!-- Email -->
+      <div class="inner-container _487px _100-tablet">
+        <input
+          id="email"
+          name="email"
+          type="email"
+          class="input w-input"
+          placeholder="Email"
+          required
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="inner-container _487px _100-tablet mg-top-default">
+        <div class="password-wrapper">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            class="input w-input"
+            placeholder="Password"
+            required
+          />
+          <button
+            type="button"
+            id="togglePassword"
+            aria-label="Show password"
+            class="password-toggle"
+          >
+            <i data-feather="eye-off"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Forgot Password -->
+      <div
+        class="inner-container _487px _100-tablet mg-top-default"
+        style="display: flex; justify-content: flex-end; color: #d25782"
+      >
+        <a
+          href="/reset-password"
+          class="link-primary"
+          style="text-decoration: none"
+        >
+          Forgot password?
+        </a>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="buttons-row left mg-top-default">
+        <button
+          type="submit"
+          id="primary-button"
+          class="primary-button w-button"
+        >
+          Log In
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

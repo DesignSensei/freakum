@@ -1,36 +1,66 @@
 const express = require("express");
 const router = express.Router();
-const authController = require("../controllers/authController");
+const passport = require("passport");
 
-// ── Public auth pages ─────────────────────────────────────────
+// Auth Render Block
+router.get("/login", (req, res) => {
+  res.render("auth/login", {
+    layout: "layouts/auth-layout",
+    title: "Log In",
+    wfPage: "66b93fd9c65755b8a91df18e",
+    scripts: `
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/login.js"></script>`,
+  });
+});
 
-// Signup
-router.get("/signup", authController.showSignUp);
-router.post("/signup", authController.signup);
+router.get("/signup", (req, res) => {
+  res.render("auth/signup", {
+    layout: "layouts/auth-layout",
+    title: "Sign Up",
+    scripts: `
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/login.js"></script>`,
+  });
+});
 
-// Login
-router.get("/login", authController.showLogin);
-router.post("/login", authController.login);
+router.get("/reset-password", (req, res) => {
+  res.render("auth/reset-password", {
+    layout: "layouts/auth-layout-no-index",
+    title: "Reset Password",
+    wfPage: "66b93fd9c65755b8a91df18e",
+    scripts: `
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/login.js"></script>`,
+  });
+});
 
-// Logout (Destroy Session)
-router.post("/logout", authController.logout);
+router.get("/new-password", (req, res) => {
+  res.render("auth/new-password", {
+    layout: "layouts/auth-layout-no-index",
+    title: "New Password",
+    wfPage: "66b93fd9c65755b8a91df18e",
+    scripts: `
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/login.js"></script>`,
+  });
+});
 
-// ── Password Reset ─────────────────────────────────────────
-// Forgot password
-router.get("/forgot-password", authController.showForgotPassword);
-router.post("/forgot-password", authController.handleForgotPassword);
+router.get("/two-factor", (req, res) => {
+  res.render("auth/two-factor", {
+    layout: "layouts/auth-layout-no-index",
+    title: "Two Factor",
+    wfPage: "66b93fd9c65755b8a91df18e",
+    scripts: `
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="/js/login.js"></script>
+      <script src="/js/two-factor.js"></script>
+    `,
+    csrfToken: req.csrfToken(),
+  });
+});
 
-// Reset password
-router.get("/reset-password", authController.showResetPassword);
-router.post("/reset-password", authController.handleResetPassword);
-
-// ── OTP flow ────────────────────────────────────────────────────────
-// Send OTP
-router.get("/send-otp", authController.showSendOtp);
-router.post("/send-otp", authController.handleSendOtp);
-
-// Verify OTP
-router.get("/verify-otp", authController.showVerifyOtp);
-router.post("/verify-otp", authController.handleVerifyOtp);
+// Auth Render Endpoints
+router.post;
 
 module.exports = router;
