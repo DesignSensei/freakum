@@ -1,7 +1,9 @@
 <!-- views/partials/header-admin.ejs -->
 
 <!-- Primary Meta Tags -->
-<title><%= title %> | Kottin - Let's Get Your Freak On</title>
+<title>
+  <%= title %> | Kottin - Let's Get Your Freak On
+</title>
 <meta charset="utf-8" />
 <meta name="description" content="Kottin admin." />
 <meta name="author" content="Kottin" />
@@ -9,10 +11,8 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:title" content="Freakum – Let’s Get Your Freak On" />
-<meta
-  property="og:description"
-  content="Discover your desires with Freakum. Premium adult toys and essentials delivered discreetly to your doorstep."
-/>
+<meta property="og:description"
+  content="Discover your desires with Freakum. Premium adult toys and essentials delivered discreetly to your doorstep." />
 <meta property="og:image" content="https://cdn.freakum.com/assets/images/og-cover.jpg" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kottin.com" />
@@ -20,42 +20,41 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Freakum – Let’s Get Your Freak On" />
-<meta
-  property="twitter:description"
-  content="Explore our curated selection of premium adult toys, lubes, and accessories. Discreet shipping. Zero judgment."
-/>
+<meta property="twitter:description"
+  content="Explore our curated selection of premium adult toys, lubes, and accessories. Discreet shipping. Zero judgment." />
 <meta property="twitter:image" content="https://cdn.freakum.com/assets/images/og-cover.jpg" />
 <meta property="twitter:url" content="https://freakum.com" />
 
 <!-- Generator (optional) -->
 <meta name="generator" content="Freakum" />
 
+<!-- CSRF Token Meta Tag -->
+<meta name="csrf-token" content="<%= csrfToken %>" />
+
 <!-- Font Preconnects -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <!-- Fonts -->
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
 
-<!-- Page-specific Stylesheets -->
-<%- typeof styles !== "undefined" ? styles : "" %>
+<!-- Begin:: Page-specific Stylesheets -->
+<%- typeof styles !=="undefined" ? styles : "" %>
+  <!-- End:: Page-specific Stylesheets -->
 
-<!-- Global Stylesheets Bundle -->
-<link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-<link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-<!-- End Global Stylesheets Bundle -->
+  <!-- Begin:: Global Stylesheets Bundle -->
+  <link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+  <!-- End:: Global Stylesheets Bundle -->
 
-<!-- Favicon -->
-<link rel="shortcut icon" href="/assets/images/kottin-favicon-white.svg" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/images/kottin-favicon-white.svg" />
 
-<script src="/js/custom/auth/logout.js"></script>
+  <script src="/js/custom/auth/logout.js"></script>
 
-<!-- Frame Buster -->
-<script>
-  if (window.top !== window.self) {
-    window.top.location.replace(window.self.location.href);
-  }
-</script>
+  <!-- Frame Buster -->
+  <script>
+    if (window.top !== window.self) {
+      window.top.location.replace(window.self.location.href);
+    }
+  </script>

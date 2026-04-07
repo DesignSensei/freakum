@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
           icon: "error",
           title: "Invalid Code",
           text: "Please enter all 6 digits",
-          confirmButtonColor: "#d25782",
+          confirmButtonColor: "#6a14f2",
         });
         inputs.find((input) => !input.value)?.focus();
         return;

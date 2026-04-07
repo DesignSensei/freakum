@@ -2,12 +2,12 @@
 
 const User = require("../models/User");
 const crypto = require("crypto");
+const logger = require("../utils/logger");
 
 const sha256 = (str) => crypto.createHash("sha256").update(str).digest("hex");
 
 // Generate a 6-digit code
-const sixDigits = () =>
-  crypto.randomInt(0, 1000000).toString().padStart(6, "0");
+const sixDigits = () => crypto.randomInt(0, 1000000).toString().padStart(6, "0");
 
 class AuthService {
   /* --------------- Signup --------------- */
@@ -105,10 +105,7 @@ class AuthService {
   }
 
   /* --------------- Create TwoFactor OTP --------------- */
-  static async createTwoFactorChallenge(
-    userId,
-    { ttlMs = 5 * 60 * 1000, maxAttempts = 5 } = {}
-  ) {
+  static async createTwoFactorChallenge(userId, { ttlMs = 5 * 60 * 1000, maxAttempts = 5 } = {}) {
     const user = await User.findById(userId);
     if (!user) throw new Error("User not found");
 
@@ -121,6 +118,8 @@ class AuthService {
     user.otpMaxAttempts = maxAttempts;
 
     await user.save({ validateBeforeSave: false });
+
+    logger.info(`NEW OTP FOR ${user.email}: ${code}`);
 
     return { code, expiresAt: expiresAt.getTime() };
   }

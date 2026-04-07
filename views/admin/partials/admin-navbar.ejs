@@ -2,25 +2,20 @@
 
 <div id="kt_app_header" class="app-header d-flex">
   <!--begin::Header container-->
-  <div
-    class="app-container container-fluid d-flex align-items-center justify-content-between"
-    id="kt_app_header_container"
-  >
+  <div class="app-container container-fluid d-flex align-items-center justify-content-between"
+    id="kt_app_header_container">
     <!--begin::Logo-->
 
     <div class="app-header-logo d-flex flex-center">
       <!--begin::Sidebar toggle-->
-      <button
-        class="btn btn-icon btn-sm btn-active-color-primary d-flex d-lg-none"
-        id="kt_app_sidebar_mobile_toggle"
-      >
+      <button class="btn btn-icon btn-sm btn-active-color-primary d-flex d-lg-none" id="kt_app_sidebar_mobile_toggle">
         <i class="ki-outline ki-abstract-14 fs-1"></i>
       </button>
       <!--end::Sidebar toggle-->
 
       <!--begin::Logo image-->
       <a href="/admin/dashboard">
-        <img alt="Logo" src="/assets/images/kottin-logo-orange-admin.svg" class="mh-25px" />
+        <img alt="Logo" src="/assets/images/kottin-logo-purple-admin.svg" class="mh-25px" />
       </a>
       <!--end::Logo image-->
     </div>
@@ -29,19 +24,19 @@
     <div class="d-flex flex-lg-grow-1 flex-stack" id="kt_app_header_wrapper">
       <div
         class="app-header-wrapper d-flex align-items-center justify-content-lg-between flex-wrap gap-6 gap-lg-0 mb-6 mb-lg-0"
-        data-kt-swapper="true"
-        data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}"
-        data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_header_wrapper'}"
-      >
+        data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}"
+        data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_header_wrapper'}">
         <!--begin::Page title-->
         <div class="d-flex flex-column justify-content-center">
           <!--begin::Title-->
-          <h1 class="text-gray-900 fw-bold fs-6 mb-2"><%= pageTitle %></h1>
+          <h1 class="text-gray-900 fw-bold fs-6 mb-2">
+            <%= pageTitle %>
+          </h1>
           <!--end::Title-->
 
           <!--begin::Breadcrumb-->
           <%- include("../partials/breadcrumbs") %>
-          <!--end::Breadcrumb-->
+            <!--end::Breadcrumb-->
         </div>
         <!--end::Page title-->
       </div>
@@ -53,24 +48,15 @@
           <!--begin::Menu- wrapper-->
           <div
             class="btn btn-icon border border-200 bg-gray-100 btn-color-gray-600 btn-active-color-primary w-40px h-40px"
-            data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-            data-kt-menu-attach="parent"
-            data-kt-menu-placement="bottom-end"
-            id="kt_menu_item_wow"
-          >
+            data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
+            data-kt-menu-placement="bottom-end" id="kt_menu_item_wow">
             <i class="ki-outline ki-notification-on fs-1"></i>
           </div>
           <!--begin::Menu-->
-          <div
-            class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px"
-            data-kt-menu="true"
-            id="kt_menu_notifications"
-          >
+          <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true"
+            id="kt_menu_notifications">
             <!--begin::Heading-->
-            <div
-              class="d-flex flex-column bgi-no-repeat rounded-top"
-              style="background-color: #ff5f1f"
-            >
+            <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-color: #ff5f1f">
               <!--begin::Title-->
               <h3 class="text-white fw-semibold px-9 mt-10 mb-6">
                 Notifications
@@ -112,19 +98,14 @@
         <!--begin::User menu-->
         <div class="app-navbar-item" id="kt_header_user_menu_toggle">
           <!--begin::Menu wrapper-->
-          <div
-            class="cursor-pointer symbol symbol-40px"
-            data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-            data-kt-menu-attach="parent"
-            data-kt-menu-placement="bottom-end"
-          >
+          <div class="cursor-pointer symbol symbol-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+            data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
             <img src="/assets/media/avatars/300-2.jpg" class="rounded-3" alt="user" />
           </div>
           <!--begin::User account menu-->
           <div
             class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
-            data-kt-menu="true"
-          >
+            data-kt-menu="true">
             <!--begin::Menu item-->
             <div class="menu-item px-3">
               <div class="menu-content d-flex align-items-center px-3">
@@ -138,23 +119,18 @@
                   <div class="fw-bold d-flex align-items-center fs-5">
                     <%= user ? `${user.firstName} ${user.lastName}` : "Guest" %>
 
-                    <!-- Role/Badge -->
-                    <% if (user && user.role === "admin") { %>
-                    <span class="badge badge-light-primary fw-bold fs-8 px-2 py-1 ms-2">Admin</span>
+                      <!-- Role/Badge -->
+                      <% if (user && user.role==="admin" ) { %>
+                        <span class="badge badge-light-primary fw-bold fs-8 px-2 py-1 ms-2">Admin</span>
 
-                    <% } else if (user && user.role === "super-admin") { %>
-                    <span class="badge badge-light-dark fw-bold fs-8 px-2 py-1 ms-2"
-                      >Super Admin</span
-                    >
-                    <% } else { %>
-                    <span class="badge badge-light">User</span>
-                    <% } %>
+                        <% } else if (user && user.role==="super-admin" ) { %>
+                          <span class="badge badge-light-dark fw-bold fs-8 px-2 py-1 ms-2">Super Admin</span>
+                          <% } else { %>
+                            <span class="badge badge-light">User</span>
+                            <% } %>
                   </div>
 
-                  <a
-                    href="mailto:<%= user ? user.email : '' %>"
-                    class="fw-semibold text-muted text-hover-primary fs-7"
-                  >
+                  <a href="mailto:<%= user ? user.email : '' %>" class="fw-semibold text-muted text-hover-primary fs-7">
                     <%= user ? user.email : '' %>
                   </a>
                 </div>
@@ -178,11 +154,8 @@
             <!--end::Menu separator-->
 
             <!--begin::Menu item-->
-            <div
-              class="menu-item px-5"
-              data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-              data-kt-menu-placement="left-start"
-            >
+            <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+              data-kt-menu-placement="left-start">
               <a href="#" class="menu-link px-5">
                 <span class="menu-title">Mode</span>
                 <!-- Active icon based on theme -->
@@ -191,18 +164,10 @@
               </a>
 
               <!--begin::Menu sub-->
-              <div
-                class="menu-sub menu-sub-dropdown w-150px py-4"
-                data-kt-element="theme-mode-menu"
-              >
+              <div class="menu-sub menu-sub-dropdown w-150px py-4" data-kt-element="theme-mode-menu">
                 <!-- Light Mode -->
                 <div class="menu-item px-3 my-0">
-                  <a
-                    href="#"
-                    class="menu-link px-3 py-2"
-                    data-kt-element="mode"
-                    data-kt-value="light"
-                  >
+                  <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="light">
                     <span class="menu-icon" data-kt-element="icon">
                       <i class="ki-outline ki-night-day fs-2"></i>
                     </span>
@@ -212,12 +177,7 @@
 
                 <!-- Dark Mode -->
                 <div class="menu-item px-3 my-0">
-                  <a
-                    href="#"
-                    class="menu-link px-3 py-2"
-                    data-kt-element="mode"
-                    data-kt-value="dark"
-                  >
+                  <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark">
                     <span class="menu-icon" data-kt-element="icon">
                       <i class="ki-outline ki-moon fs-2"></i>
                     </span>
@@ -227,12 +187,7 @@
 
                 <!-- System Mode -->
                 <div class="menu-item px-3 my-0">
-                  <a
-                    href="#"
-                    class="menu-link px-3 py-2"
-                    data-kt-element="mode"
-                    data-kt-value="system"
-                  >
+                  <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system">
                     <span class="menu-icon" data-kt-element="icon">
                       <i class="ki-outline ki-screen fs-2"></i>
                     </span>
@@ -246,7 +201,7 @@
 
             <!--begin::Menu item-->
             <div class="menu-item px-5">
-              <a href="#" id="logout-button" class="menu-link px-5">Log Out</a>
+              <a href="#" class="menu-link px-5 logout-button">Log Out</a>
             </div>
             <!--end::Menu item-->
           </div>

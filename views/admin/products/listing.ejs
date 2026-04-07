@@ -9,10 +9,12 @@
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <div class="symbol symbol-60px mb-5">
             <span class="symbol-label bg-primary">
-              <i class="ki-outline ki-box fs-2x text-white"></i>
+              <i class="ki-outline ki-archive fs-2x text-white"></i>
             </span>
           </div>
-          <span class="text-gray-800 fw-bold fs-1 mb-2"><%= totalProducts %></span>
+          <span class="text-gray-800 fw-bold fs-1 mb-2">
+            <%= totalProducts %>
+          </span>
           <span class="text-gray-600 fw-semibold fs-4">Total Products</span>
         </div>
       </div>
@@ -24,10 +26,12 @@
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <div class="symbol symbol-60px mb-5">
             <span class="symbol-label bg-info">
-              <i class="ki-outline ki-check fs-2x text-white"></i>
+              <i class="ki-outline ki-verify fs-2x text-white"></i>
             </span>
           </div>
-          <span class="text-gray-800 fw-bold fs-1 mb-2"><%= publishedProducts %></span>
+          <span class="text-gray-800 fw-bold fs-1 mb-2">
+            <%= publishedProducts %>
+          </span>
           <span class="text-gray-600 fw-semibold fs-4">Published</span>
         </div>
       </div>
@@ -39,10 +43,12 @@
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <div class="symbol symbol-60px mb-5">
             <span class="symbol-label bg-warning">
-              <i class="ki-outline ki-exclamation-circle fs-2x text-white"></i>
+              <i class="ki-outline ki-information fs-2x text-white"></i>
             </span>
           </div>
-          <span class="text-gray-800 fw-bold fs-1 mb-2"><%= lowStockProducts %></span>
+          <span class="text-gray-800 fw-bold fs-1 mb-2">
+            <%= lowStockProducts %>
+          </span>
           <span class="text-gray-600 fw-semibold fs-4">Low Stock</span>
         </div>
       </div>
@@ -57,7 +63,9 @@
               <i class="ki-outline ki-cross-circle fs-2x text-white"></i>
             </span>
           </div>
-          <span class="text-gray-800 fw-bold fs-1 mb-2"><%= outOfStockProducts %></span>
+          <span class="text-gray-800 fw-bold fs-1 mb-2">
+            <%= outOfStockProducts %>
+          </span>
           <span class="text-gray-600 fw-semibold fs-4">Out of Stock</span>
         </div>
       </div>
@@ -74,12 +82,8 @@
       <!--begin::Search-->
       <div class="d-flex align-items-center position-relative my-1">
         <i class="ki-outline ki-magnifier fs-3 position-absolute ms-4"></i>
-        <input
-          type="text"
-          id="searchProduct"
-          class="form-control form-control-solid w-250px ps-12"
-          placeholder="Search Product"
-        />
+        <input type="text" id="searchProduct" class="form-control form-control-solid w-250px ps-12"
+          placeholder="Search Product" />
       </div>
       <!--end::Search-->
     </div>
@@ -87,13 +91,8 @@
     <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
       <div class="w-100 mw-150px">
         <!--begin:: Status-->
-        <select
-          class="form-select form-select-solid"
-          id="statusFilter"
-          data-control="select2"
-          data-hide-search="true"
-          data-placeholder="Select status"
-        >
+        <select class="form-select form-select-solid" id="statusFilter" data-control="select2" data-hide-search="true"
+          data-placeholder="Select status">
           <option value="all">All</option>
           <option value="active">Active</option>
           <option value="inactive">Inactive</option>
@@ -101,6 +100,10 @@
         <!--end:: Status-->
       </div>
       <a href="/admin/products/new" class="btn btn-primary">Add Product</a>
+
+      <a href="/admin/products/new" class="btn btn-light-primary" id="importProductsBtn" data-bs-toggle="tooltip"
+        title="Bulk import via CSV">Import
+        Product</a>
     </div>
   </div>
   <!--end::Card header-->

@@ -3,15 +3,19 @@
 const express = require("express");
 const router = express.Router();
 const productController = require("../../controllers/admin/productController");
+const { productImages } = require("../../middleware/multer");
+const { ensureRole } = require("../../middleware/authMiddleware");
 
 /* ---------- Product Management Routes ---------- */
+// Protect the entire router - Only Admin & Super-Admin can access
+router.use(ensureRole("admin", "super-admin"));
 
 /* ------------------------------ RENDER ROUTES (GET) ------------------------------ */
 // List all products → GET /admin/products
 router.get("/", productController.listProduct);
 
 // Show form to add new product → GET /admin/products/new
-router.get("/new", productController.addProduct);
+router.get("/new", productController.newProduct);
 
 // Show form to edit product → GET /admin/products/:id/edit
 // router.get("/:id/edit", productController.editProduct);
@@ -21,7 +25,7 @@ router.get("/new", productController.addProduct);
 
 /* ------------------------------ API ROUTES (POST/PUT/DELETE) ------------------------------ */
 // Create new product → POST /admin/products
-// router.post("/", productController.createProduct);
+router.post("/", productImages, productController.createProduct);
 
 // Update product → PUT /admin/products/:id
 // router.put("/:id", productController.updateProduct);

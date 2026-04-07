@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function getErrorMessage(field) {
     const validity = field.validity;
     const customMessages = messages[field.name] || {};
+
     if (validity.valueMissing) return customMessages.valueMissing || "This field is required";
     if (validity.typeMismatch) return customMessages.typeMismatch || "Please enter a valid value";
     if (validity.tooShort) return customMessages.tooShort || `Minimum length is ${field.minLength}`;
@@ -53,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (field.value && field.value !== password)
         return customMessages.mismatch || "Passwords do not match";
     }
+
     return field.validationMessage || "Please fix this field";
   }
 
@@ -62,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getErrorContainer(inputField) {
     const container = form.querySelector(`.field-error[data-for="${inputField.name}"]`);
+
     if (!container) {
       const newContainer = document.createElement("div");
       newContainer.className = "field-error";
@@ -98,8 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (inputField.name === "confirmPassword") {
       const password = fieldMap.password?.value || "";
-      console.log("Password:", password);
-      console.log("Confirm Password:", inputField.value);
       mismatch = inputField.value && inputField.value !== password;
     }
 
@@ -238,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-CSRF-Token": formData._csrf,
+          "x-csrf-token": formData._csrf,
         },
         body: JSON.stringify({
           firstName: formData.firstName,
@@ -251,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(responseData.message || "Submission failed");
+        throw new Error(data.message || "Submission failed");
       }
 
       await Swal.fire({
@@ -273,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trackedFields.forEach(clearFieldError);
 
       // ------------ Redirect to 2FA page ------------
-      window.location.href = "/two-factor";
+      window.location.href = data.redirect || "/two-factor";
     } catch (error) {
       await Swal.fire({
         icon: "error",

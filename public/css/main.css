@@ -937,12 +937,12 @@ textarea.w-select {
 }
 
 .swal-confirm-btn {
-  background-color: #d35782 !important;
+  background-color: #6a14f2 !important;
   color: #ffffff !important;
 }
 
 .swal-cancel-btn {
-  background-color: #ffc5c5 !important;
+  background-color: #9c69ec !important;
   color: #ff4e4e !important;
 }
 
@@ -7415,15 +7415,30 @@ form button.link-2 {
   position: relative;
 }
 
+.password-wrapper {
+  position: relative;
+}
+
 .password-toggle {
   position: absolute;
   top: 50%;
-  right: 1.5rem;
-  transform: translateY(-35%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
+  right: 12px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .paragraph-small {
@@ -9856,7 +9871,7 @@ form button.link-2 {
 
 .otp-input:focus {
   border-color: #6a14f2;
-  background: #fff0f5;
+  background: #e7d9ff;
 }
 
 .input-error {

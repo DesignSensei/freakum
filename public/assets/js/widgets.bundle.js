@@ -1,7 +1,7 @@
 "use strict";
 var KTFormsWidget1 = {
   init: function () {
-    !(function () {
+    (!(function () {
       var e = document.querySelector("#kt_forms_widget_1_select_1");
       if (e) {
         var t = function (e) {
@@ -50,13 +50,13 @@ var KTFormsWidget1 = {
             templateResult: t,
           });
         }
-      })();
+      })());
   },
 };
-"undefined" != typeof module && (module.exports = KTFormsWidget1),
+("undefined" != typeof module && (module.exports = KTFormsWidget1),
   KTUtil.onDOMContentLoaded(function () {
     KTFormsWidget1.init();
-  });
+  }));
 var KTCardsWidget1 = {
   init: function () {
     !(function () {
@@ -65,9 +65,7 @@ var KTCardsWidget1 = {
         var t = e.getAttribute("data-kt-chart-color"),
           a = parseInt(KTUtil.css(e, "height")),
           l = KTUtil.getCssVariableValue("--bs-gray-500"),
-          r = KTUtil.isHexColor(t)
-            ? t
-            : KTUtil.getCssVariableValue("--bs-" + t),
+          r = KTUtil.isHexColor(t) ? t : KTUtil.getCssVariableValue("--bs-" + t),
           o = KTUtil.getCssVariableValue("--bs-gray-300"),
           i = new ApexCharts(e, {
             series: [
@@ -136,19 +134,17 @@ var KTCardsWidget1 = {
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTCardsWidget1),
+("undefined" != typeof module && (module.exports = KTCardsWidget1),
   KTUtil.onDOMContentLoaded(function () {
     KTCardsWidget1.init();
-  });
+  }));
 var KTCardsWidget10 = {
   init: function () {
     !(function () {
       var e = document.getElementById("kt_card_widget_10_chart");
       if (e) {
         var t = {
-            size: e.getAttribute("data-kt-size")
-              ? parseInt(e.getAttribute("data-kt-size"))
-              : 70,
+            size: e.getAttribute("data-kt-size") ? parseInt(e.getAttribute("data-kt-size")) : 70,
             lineWidth: e.getAttribute("data-kt-line")
               ? parseInt(e.getAttribute("data-kt-line"))
               : 11,
@@ -158,35 +154,34 @@ var KTCardsWidget10 = {
           },
           a = document.createElement("canvas"),
           l = document.createElement("span");
-        "undefined" != typeof G_vmlCanvasManager &&
-          G_vmlCanvasManager.initElement(a);
+        "undefined" != typeof G_vmlCanvasManager && G_vmlCanvasManager.initElement(a);
         var r = a.getContext("2d");
-        (a.width = a.height = t.size),
+        ((a.width = a.height = t.size),
           e.appendChild(l),
           e.appendChild(a),
           r.translate(t.size / 2, t.size / 2),
-          r.rotate((t.rotate / 180 - 0.5) * Math.PI);
+          r.rotate((t.rotate / 180 - 0.5) * Math.PI));
         var o = (t.size - t.lineWidth) / 2,
           i = function (e, t, a) {
-            (a = Math.min(Math.max(0, a || 1), 1)),
+            ((a = Math.min(Math.max(0, a || 1), 1)),
               r.beginPath(),
               r.arc(0, 0, o, 0, 2 * Math.PI * a, !1),
               (r.strokeStyle = e),
               (r.lineCap = "round"),
               (r.lineWidth = t),
-              r.stroke();
+              r.stroke());
           };
-        i("#E4E6EF", t.lineWidth, 1),
+        (i("#E4E6EF", t.lineWidth, 1),
           i(KTUtil.getCssVariableValue("--bs-primary"), t.lineWidth, 100 / 150),
-          i(KTUtil.getCssVariableValue("--bs-success"), t.lineWidth, 0.4);
+          i(KTUtil.getCssVariableValue("--bs-success"), t.lineWidth, 0.4));
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTCardsWidget10),
+("undefined" != typeof module && (module.exports = KTCardsWidget10),
   KTUtil.onDOMContentLoaded(function () {
     KTCardsWidget10.init();
-  });
+  }));
 var KTCardWidget12 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -199,10 +194,7 @@ var KTCardWidget12 = (function () {
             series: [
               {
                 name: "Sales",
-                data: [
-                  3.5, 5.7, 2.8, 5.9, 4.2, 5.6, 4.3, 4.5, 5.9, 4.5, 5.7, 4.8,
-                  5.7,
-                ],
+                data: [3.5, 5.7, 2.8, 5.9, 4.2, 5.6, 4.3, 4.5, 5.9, 4.5, 5.7, 4.8, 5.7],
               },
             ],
             chart: {
@@ -261,25 +253,25 @@ var KTCardWidget12 = (function () {
             },
             markers: { strokeColor: r, strokeWidth: 2 },
           };
-        (e.self = new ApexCharts(t, o)),
+        ((e.self = new ApexCharts(t, o)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTCardWidget12),
+("undefined" != typeof module && (module.exports = KTCardWidget12),
   KTUtil.onDOMContentLoaded(function () {
     KTCardWidget12.init();
-  });
+  }));
 var KTCardWidget13 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -351,34 +343,32 @@ var KTCardWidget13 = (function () {
             },
             markers: { strokeColor: r, strokeWidth: 2 },
           };
-        (e.self = new ApexCharts(t, o)),
+        ((e.self = new ApexCharts(t, o)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTCardWidget13),
+("undefined" != typeof module && (module.exports = KTCardWidget13),
   KTUtil.onDOMContentLoaded(function () {
     KTCardWidget13.init();
-  });
+  }));
 var KTCardsWidget17 = {
   init: function () {
     !(function () {
       var e = document.getElementById("kt_card_widget_17_chart");
       if (e) {
         var t = {
-            size: e.getAttribute("data-kt-size")
-              ? parseInt(e.getAttribute("data-kt-size"))
-              : 70,
+            size: e.getAttribute("data-kt-size") ? parseInt(e.getAttribute("data-kt-size")) : 70,
             lineWidth: e.getAttribute("data-kt-line")
               ? parseInt(e.getAttribute("data-kt-line"))
               : 11,
@@ -388,44 +378,41 @@ var KTCardsWidget17 = {
           },
           a = document.createElement("canvas"),
           l = document.createElement("span");
-        "undefined" != typeof G_vmlCanvasManager &&
-          G_vmlCanvasManager.initElement(a);
+        "undefined" != typeof G_vmlCanvasManager && G_vmlCanvasManager.initElement(a);
         var r = a.getContext("2d");
-        (a.width = a.height = t.size),
+        ((a.width = a.height = t.size),
           e.appendChild(l),
           e.appendChild(a),
           r.translate(t.size / 2, t.size / 2),
-          r.rotate((t.rotate / 180 - 0.5) * Math.PI);
+          r.rotate((t.rotate / 180 - 0.5) * Math.PI));
         var o = (t.size - t.lineWidth) / 2,
           i = function (e, t, a) {
-            (a = Math.min(Math.max(0, a || 1), 1)),
+            ((a = Math.min(Math.max(0, a || 1), 1)),
               r.beginPath(),
               r.arc(0, 0, o, 0, 2 * Math.PI * a, !1),
               (r.strokeStyle = e),
               (r.lineCap = "round"),
               (r.lineWidth = t),
-              r.stroke();
+              r.stroke());
           };
-        i("#E4E6EF", t.lineWidth, 1),
+        (i("#E4E6EF", t.lineWidth, 1),
           i(KTUtil.getCssVariableValue("--bs-primary"), t.lineWidth, 100 / 150),
-          i(KTUtil.getCssVariableValue("--bs-success"), t.lineWidth, 0.4);
+          i(KTUtil.getCssVariableValue("--bs-success"), t.lineWidth, 0.4));
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTCardsWidget17),
+("undefined" != typeof module && (module.exports = KTCardsWidget17),
   KTUtil.onDOMContentLoaded(function () {
     KTCardsWidget17.init();
-  });
+  }));
 var KTCardsWidget19 = {
   init: function () {
     !(function () {
       var e = document.getElementById("kt_card_widget_19_chart");
       if (e) {
         var t = {
-            size: e.getAttribute("data-kt-size")
-              ? parseInt(e.getAttribute("data-kt-size"))
-              : 70,
+            size: e.getAttribute("data-kt-size") ? parseInt(e.getAttribute("data-kt-size")) : 70,
             lineWidth: e.getAttribute("data-kt-line")
               ? parseInt(e.getAttribute("data-kt-line"))
               : 11,
@@ -435,44 +422,41 @@ var KTCardsWidget19 = {
           },
           a = document.createElement("canvas"),
           l = document.createElement("span");
-        "undefined" != typeof G_vmlCanvasManager &&
-          G_vmlCanvasManager.initElement(a);
+        "undefined" != typeof G_vmlCanvasManager && G_vmlCanvasManager.initElement(a);
         var r = a.getContext("2d");
-        (a.width = a.height = t.size),
+        ((a.width = a.height = t.size),
           e.appendChild(l),
           e.appendChild(a),
           r.translate(t.size / 2, t.size / 2),
-          r.rotate((t.rotate / 180 - 0.5) * Math.PI);
+          r.rotate((t.rotate / 180 - 0.5) * Math.PI));
         var o = (t.size - t.lineWidth) / 2,
           i = function (e, t, a) {
-            (a = Math.min(Math.max(0, a || 1), 1)),
+            ((a = Math.min(Math.max(0, a || 1), 1)),
               r.beginPath(),
               r.arc(0, 0, o, 0, 2 * Math.PI * a, !1),
               (r.strokeStyle = e),
               (r.lineCap = "round"),
               (r.lineWidth = t),
-              r.stroke();
+              r.stroke());
           };
-        i("#E4E6EF", t.lineWidth, 1),
+        (i("#E4E6EF", t.lineWidth, 1),
           i(KTUtil.getCssVariableValue("--bs-primary"), t.lineWidth, 100 / 150),
-          i(KTUtil.getCssVariableValue("--bs-success"), t.lineWidth, 0.4);
+          i(KTUtil.getCssVariableValue("--bs-success"), t.lineWidth, 0.4));
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTCardsWidget19),
+("undefined" != typeof module && (module.exports = KTCardsWidget19),
   KTUtil.onDOMContentLoaded(function () {
     KTCardsWidget19.init();
-  });
+  }));
 var KTCardsWidget4 = {
   init: function () {
     !(function () {
       var e = document.getElementById("kt_card_widget_4_chart");
       if (e) {
         var t = {
-            size: e.getAttribute("data-kt-size")
-              ? parseInt(e.getAttribute("data-kt-size"))
-              : 70,
+            size: e.getAttribute("data-kt-size") ? parseInt(e.getAttribute("data-kt-size")) : 70,
             lineWidth: e.getAttribute("data-kt-line")
               ? parseInt(e.getAttribute("data-kt-line"))
               : 11,
@@ -482,35 +466,34 @@ var KTCardsWidget4 = {
           },
           a = document.createElement("canvas"),
           l = document.createElement("span");
-        "undefined" != typeof G_vmlCanvasManager &&
-          G_vmlCanvasManager.initElement(a);
+        "undefined" != typeof G_vmlCanvasManager && G_vmlCanvasManager.initElement(a);
         var r = a.getContext("2d");
-        (a.width = a.height = t.size),
+        ((a.width = a.height = t.size),
           e.appendChild(l),
           e.appendChild(a),
           r.translate(t.size / 2, t.size / 2),
-          r.rotate((t.rotate / 180 - 0.5) * Math.PI);
+          r.rotate((t.rotate / 180 - 0.5) * Math.PI));
         var o = (t.size - t.lineWidth) / 2,
           i = function (e, t, a) {
-            (a = Math.min(Math.max(0, a || 1), 1)),
+            ((a = Math.min(Math.max(0, a || 1), 1)),
               r.beginPath(),
               r.arc(0, 0, o, 0, 2 * Math.PI * a, !1),
               (r.strokeStyle = e),
               (r.lineCap = "round"),
               (r.lineWidth = t),
-              r.stroke();
+              r.stroke());
           };
-        i("#E4E6EF", t.lineWidth, 1),
+        (i("#E4E6EF", t.lineWidth, 1),
           i(KTUtil.getCssVariableValue("--bs-danger"), t.lineWidth, 100 / 150),
-          i(KTUtil.getCssVariableValue("--bs-primary"), t.lineWidth, 0.4);
+          i(KTUtil.getCssVariableValue("--bs-primary"), t.lineWidth, 0.4));
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTCardsWidget4),
+("undefined" != typeof module && (module.exports = KTCardsWidget4),
   KTUtil.onDOMContentLoaded(function () {
     KTCardsWidget4.init();
-  });
+  }));
 var KTCardsWidget6 = {
   init: function () {
     !(function () {
@@ -582,10 +565,10 @@ var KTCardsWidget6 = {
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTCardsWidget6),
+("undefined" != typeof module && (module.exports = KTCardsWidget6),
   KTUtil.onDOMContentLoaded(function () {
     KTCardsWidget6.init();
-  });
+  }));
 var KTCardWidget8 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -598,10 +581,7 @@ var KTCardWidget8 = (function () {
             series: [
               {
                 name: "Sales",
-                data: [
-                  4.5, 5.7, 2.8, 5.9, 4.2, 5.6, 5.2, 4.5, 5.9, 4.5, 5.7, 4.8,
-                  5.7,
-                ],
+                data: [4.5, 5.7, 2.8, 5.9, 4.2, 5.6, 5.2, 4.5, 5.9, 4.5, 5.7, 4.8, 5.7],
               },
             ],
             chart: {
@@ -660,25 +640,25 @@ var KTCardWidget8 = (function () {
             },
             markers: { strokeColor: r, strokeWidth: 2 },
           };
-        (e.self = new ApexCharts(t, o)),
+        ((e.self = new ApexCharts(t, o)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTCardWidget8),
+("undefined" != typeof module && (module.exports = KTCardWidget8),
   KTUtil.onDOMContentLoaded(function () {
     KTCardWidget8.init();
-  });
+  }));
 var KTCardWidget9 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -750,25 +730,25 @@ var KTCardWidget9 = (function () {
             },
             markers: { strokeColor: r, strokeWidth: 2 },
           };
-        (e.self = new ApexCharts(t, o)),
+        ((e.self = new ApexCharts(t, o)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTCardWidget9),
+("undefined" != typeof module && (module.exports = KTCardWidget9),
   KTUtil.onDOMContentLoaded(function () {
     KTCardWidget9.init();
-  });
+  }));
 var KTTimelineWidget24 = {
   init: function () {
     var e;
@@ -786,10 +766,10 @@ var KTTimelineWidget24 = {
       });
   },
 };
-"undefined" != typeof module && (module.exports = KTTimelineWidget24),
+("undefined" != typeof module && (module.exports = KTTimelineWidget24),
   KTUtil.onDOMContentLoaded(function () {
     KTTimelineWidget24.init();
-  });
+  }));
 var KTMapsWidget1 = {
   init: function () {
     !(function () {
@@ -815,7 +795,7 @@ var KTMapsWidget1 = {
                     exclude: ["AQ"],
                   })
                 );
-              l.mapPolygons.template.setAll({
+              (l.mapPolygons.template.setAll({
                 tooltipText: "{name}",
                 toggleKey: "active",
                 interactive: !0,
@@ -826,14 +806,14 @@ var KTMapsWidget1 = {
                 }),
                 l.mapPolygons.template.states.create("active", {
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
-                });
+                }));
               var r = a.series.push(
                 am5map.MapPolygonSeries.new(t, {
                   geoJSON: am5geodata_worldLow,
                   include: ["US", "BR", "DE", "AU", "JP"],
                 })
               );
-              r.mapPolygons.template.setAll({
+              (r.mapPolygons.template.setAll({
                 tooltipText: "{name}",
                 toggleKey: "active",
                 interactive: !0,
@@ -849,28 +829,26 @@ var KTMapsWidget1 = {
                 r.mapPolygons.template.states.create("active", {
                   fill: t.interfaceColors.get("primaryButtonHover"),
                 }),
-                a.chartContainer
-                  .get("background")
-                  .events.on("click", function () {
-                    a.goHome();
-                  }),
-                a.appear(1e3, 100);
+                a.chartContainer.get("background").events.on("click", function () {
+                  a.goHome();
+                }),
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTMapsWidget1),
+("undefined" != typeof module && (module.exports = KTMapsWidget1),
   KTUtil.onDOMContentLoaded(function () {
     KTMapsWidget1.init();
-  });
+  }));
 var KTMapsWidget2 = {
   init: function () {
     !(function () {
@@ -896,7 +874,7 @@ var KTMapsWidget2 = {
                     exclude: ["AQ"],
                   })
                 );
-              l.mapPolygons.template.setAll({
+              (l.mapPolygons.template.setAll({
                 tooltipText: "{name}",
                 toggleKey: "active",
                 interactive: !0,
@@ -907,14 +885,14 @@ var KTMapsWidget2 = {
                 }),
                 l.mapPolygons.template.states.create("active", {
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
-                });
+                }));
               var r = a.series.push(
                 am5map.MapPolygonSeries.new(t, {
                   geoJSON: am5geodata_worldLow,
                   include: ["US", "BR", "DE", "AU", "JP"],
                 })
               );
-              r.mapPolygons.template.setAll({
+              (r.mapPolygons.template.setAll({
                 tooltipText: "{name}",
                 toggleKey: "active",
                 interactive: !0,
@@ -930,28 +908,26 @@ var KTMapsWidget2 = {
                 r.mapPolygons.template.states.create("active", {
                   fill: t.interfaceColors.get("primaryButtonHover"),
                 }),
-                a.chartContainer
-                  .get("background")
-                  .events.on("click", function () {
-                    a.goHome();
-                  }),
-                a.appear(1e3, 100);
+                a.chartContainer.get("background").events.on("click", function () {
+                  a.goHome();
+                }),
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTMapsWidget2),
+("undefined" != typeof module && (module.exports = KTMapsWidget2),
   KTUtil.onDOMContentLoaded(function () {
     KTMapsWidget2.init();
-  });
+  }));
 var KTChartsWidget1 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -967,16 +943,12 @@ var KTChartsWidget1 = (function () {
             series: [
               {
                 name: "Subscribed",
-                data: [
-                  20, 30, 20, 40, 60, 75, 65, 18, 10, 5, 15, 40, 60, 18, 35, 55,
-                  20,
-                ],
+                data: [20, 30, 20, 40, 60, 75, 65, 18, 10, 5, 15, 40, 60, 18, 35, 55, 20],
               },
               {
                 name: "Unsubscribed",
                 data: [
-                  -20, -15, -5, -20, -30, -15, -10, -8, -5, -5, -10, -25, -15,
-                  -5, -10, -5, -15,
+                  -20, -15, -5, -20, -30, -15, -10, -8, -5, -5, -10, -25, -15, -5, -10, -5, -15,
                 ],
               },
             ],
@@ -1057,25 +1029,25 @@ var KTChartsWidget1 = (function () {
               yaxis: { lines: { show: !0 } },
             },
           };
-        (e.self = new ApexCharts(t, i)),
+        ((e.self = new ApexCharts(t, i)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget1),
+("undefined" != typeof module && (module.exports = KTChartsWidget1),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget1.init();
-  });
+  }));
 var KTChartsWidget10 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -1115,15 +1087,7 @@ var KTChartsWidget10 = (function () {
             },
             stroke: { show: !0, width: 2, colors: ["transparent"] },
             xaxis: {
-              categories: [
-                "Metals",
-                "Energy",
-                "Agro",
-                "Machines",
-                "Transport",
-                "Textile",
-                "Wood",
-              ],
+              categories: ["Metals", "Energy", "Agro", "Machines", "Transport", "Textile", "Wood"],
               axisBorder: { show: !1 },
               axisTicks: { show: !1 },
               labels: {
@@ -1176,13 +1140,13 @@ var KTChartsWidget10 = (function () {
           };
         e.self = new ApexCharts(o, d);
         var m = document.querySelector(t);
-        !0 === r &&
+        (!0 === r &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           m.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
@@ -1194,48 +1158,24 @@ var KTChartsWidget10 = (function () {
       var s = [45, 15, 35, 70, 45, 50, 21];
       r(a, "#kt_charts_widget_10_tab_3", "#kt_charts_widget_10_chart_3", s, !1);
       var n = [15, 55, 25, 50, 25, 60, 31];
-      r(l, "#kt_charts_widget_10_tab_4", "#kt_charts_widget_10_chart_4", n, !1),
+      (r(l, "#kt_charts_widget_10_tab_4", "#kt_charts_widget_10_chart_4", n, !1),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
-            r(
-              e,
-              "#kt_charts_widget_10_tab_1",
-              "#kt_charts_widget_10_chart_1",
-              o,
-              e.rendered
-            ),
-            r(
-              t,
-              "#kt_charts_widget_10_tab_2",
-              "#kt_charts_widget_10_chart_2",
-              i,
-              t.rendered
-            ),
-            r(
-              a,
-              "#kt_charts_widget_10_tab_3",
-              "#kt_charts_widget_10_chart_3",
-              s,
-              a.rendered
-            ),
-            r(
-              l,
-              "#kt_charts_widget_10_tab_4",
-              "#kt_charts_widget_10_chart_4",
-              n,
-              l.rendered
-            );
-        });
+            r(e, "#kt_charts_widget_10_tab_1", "#kt_charts_widget_10_chart_1", o, e.rendered),
+            r(t, "#kt_charts_widget_10_tab_2", "#kt_charts_widget_10_chart_2", i, t.rendered),
+            r(a, "#kt_charts_widget_10_tab_3", "#kt_charts_widget_10_chart_3", s, a.rendered),
+            r(l, "#kt_charts_widget_10_tab_4", "#kt_charts_widget_10_chart_4", n, l.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget10),
+("undefined" != typeof module && (module.exports = KTChartsWidget10),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget10.init();
-  });
+  }));
 var KTChartsWidget11 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -1351,65 +1291,47 @@ var KTChartsWidget11 = (function () {
           };
         e.self = new ApexCharts(o, m);
         var c = document.querySelector(t);
-        !0 === r &&
+        (!0 === r &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           c.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
     init: function () {
       var r = [
-        16, 19, 19, 16, 16, 14, 15, 15, 17, 17, 19, 19, 18, 18, 20, 20, 18, 18,
-        22, 22, 20, 20, 18, 18, 20, 20, 18, 20, 20, 22,
+        16, 19, 19, 16, 16, 14, 15, 15, 17, 17, 19, 19, 18, 18, 20, 20, 18, 18, 22, 22, 20, 20, 18,
+        18, 20, 20, 18, 20, 20, 22,
       ];
       l(e, "#kt_charts_widget_11_tab_1", "#kt_charts_widget_11_chart_1", r, !1);
       var o = [
-        18, 18, 20, 20, 18, 18, 22, 22, 20, 20, 18, 18, 20, 20, 18, 18, 20, 20,
-        22, 15, 18, 18, 17, 17, 15, 15, 17, 17, 19, 17,
+        18, 18, 20, 20, 18, 18, 22, 22, 20, 20, 18, 18, 20, 20, 18, 18, 20, 20, 22, 15, 18, 18, 17,
+        17, 15, 15, 17, 17, 19, 17,
       ];
       l(t, "#kt_charts_widget_11_tab_2", "#kt_charts_widget_11_chart_2", o, !1);
       var i = [
-        17, 20, 20, 19, 19, 17, 17, 19, 19, 21, 21, 19, 19, 21, 21, 18, 18, 16,
-        17, 17, 19, 19, 21, 21, 19, 19, 17, 17, 18, 18,
+        17, 20, 20, 19, 19, 17, 17, 19, 19, 21, 21, 19, 19, 21, 21, 18, 18, 16, 17, 17, 19, 19, 21,
+        21, 19, 19, 17, 17, 18, 18,
       ];
-      l(a, "#kt_charts_widget_11_tab_3", "#kt_charts_widget_11_chart_3", i, !0),
+      (l(a, "#kt_charts_widget_11_tab_3", "#kt_charts_widget_11_chart_3", i, !0),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
-            l(
-              e,
-              "#kt_charts_widget_11_tab_1",
-              "#kt_charts_widget_11_chart_1",
-              r,
-              e.rendered
-            ),
-            l(
-              t,
-              "#kt_charts_widget_11_tab_2",
-              "#kt_charts_widget_11_chart_2",
-              o,
-              t.rendered
-            ),
-            l(
-              a,
-              "#kt_charts_widget_11_tab_3",
-              "#kt_charts_widget_11_chart_3",
-              i,
-              a.rendered
-            );
-        });
+            l(e, "#kt_charts_widget_11_tab_1", "#kt_charts_widget_11_chart_1", r, e.rendered),
+            l(t, "#kt_charts_widget_11_tab_2", "#kt_charts_widget_11_chart_2", o, t.rendered),
+            l(a, "#kt_charts_widget_11_tab_3", "#kt_charts_widget_11_chart_3", i, a.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget11),
+("undefined" != typeof module && (module.exports = KTChartsWidget11),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget11.init();
-  });
+  }));
 var KTChartsWidget12 = (function () {
   var e = function (e, t, a, l) {
     var r = document.querySelector(t);
@@ -1507,15 +1429,15 @@ var KTChartsWidget12 = (function () {
         d = new ApexCharts(r, n),
         m = !1,
         c = document.querySelector(e);
-      !0 === l && (d.render(), (m = !0)),
+      (!0 === l && (d.render(), (m = !0)),
         c.addEventListener("shown.bs.tab", function (e) {
           0 == m && (d.render(), (m = !0));
-        });
+        }));
     }
   };
   return {
     init: function () {
-      e(
+      (e(
         "#kt_charts_widget_12_tab_1",
         "#kt_charts_widget_12_chart_1",
         [54, 42, 75, 110, 23, 87, 50],
@@ -1532,14 +1454,14 @@ var KTChartsWidget12 = (function () {
           "#kt_charts_widget_12_chart_3",
           [45, 15, 35, 70, 45, 50, 21],
           !1
-        );
+        ));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget12),
+("undefined" != typeof module && (module.exports = KTChartsWidget12),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget12.init();
-  });
+  }));
 var KTChartsWidget13 = {
   init: function () {
     !(function () {
@@ -1557,10 +1479,7 @@ var KTChartsWidget13 = {
                   wheelY: "zoomX",
                 })
               );
-              a.set(
-                "cursor",
-                am5xy.XYCursor.new(t, { behavior: "none" })
-              ).lineY.set("visible", !1);
+              a.set("cursor", am5xy.XYCursor.new(t, { behavior: "none" })).lineY.set("visible", !1);
               var l = [
                   { year: "2003", cars: 1587, motorcycles: 650, bicycles: 121 },
                   { year: "2004", cars: 1567, motorcycles: 683, bicycles: 146 },
@@ -1591,19 +1510,13 @@ var KTChartsWidget13 = {
                     tooltip: am5.Tooltip.new(t, {}),
                   })
                 );
-              r
-                .get("renderer")
-                .grid.template.setAll({ disabled: !0, strokeOpacity: 0 }),
-                r
-                  .get("renderer")
-                  .labels.template.setAll({
-                    fontWeight: "400",
-                    fontSize: 13,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-500")
-                    ),
-                  }),
-                r.data.setAll(l);
+              (r.get("renderer").grid.template.setAll({ disabled: !0, strokeOpacity: 0 }),
+                r.get("renderer").labels.template.setAll({
+                  fontWeight: "400",
+                  fontSize: 13,
+                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+                }),
+                r.data.setAll(l));
               var o = a.yAxes.push(
                 am5xy.ValueAxis.new(t, {
                   renderer: am5xy.AxisRendererY.new(t, {}),
@@ -1625,40 +1538,24 @@ var KTChartsWidget13 = {
                     }),
                   })
                 );
-                n.fills.template.setAll({ fillOpacity: 0.5, visible: !0 }),
+                (n.fills.template.setAll({ fillOpacity: 0.5, visible: !0 }),
                   n.data.setAll(l),
-                  n.appear(1e3);
+                  n.appear(1e3));
               }
-              o
-                .get("renderer")
-                .grid.template.setAll({
-                  stroke: am5.color(
-                    KTUtil.getCssVariableValue("--bs-gray-300")
-                  ),
-                  strokeWidth: 1,
-                  strokeOpacity: 1,
-                  strokeDasharray: [3],
+              (o.get("renderer").grid.template.setAll({
+                stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
+                strokeWidth: 1,
+                strokeOpacity: 1,
+                strokeDasharray: [3],
+              }),
+                o.get("renderer").labels.template.setAll({
+                  fontWeight: "400",
+                  fontSize: 13,
+                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
                 }),
-                o
-                  .get("renderer")
-                  .labels.template.setAll({
-                    fontWeight: "400",
-                    fontSize: 13,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-500")
-                    ),
-                  }),
                 i("Cars", "cars", KTUtil.getCssVariableValue("--bs-primary")),
-                i(
-                  "Motorcycles",
-                  "motorcycles",
-                  KTUtil.getCssVariableValue("--bs-success")
-                ),
-                i(
-                  "Bicycles",
-                  "bicycles",
-                  KTUtil.getCssVariableValue("--bs-warning")
-                ),
+                i("Motorcycles", "motorcycles", KTUtil.getCssVariableValue("--bs-success")),
+                i("Bicycles", "bicycles", KTUtil.getCssVariableValue("--bs-warning")),
                 a.set(
                   "scrollbarX",
                   am5.Scrollbar.new(t, {
@@ -1666,78 +1563,62 @@ var KTChartsWidget13 = {
                     marginBottom: 25,
                     height: 8,
                   })
-                );
+                ));
               var s = r.makeDataItem({ category: "2016", endCategory: "2021" });
-              r.createAxisRange(s),
-                s
-                  .get("grid")
-                  .setAll({
-                    stroke: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-200")
-                    ),
-                    strokeOpacity: 0.5,
-                    strokeDasharray: [3],
-                  }),
-                s
-                  .get("axisFill")
-                  .setAll({
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-200")
-                    ),
-                    fillOpacity: 0.1,
-                  }),
-                s
-                  .get("label")
-                  .setAll({
-                    inside: !0,
-                    text: "Fines increased",
-                    rotation: 90,
-                    centerX: am5.p100,
-                    centerY: am5.p100,
-                    location: 0,
-                    paddingBottom: 10,
-                    paddingRight: 15,
-                  });
+              (r.createAxisRange(s),
+                s.get("grid").setAll({
+                  stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-200")),
+                  strokeOpacity: 0.5,
+                  strokeDasharray: [3],
+                }),
+                s.get("axisFill").setAll({
+                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-200")),
+                  fillOpacity: 0.1,
+                }),
+                s.get("label").setAll({
+                  inside: !0,
+                  text: "Fines increased",
+                  rotation: 90,
+                  centerX: am5.p100,
+                  centerY: am5.p100,
+                  location: 0,
+                  paddingBottom: 10,
+                  paddingRight: 15,
+                }));
               var n = r.makeDataItem({ category: "2021" });
-              r.createAxisRange(n),
-                n
-                  .get("grid")
-                  .setAll({
-                    stroke: am5.color(
-                      KTUtil.getCssVariableValue("--bs-danger")
-                    ),
-                    strokeOpacity: 1,
-                    strokeDasharray: [3],
-                  }),
-                n
-                  .get("label")
-                  .setAll({
-                    inside: !0,
-                    text: "Fee introduced",
-                    rotation: 90,
-                    centerX: am5.p100,
-                    centerY: am5.p100,
-                    location: 0,
-                    paddingBottom: 10,
-                    paddingRight: 15,
-                  }),
-                a.appear(1e3, 100);
+              (r.createAxisRange(n),
+                n.get("grid").setAll({
+                  stroke: am5.color(KTUtil.getCssVariableValue("--bs-danger")),
+                  strokeOpacity: 1,
+                  strokeDasharray: [3],
+                }),
+                n.get("label").setAll({
+                  inside: !0,
+                  text: "Fee introduced",
+                  rotation: 90,
+                  centerX: am5.p100,
+                  centerY: am5.p100,
+                  location: 0,
+                  paddingBottom: 10,
+                  paddingRight: 15,
+                }),
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget13),
+("undefined" != typeof module && (module.exports = KTChartsWidget13),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget13.init();
-  });
+  }));
 var KTChartsWidget14 = {
   init: function () {
     !(function () {
@@ -1796,13 +1677,12 @@ var KTChartsWidget14 = {
                   },
                 },
               ];
-            a.set(
-              "cursor",
-              am5radar.RadarCursor.new(t, { behavior: "zoomX" })
-            ).lineY.set("visible", !1);
+            a.set("cursor", am5radar.RadarCursor.new(t, { behavior: "zoomX" })).lineY.set(
+              "visible",
+              !1
+            );
             var r = am5radar.AxisRendererCircular.new(t, {});
-            r.labels.template.setAll({ radius: 10 }),
-              r.grid.template.setAll({ forceHidden: !0 });
+            (r.labels.template.setAll({ radius: 10 }), r.grid.template.setAll({ forceHidden: !0 }));
             var o = a.xAxes.push(
               am5xy.ValueAxis.new(t, {
                 renderer: r,
@@ -1819,14 +1699,14 @@ var KTChartsWidget14 = {
               fontSize: 16,
             });
             var i = am5radar.AxisRendererRadial.new(t, { minGridDistance: 20 });
-            i.labels.template.setAll({
+            (i.labels.template.setAll({
               centerX: am5.p100,
               fontWeight: "500",
               fontSize: 18,
               fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
               templateField: "columnSettings",
             }),
-              i.grid.template.setAll({ forceHidden: !0 });
+              i.grid.template.setAll({ forceHidden: !0 }));
             var s = a.yAxes.push(
               am5xy.CategoryAxis.new(t, {
                 categoryField: "category",
@@ -1844,13 +1724,13 @@ var KTChartsWidget14 = {
                 fill: t.interfaceColors.get("alternativeBackground"),
               })
             );
-            n.columns.template.setAll({
+            (n.columns.template.setAll({
               width: am5.p100,
               fillOpacity: 0.08,
               strokeOpacity: 0,
               cornerRadius: 20,
             }),
-              n.data.setAll(l);
+              n.data.setAll(l));
             var d = a.series.push(
               am5radar.RadarColumnSeries.new(t, {
                 xAxis: o,
@@ -1860,7 +1740,7 @@ var KTChartsWidget14 = {
                 categoryYField: "category",
               })
             );
-            d.columns.template.setAll({
+            (d.columns.template.setAll({
               width: am5.p100,
               strokeOpacity: 0,
               tooltipText: "{category}: {valueX}%",
@@ -1870,16 +1750,16 @@ var KTChartsWidget14 = {
               d.data.setAll(l),
               n.appear(1e3),
               d.appear(1e3),
-              a.appear(1e3, 100);
+              a.appear(1e3, 100));
           });
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget14),
+("undefined" != typeof module && (module.exports = KTChartsWidget14),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget14.init();
-  });
+  }));
 var KTChartsWidget15 = {
   init: function () {
     !(function () {
@@ -1904,9 +1784,7 @@ var KTChartsWidget15 = {
                       visits: 725,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/united-states.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1914,9 +1792,7 @@ var KTChartsWidget15 = {
                       visits: 625,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/united-kingdom.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1924,9 +1800,7 @@ var KTChartsWidget15 = {
                       visits: 602,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/china.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1934,9 +1808,7 @@ var KTChartsWidget15 = {
                       visits: 509,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/japan.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1944,9 +1816,7 @@ var KTChartsWidget15 = {
                       visits: 322,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/germany.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1954,9 +1824,7 @@ var KTChartsWidget15 = {
                       visits: 214,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/france.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1964,9 +1832,7 @@ var KTChartsWidget15 = {
                       visits: 204,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/india.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1974,9 +1840,7 @@ var KTChartsWidget15 = {
                       visits: 200,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/spain.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1984,9 +1848,7 @@ var KTChartsWidget15 = {
                       visits: 165,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/italy.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -1994,9 +1856,7 @@ var KTChartsWidget15 = {
                       visits: 152,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/russia.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -2004,9 +1864,7 @@ var KTChartsWidget15 = {
                       visits: 125,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/norway.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                     {
@@ -2014,9 +1872,7 @@ var KTChartsWidget15 = {
                       visits: 99,
                       icon: "https://www.amcharts.com/wp-content/uploads/flags/canada.svg",
                       columnSettings: {
-                        fill: am5.color(
-                          KTUtil.getCssVariableValue("--bs-primary")
-                        ),
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                       },
                     },
                   ]),
@@ -2040,42 +1896,30 @@ var KTChartsWidget15 = {
                     },
                   })
                 );
-              r
-                .get("renderer")
-                .labels.template.setAll({
-                  paddingTop: 20,
-                  fontWeight: "400",
-                  fontSize: 10,
-                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
-                }),
-                r
-                  .get("renderer")
-                  .grid.template.setAll({ disabled: !0, strokeOpacity: 0 }),
-                r.data.setAll(l);
+              (r.get("renderer").labels.template.setAll({
+                paddingTop: 20,
+                fontWeight: "400",
+                fontSize: 10,
+                fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+              }),
+                r.get("renderer").grid.template.setAll({ disabled: !0, strokeOpacity: 0 }),
+                r.data.setAll(l));
               var o = a.yAxes.push(
                 am5xy.ValueAxis.new(t, {
                   renderer: am5xy.AxisRendererY.new(t, {}),
                 })
               );
-              o
-                .get("renderer")
-                .grid.template.setAll({
-                  stroke: am5.color(
-                    KTUtil.getCssVariableValue("--bs-gray-300")
-                  ),
-                  strokeWidth: 1,
-                  strokeOpacity: 1,
-                  strokeDasharray: [3],
-                }),
-                o
-                  .get("renderer")
-                  .labels.template.setAll({
-                    fontWeight: "400",
-                    fontSize: 10,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-500")
-                    ),
-                  });
+              (o.get("renderer").grid.template.setAll({
+                stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
+                strokeWidth: 1,
+                strokeOpacity: 1,
+                strokeDasharray: [3],
+              }),
+                o.get("renderer").labels.template.setAll({
+                  fontWeight: "400",
+                  fontSize: 10,
+                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+                }));
               var i = a.series.push(
                 am5xy.ColumnSeries.new(t, {
                   xAxis: r,
@@ -2084,7 +1928,7 @@ var KTChartsWidget15 = {
                   categoryXField: "country",
                 })
               );
-              i.columns.template.setAll({
+              (i.columns.template.setAll({
                 tooltipText: "{categoryX}: {valueY}",
                 tooltipY: 0,
                 strokeOpacity: 0,
@@ -2099,23 +1943,23 @@ var KTChartsWidget15 = {
                 }),
                 i.data.setAll(l),
                 i.appear(),
-                a.appear(1e3, 100);
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget15),
+("undefined" != typeof module && (module.exports = KTChartsWidget15),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget15.init();
-  });
+  }));
 var KTChartsWidget16 = {
   init: function () {
     !(function () {
@@ -2153,8 +1997,7 @@ var KTChartsWidget16 = {
               !(function () {
                 for (var e = 0, t = 0; t < l.length; t++) e += l[t].visits;
                 var a = 0;
-                for (t = 0; t < l.length; t++)
-                  (a += l[t].visits), (l[t].pareto = (a / e) * 100);
+                for (t = 0; t < l.length; t++) ((a += l[t].visits), (l[t].pareto = (a / e) * 100));
               })();
               var r = a.xAxes.push(
                 am5xy.CategoryAxis.new(t, {
@@ -2162,41 +2005,31 @@ var KTChartsWidget16 = {
                   renderer: am5xy.AxisRendererX.new(t, { minGridDistance: 30 }),
                 })
               );
-              r
-                .get("renderer")
-                .labels.template.setAll({
-                  paddingTop: 10,
-                  fontWeight: "400",
-                  fontSize: 13,
-                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
-                }),
-                r
-                  .get("renderer")
-                  .grid.template.setAll({ disabled: !0, strokeOpacity: 0 }),
-                r.data.setAll(l);
+              (r.get("renderer").labels.template.setAll({
+                paddingTop: 10,
+                fontWeight: "400",
+                fontSize: 13,
+                fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+              }),
+                r.get("renderer").grid.template.setAll({ disabled: !0, strokeOpacity: 0 }),
+                r.data.setAll(l));
               var o = a.yAxes.push(
                 am5xy.ValueAxis.new(t, {
                   renderer: am5xy.AxisRendererY.new(t, {}),
                 })
               );
-              o
-                .get("renderer")
-                .labels.template.setAll({
-                  paddingLeft: 10,
-                  fontWeight: "400",
-                  fontSize: 13,
-                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
-                }),
-                o
-                  .get("renderer")
-                  .grid.template.setAll({
-                    stroke: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-300")
-                    ),
-                    strokeWidth: 1,
-                    strokeOpacity: 1,
-                    strokeDasharray: [3],
-                  });
+              (o.get("renderer").labels.template.setAll({
+                paddingLeft: 10,
+                fontWeight: "400",
+                fontSize: 13,
+                fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+              }),
+                o.get("renderer").grid.template.setAll({
+                  stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
+                  strokeWidth: 1,
+                  strokeOpacity: 1,
+                  strokeDasharray: [3],
+                }));
               var i = am5xy.AxisRendererY.new(t, { opposite: !0 }),
                 s = a.yAxes.push(
                   am5xy.ValueAxis.new(t, {
@@ -2206,15 +2039,13 @@ var KTChartsWidget16 = {
                     strictMinMax: !0,
                   })
                 );
-              s
-                .get("renderer")
-                .labels.template.setAll({
-                  fontWeight: "400",
-                  fontSize: 13,
-                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
-                }),
+              (s.get("renderer").labels.template.setAll({
+                fontWeight: "400",
+                fontSize: 13,
+                fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+              }),
                 i.grid.template.set("forceHidden", !0),
-                s.set("numberFormat", "#'%");
+                s.set("numberFormat", "#'%"));
               var n = a.series.push(
                 am5xy.ColumnSeries.new(t, {
                   xAxis: r,
@@ -2223,7 +2054,7 @@ var KTChartsWidget16 = {
                   categoryXField: "country",
                 })
               );
-              n.columns.template.setAll({
+              (n.columns.template.setAll({
                 tooltipText: "{categoryX}: {valueY}",
                 tooltipY: 0,
                 strokeOpacity: 0,
@@ -2231,10 +2062,8 @@ var KTChartsWidget16 = {
                 cornerRadiusTR: 6,
               }),
                 n.columns.template.adapters.add("fill", function (e, t) {
-                  return a
-                    .get("colors")
-                    .getIndex(n.dataItems.indexOf(t.dataItem));
-                });
+                  return a.get("colors").getIndex(n.dataItems.indexOf(t.dataItem));
+                }));
               var d = a.series.push(
                 am5xy.LineSeries.new(t, {
                   xAxis: r,
@@ -2245,7 +2074,7 @@ var KTChartsWidget16 = {
                   maskBullets: !1,
                 })
               );
-              d.bullets.push(function () {
+              (d.bullets.push(function () {
                 return am5.Bullet.new(t, {
                   locationY: 1,
                   sprite: am5.Circle.new(t, {
@@ -2258,23 +2087,23 @@ var KTChartsWidget16 = {
                 n.data.setAll(l),
                 d.data.setAll(l),
                 n.appear(),
-                a.appear(1e3, 100);
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget16),
+("undefined" != typeof module && (module.exports = KTChartsWidget16),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget16.init();
-  });
+  }));
 var KTChartsWidget17 = {
   init: function () {
     !(function () {
@@ -2302,7 +2131,7 @@ var KTChartsWidget17 = {
                     alignLabels: !1,
                   })
                 );
-              a.labels.template.setAll({
+              (a.labels.template.setAll({
                 fontWeight: "400",
                 fontSize: 13,
                 fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
@@ -2339,28 +2168,26 @@ var KTChartsWidget17 = {
                   {
                     value: 3,
                     category: "Six",
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-secondary")
-                    ),
+                    fill: am5.color(KTUtil.getCssVariableValue("--bs-secondary")),
                   },
                 ]),
-                a.appear(1e3, 100);
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget17),
+("undefined" != typeof module && (module.exports = KTChartsWidget17),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget17.init();
-  });
+  }));
 var KTChartsWidget18 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -2370,9 +2197,7 @@ var KTChartsWidget18 = (function () {
           l = KTUtil.getCssVariableValue("--bs-gray-900"),
           r = KTUtil.getCssVariableValue("--bs-border-dashed-color"),
           o = {
-            series: [
-              { name: "Spent time", data: [54, 42, 75, 110, 23, 87, 50] },
-            ],
+            series: [{ name: "Spent time", data: [54, 42, 75, 110, 23, 87, 50] }],
             chart: {
               fontFamily: "inherit",
               type: "bar",
@@ -2458,28 +2283,28 @@ var KTChartsWidget18 = (function () {
               yaxis: { lines: { show: !0 } },
             },
           };
-        (e.self = new ApexCharts(t, o)),
+        ((e.self = new ApexCharts(t, o)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget18),
+("undefined" != typeof module && (module.exports = KTChartsWidget18),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget18.init();
-  });
+  }));
 var KTChartsWidget19 = {
   init: function () {
-    !(function () {
+    (!(function () {
       if ("undefined" != typeof am5) {
         var e = document.getElementById("kt_charts_widget_19_chart_1");
         if (e) {
@@ -2513,9 +2338,7 @@ var KTChartsWidget19 = {
                     full: 100,
                     columnSettings: {
                       fillOpacity: 1,
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-danger")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-danger")),
                     },
                   },
                   {
@@ -2524,9 +2347,7 @@ var KTChartsWidget19 = {
                     full: 100,
                     columnSettings: {
                       fillOpacity: 1,
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                   {
@@ -2535,19 +2356,17 @@ var KTChartsWidget19 = {
                     full: 100,
                     columnSettings: {
                       fillOpacity: 1,
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-success")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
                     },
                   },
                 ];
-              a.set(
-                "cursor",
-                am5radar.RadarCursor.new(t, { behavior: "zoomX" })
-              ).lineY.set("visible", !1);
+              a.set("cursor", am5radar.RadarCursor.new(t, { behavior: "zoomX" })).lineY.set(
+                "visible",
+                !1
+              );
               var r = am5radar.AxisRendererCircular.new(t, {});
-              r.labels.template.setAll({ radius: 10 }),
-                r.grid.template.setAll({ forceHidden: !0 });
+              (r.labels.template.setAll({ radius: 10 }),
+                r.grid.template.setAll({ forceHidden: !0 }));
               var o = a.xAxes.push(
                 am5xy.ValueAxis.new(t, {
                   renderer: r,
@@ -2566,14 +2385,14 @@ var KTChartsWidget19 = {
               var i = am5radar.AxisRendererRadial.new(t, {
                 minGridDistance: 20,
               });
-              i.labels.template.setAll({
+              (i.labels.template.setAll({
                 centerX: am5.p100,
                 fontWeight: "500",
                 fontSize: 18,
                 fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
                 templateField: "columnSettings",
               }),
-                i.grid.template.setAll({ forceHidden: !0 });
+                i.grid.template.setAll({ forceHidden: !0 }));
               var s = a.yAxes.push(
                 am5xy.CategoryAxis.new(t, {
                   categoryField: "category",
@@ -2591,13 +2410,13 @@ var KTChartsWidget19 = {
                   fill: t.interfaceColors.get("alternativeBackground"),
                 })
               );
-              n.columns.template.setAll({
+              (n.columns.template.setAll({
                 width: am5.p100,
                 fillOpacity: 0.08,
                 strokeOpacity: 0,
                 cornerRadius: 20,
               }),
-                n.data.setAll(l);
+                n.data.setAll(l));
               var d = a.series.push(
                 am5radar.RadarColumnSeries.new(t, {
                   xAxis: o,
@@ -2607,7 +2426,7 @@ var KTChartsWidget19 = {
                   categoryYField: "category",
                 })
               );
-              d.columns.template.setAll({
+              (d.columns.template.setAll({
                 width: am5.p100,
                 strokeOpacity: 0,
                 tooltipText: "{category}: {valueX}%",
@@ -2617,14 +2436,14 @@ var KTChartsWidget19 = {
                 d.data.setAll(l),
                 n.appear(1e3),
                 d.appear(1e3),
-                a.appear(1e3, 100);
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })(),
@@ -2662,9 +2481,7 @@ var KTChartsWidget19 = {
                     full: 100,
                     columnSettings: {
                       fillOpacity: 1,
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-danger")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-danger")),
                     },
                   },
                   {
@@ -2673,9 +2490,7 @@ var KTChartsWidget19 = {
                     full: 100,
                     columnSettings: {
                       fillOpacity: 1,
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                   {
@@ -2684,19 +2499,17 @@ var KTChartsWidget19 = {
                     full: 100,
                     columnSettings: {
                       fillOpacity: 1,
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-success")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
                     },
                   },
                 ];
-              a.set(
-                "cursor",
-                am5radar.RadarCursor.new(e, { behavior: "zoomX" })
-              ).lineY.set("visible", !1);
+              a.set("cursor", am5radar.RadarCursor.new(e, { behavior: "zoomX" })).lineY.set(
+                "visible",
+                !1
+              );
               var r = am5radar.AxisRendererCircular.new(e, {});
-              r.labels.template.setAll({ radius: 10 }),
-                r.grid.template.setAll({ forceHidden: !0 });
+              (r.labels.template.setAll({ radius: 10 }),
+                r.grid.template.setAll({ forceHidden: !0 }));
               var o = a.xAxes.push(
                   am5xy.ValueAxis.new(e, {
                     renderer: r,
@@ -2708,14 +2521,14 @@ var KTChartsWidget19 = {
                   })
                 ),
                 i = am5radar.AxisRendererRadial.new(e, { minGridDistance: 20 });
-              i.labels.template.setAll({
+              (i.labels.template.setAll({
                 centerX: am5.p100,
                 fontWeight: "500",
                 fontSize: 18,
                 fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
                 templateField: "columnSettings",
               }),
-                i.grid.template.setAll({ forceHidden: !0 });
+                i.grid.template.setAll({ forceHidden: !0 }));
               var s = a.yAxes.push(
                 am5xy.CategoryAxis.new(e, {
                   categoryField: "category",
@@ -2733,13 +2546,13 @@ var KTChartsWidget19 = {
                   fill: e.interfaceColors.get("alternativeBackground"),
                 })
               );
-              n.columns.template.setAll({
+              (n.columns.template.setAll({
                 width: am5.p100,
                 fillOpacity: 0.08,
                 strokeOpacity: 0,
                 cornerRadius: 20,
               }),
-                n.data.setAll(l);
+                n.data.setAll(l));
               var d = a.series.push(
                 am5radar.RadarColumnSeries.new(e, {
                   xAxis: o,
@@ -2749,7 +2562,7 @@ var KTChartsWidget19 = {
                   categoryYField: "category",
                 })
               );
-              d.columns.template.setAll({
+              (d.columns.template.setAll({
                 width: am5.p100,
                 strokeOpacity: 0,
                 tooltipText: "{category}: {valueX}%",
@@ -2759,23 +2572,23 @@ var KTChartsWidget19 = {
                 d.data.setAll(l),
                 n.appear(1e3),
                 d.appear(1e3),
-                a.appear(1e3, 100);
+                a.appear(1e3, 100));
             };
-            am5.ready(function () {
+            (am5.ready(function () {
               a();
             }),
               KTThemeMode.on("kt.thememode.change", function () {
-                e.dispose(), a();
-              });
+                (e.dispose(), a());
+              }));
           }
         }
-      })();
+      })());
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget19),
+("undefined" != typeof module && (module.exports = KTChartsWidget19),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget19.init();
-  });
+  }));
 var KTChartsWidget2 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -2860,25 +2673,25 @@ var KTChartsWidget2 = (function () {
             colors: [s],
             markers: { colors: s, strokeColor: i, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, n)),
+        ((e.self = new ApexCharts(t, n)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget2),
+("undefined" != typeof module && (module.exports = KTChartsWidget2),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget2.init();
-  });
+  }));
 var KTChartsWidget20 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -2894,8 +2707,8 @@ var KTChartsWidget20 = (function () {
               {
                 name: t.getAttribute("data-kt-chart-info"),
                 data: [
-                  34.5, 34.5, 35, 35, 35.5, 35.5, 35, 35, 35.5, 35.5, 35, 35,
-                  34.5, 34.5, 35, 35, 35.4, 35.4, 35,
+                  34.5, 34.5, 35, 35, 35.5, 35.5, 35, 35, 35.5, 35.5, 35, 35, 34.5, 34.5, 35, 35,
+                  35.4, 35.4, 35,
                 ],
               },
             ],
@@ -2994,25 +2807,25 @@ var KTChartsWidget20 = (function () {
             },
             markers: { strokeColor: o, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, s)),
+        ((e.self = new ApexCharts(t, s)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget20),
+("undefined" != typeof module && (module.exports = KTChartsWidget20),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget20.init();
-  });
+  }));
 var KTChartsWidget21 = {
   init: function () {
     !(function () {
@@ -3252,10 +3065,10 @@ var KTChartsWidget21 = {
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget21),
+("undefined" != typeof module && (module.exports = KTChartsWidget21),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget21.init();
-  });
+  }));
 var KTChartsWidget22 = (function () {
   var e = function (e, t, a, l) {
     var r = document.querySelector(t);
@@ -3283,33 +3096,23 @@ var KTChartsWidget22 = (function () {
         i = new ApexCharts(r, o),
         s = !1,
         n = document.querySelector(e);
-      !0 === l && (i.render(), (s = !0)),
+      (!0 === l && (i.render(), (s = !0)),
         n.addEventListener("shown.bs.tab", function (e) {
           0 == s && (i.render(), (s = !0));
-        });
+        }));
     }
   };
   return {
     init: function () {
-      e(
-        "#kt_chart_widgets_22_tab_1",
-        "#kt_chart_widgets_22_chart_1",
-        [20, 100, 15, 25],
-        !0
-      ),
-        e(
-          "#kt_chart_widgets_22_tab_2",
-          "#kt_chart_widgets_22_chart_2",
-          [70, 13, 11, 2],
-          !1
-        );
+      (e("#kt_chart_widgets_22_tab_1", "#kt_chart_widgets_22_chart_1", [20, 100, 15, 25], !0),
+        e("#kt_chart_widgets_22_tab_2", "#kt_chart_widgets_22_chart_2", [70, 13, 11, 2], !1));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget22),
+("undefined" != typeof module && (module.exports = KTChartsWidget22),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget22.init();
-  });
+  }));
 var KTChartsWidget23 = {
   init: function () {
     !(function () {
@@ -3332,9 +3135,7 @@ var KTChartsWidget23 = {
                     income: 23.5,
                     expenses: 21.1,
                     columnSettings: {
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                   {
@@ -3342,9 +3143,7 @@ var KTChartsWidget23 = {
                     income: 26.2,
                     expenses: 30.5,
                     columnSettings: {
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                   {
@@ -3352,9 +3151,7 @@ var KTChartsWidget23 = {
                     income: 30.1,
                     expenses: 34.9,
                     columnSettings: {
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                   {
@@ -3362,9 +3159,7 @@ var KTChartsWidget23 = {
                     income: 29.5,
                     expenses: 31.1,
                     columnSettings: {
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                   {
@@ -3373,9 +3168,7 @@ var KTChartsWidget23 = {
                     expenses: 28.2,
                     strokeSettings: { strokeWidth: 3, strokeDasharray: [5, 5] },
                     columnSettings: {
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                   {
@@ -3384,9 +3177,7 @@ var KTChartsWidget23 = {
                     expenses: 28.2,
                     strokeSettings: { strokeWidth: 3, strokeDasharray: [5, 5] },
                     columnSettings: {
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                   {
@@ -3395,9 +3186,7 @@ var KTChartsWidget23 = {
                     expenses: 32.9,
                     strokeSettings: { strokeWidth: 3, strokeDasharray: [5, 5] },
                     columnSettings: {
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-primary")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     },
                   },
                 ],
@@ -3407,20 +3196,14 @@ var KTChartsWidget23 = {
                     renderer: am5xy.AxisRendererX.new(t, {}),
                   })
                 );
-              r.data.setAll(l),
-                r
-                  .get("renderer")
-                  .labels.template.setAll({
-                    paddingTop: 20,
-                    fontWeight: "400",
-                    fontSize: 11,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-500")
-                    ),
-                  }),
-                r
-                  .get("renderer")
-                  .grid.template.setAll({ disabled: !0, strokeOpacity: 0 });
+              (r.data.setAll(l),
+                r.get("renderer").labels.template.setAll({
+                  paddingTop: 20,
+                  fontWeight: "400",
+                  fontSize: 11,
+                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+                }),
+                r.get("renderer").grid.template.setAll({ disabled: !0, strokeOpacity: 0 }));
               var o = a.yAxes.push(
                 am5xy.ValueAxis.new(t, {
                   min: 0,
@@ -3428,24 +3211,18 @@ var KTChartsWidget23 = {
                   renderer: am5xy.AxisRendererY.new(t, {}),
                 })
               );
-              o
-                .get("renderer")
-                .labels.template.setAll({
-                  paddingTop: 0,
-                  fontWeight: "400",
-                  fontSize: 11,
-                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
-                }),
-                o
-                  .get("renderer")
-                  .grid.template.setAll({
-                    stroke: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-300")
-                    ),
-                    strokeWidth: 1,
-                    strokeOpacity: 1,
-                    strokeDasharray: [3],
-                  });
+              (o.get("renderer").labels.template.setAll({
+                paddingTop: 0,
+                fontWeight: "400",
+                fontSize: 11,
+                fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+              }),
+                o.get("renderer").grid.template.setAll({
+                  stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
+                  strokeWidth: 1,
+                  strokeOpacity: 1,
+                  strokeDasharray: [3],
+                }));
               var i = a.series.push(
                 am5xy.ColumnSeries.new(t, {
                   name: "Income",
@@ -3459,11 +3236,11 @@ var KTChartsWidget23 = {
                   }),
                 })
               );
-              i.columns.template.setAll({
+              (i.columns.template.setAll({
                 tooltipY: am5.percent(10),
                 templateField: "columnSettings",
               }),
-                i.data.setAll(l);
+                i.data.setAll(l));
               var s = a.series.push(
                 am5xy.LineSeries.new(t, {
                   name: "Expenses",
@@ -3479,7 +3256,7 @@ var KTChartsWidget23 = {
                   }),
                 })
               );
-              s.strokes.template.setAll({
+              (s.strokes.template.setAll({
                 stroke: am5.color(KTUtil.getCssVariableValue("--bs-success")),
               }),
                 s.strokes.template.setAll({
@@ -3491,13 +3268,9 @@ var KTChartsWidget23 = {
                   return am5.Bullet.new(t, {
                     sprite: am5.Circle.new(t, {
                       strokeWidth: 3,
-                      stroke: am5.color(
-                        KTUtil.getCssVariableValue("--bs-success")
-                      ),
+                      stroke: am5.color(KTUtil.getCssVariableValue("--bs-success")),
                       radius: 5,
-                      fill: am5.color(
-                        KTUtil.getCssVariableValue("--bs-success-light")
-                      ),
+                      fill: am5.color(KTUtil.getCssVariableValue("--bs-success-light")),
                     }),
                   });
                 }),
@@ -3510,34 +3283,32 @@ var KTChartsWidget23 = {
                 }),
                 a.set("cursor", am5xy.XYCursor.new(t, {})),
                 a.get("cursor").lineX.setAll({ visible: !1 }),
-                a.get("cursor").lineY.setAll({ visible: !1 });
-              var n = a.children.push(
-                am5.Legend.new(t, { centerX: am5.p50, x: am5.p50 })
-              );
-              n.data.setAll(a.series.values),
+                a.get("cursor").lineY.setAll({ visible: !1 }));
+              var n = a.children.push(am5.Legend.new(t, { centerX: am5.p50, x: am5.p50 }));
+              (n.data.setAll(a.series.values),
                 n.labels.template.setAll({
                   fontWeight: "600",
                   fontSize: 14,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
                 }),
                 a.appear(1e3, 100),
-                i.appear();
+                i.appear());
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget23),
+("undefined" != typeof module && (module.exports = KTChartsWidget23),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget23.init();
-  });
+  }));
 var KTChartsWidget24 = {
   init: function () {
     !(function () {
@@ -4642,17 +4413,15 @@ var KTChartsWidget24 = {
                 };
               function r(e) {
                 for (var t = 0, a = 0, l = 0; l < e.length; l++)
-                  (t += (r = e[l]).male), (a += r.female);
+                  ((t += (r = e[l]).male), (a += r.female));
                 for (l = 0; l < e.length; l++) {
                   var r;
-                  ((r = e[l]).malePercent =
-                    (-1 * Math.round((r.male / t) * 1e4)) / 100),
-                    (r.femalePercent = Math.round((r.female / a) * 1e4) / 100);
+                  (((r = e[l]).malePercent = (-1 * Math.round((r.male / t) * 1e4)) / 100),
+                    (r.femalePercent = Math.round((r.female / a) * 1e4) / 100));
                 }
                 return e;
               }
-              (a = r(a)),
-                (t = am5.Root.new(e)).setThemes([am5themes_Animated.new(t)]);
+              ((a = r(a)), (t = am5.Root.new(e)).setThemes([am5themes_Animated.new(t)]));
               var o = t.container.children.push(
                 am5.Container.new(t, {
                   layout: t.horizontalLayout,
@@ -4677,52 +4446,38 @@ var KTChartsWidget24 = {
                     renderer: am5xy.AxisRendererY.new(t, {}),
                   })
                 );
-              s
-                .get("renderer")
-                .labels.template.setAll({
-                  paddingTop: 0,
-                  fontWeight: "400",
-                  fontSize: 11,
-                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+              (s.get("renderer").labels.template.setAll({
+                paddingTop: 0,
+                fontWeight: "400",
+                fontSize: 11,
+                fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+              }),
+                s.get("renderer").grid.template.setAll({
+                  stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
+                  strokeWidth: 1,
+                  strokeOpacity: 1,
+                  strokeDasharray: [3],
                 }),
-                s
-                  .get("renderer")
-                  .grid.template.setAll({
-                    stroke: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-300")
-                    ),
-                    strokeWidth: 1,
-                    strokeOpacity: 1,
-                    strokeDasharray: [3],
-                  }),
-                s.data.setAll(a);
+                s.data.setAll(a));
               var n = i.yAxes.push(
                 am5xy.CategoryAxis.new(t, {
                   categoryField: "age",
                   renderer: am5xy.AxisRendererY.new(t, { opposite: !0 }),
                 })
               );
-              n
-                .get("renderer")
-                .grid.template.setAll({
-                  stroke: am5.color(
-                    KTUtil.getCssVariableValue("--bs-gray-300")
-                  ),
-                  strokeWidth: 1,
-                  strokeOpacity: 1,
-                  strokeDasharray: [3],
+              (n.get("renderer").grid.template.setAll({
+                stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
+                strokeWidth: 1,
+                strokeOpacity: 1,
+                strokeDasharray: [3],
+              }),
+                n.get("renderer").labels.template.setAll({
+                  paddingTop: 0,
+                  fontWeight: "400",
+                  fontSize: 11,
+                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
                 }),
-                n
-                  .get("renderer")
-                  .labels.template.setAll({
-                    paddingTop: 0,
-                    fontWeight: "400",
-                    fontSize: 11,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-500")
-                    ),
-                  }),
-                n.data.setAll(a);
+                n.data.setAll(a));
               var d = i.xAxes.push(
                 am5xy.ValueAxis.new(t, {
                   min: -10,
@@ -4731,17 +4486,13 @@ var KTChartsWidget24 = {
                   renderer: am5xy.AxisRendererX.new(t, { minGridDistance: 40 }),
                 })
               );
-              d
-                .get("renderer")
-                .labels.template.setAll({
-                  paddingTop: 20,
-                  fontWeight: "400",
-                  fontSize: 11,
-                  fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
-                }),
-                d
-                  .get("renderer")
-                  .grid.template.setAll({ disabled: !0, strokeOpacity: 0 });
+              (d.get("renderer").labels.template.setAll({
+                paddingTop: 20,
+                fontWeight: "400",
+                fontSize: 11,
+                fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
+              }),
+                d.get("renderer").grid.template.setAll({ disabled: !0, strokeOpacity: 0 }));
               var m = i.series.push(
                 am5xy.ColumnSeries.new(t, {
                   name: "Males",
@@ -4753,16 +4504,15 @@ var KTChartsWidget24 = {
                   clustered: !1,
                 })
               );
-              m.columns.template.setAll({
-                tooltipText:
-                  "Males, age {categoryY}: {male} ({malePercent.formatNumber('#.0s')}%)",
+              (m.columns.template.setAll({
+                tooltipText: "Males, age {categoryY}: {male} ({malePercent.formatNumber('#.0s')}%)",
                 tooltipX: am5.p100,
                 cornerRadiusBR: 4,
                 cornerRadiusTR: 4,
                 cornerRadiusBL: 0,
                 cornerRadiusTL: 0,
               }),
-                m.data.setAll(a);
+                m.data.setAll(a));
               var c = i.series.push(
                 am5xy.ColumnSeries.new(t, {
                   name: "Males",
@@ -4774,7 +4524,7 @@ var KTChartsWidget24 = {
                   clustered: !1,
                 })
               );
-              c.columns.template.setAll({
+              (c.columns.template.setAll({
                 tooltipText:
                   "Males, age {categoryY}: {female} ({femalePercent.formatNumber('#.0s')}%)",
                 tooltipX: am5.p100,
@@ -4805,7 +4555,7 @@ var KTChartsWidget24 = {
                     dx: -5,
                     fill: c.get("fill"),
                   })
-                );
+                ));
               var g = o.children.push(
                 am5map.MapChart.new(t, {
                   panX: "none",
@@ -4822,9 +4572,7 @@ var KTChartsWidget24 = {
                     text: "United States",
                     fontSize: 14,
                     fontWeight: "500",
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-800")
-                    ),
+                    fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-800")),
                     y: 20,
                     x: am5.p50,
                     centerX: am5.p50,
@@ -4832,13 +4580,11 @@ var KTChartsWidget24 = {
                 ),
                 h = g.series.push(
                   am5map.MapPolygonSeries.new(t, {
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-300")
-                    ),
+                    fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-300")),
                     geoJSON: am5geodata_usaLow,
                   })
                 );
-              h.mapPolygons.template.setAll({
+              (h.mapPolygons.template.setAll({
                 tooltipText: "{name}",
                 interactive: !0,
               }),
@@ -4849,36 +4595,34 @@ var KTChartsWidget24 = {
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
                 }),
                 h.mapPolygons.template.events.on("click", function (e) {
-                  f && f.set("active", !1), (f = e.target).set("active", !0);
+                  (f && f.set("active", !1), (f = e.target).set("active", !0));
                   for (
-                    var t = e.target.dataItem.dataContext.id.split("-").pop(),
-                      a = r(l[t]),
-                      o = 0;
+                    var t = e.target.dataItem.dataContext.id.split("-").pop(), a = r(l[t]), o = 0;
                     o < a.length;
                     o++
                   )
-                    m.data.setIndex(o, a[o]), c.data.setIndex(o, a[o]);
+                    (m.data.setIndex(o, a[o]), c.data.setIndex(o, a[o]));
                   u.set("text", e.target.dataItem.dataContext.name);
-                });
+                }));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget24),
+("undefined" != typeof module && (module.exports = KTChartsWidget24),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget24.init();
-  });
+  }));
 var KTChartsWidget25 = {
   init: function () {
-    !(function () {
+    (!(function () {
       if ("undefined" != typeof am5) {
         var e = document.getElementById("kt_charts_widget_25_chart_1");
         if (e) {
@@ -4896,14 +4640,14 @@ var KTChartsWidget25 = {
                   arrangeTooltips: !1,
                 })
               );
-              a.set(
-                "cursor",
-                am5radar.RadarCursor.new(t, { behavior: "zoomX" })
-              ).lineY.set("visible", !1);
+              a.set("cursor", am5radar.RadarCursor.new(t, { behavior: "zoomX" })).lineY.set(
+                "visible",
+                !1
+              );
               var l = am5radar.AxisRendererCircular.new(t, {
                 minGridDistance: 30,
               });
-              l.labels.template.setAll({
+              (l.labels.template.setAll({
                 textType: "radial",
                 radius: 10,
                 paddingTop: 0,
@@ -4917,7 +4661,7 @@ var KTChartsWidget25 = {
                   location: 0.5,
                   strokeDasharray: [2, 2],
                   stroke: KTUtil.getCssVariableValue("--bs-gray-400"),
-                });
+                }));
               var r = a.xAxes.push(
                   am5xy.CategoryAxis.new(t, {
                     maxDeviation: 0,
@@ -4946,12 +4690,12 @@ var KTChartsWidget25 = {
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                 })
               );
-              s.strokes.template.setAll({ strokeOpacity: 0 }),
+              (s.strokes.template.setAll({ strokeOpacity: 0 }),
                 s.fills.template.setAll({
                   visible: !0,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                   fillOpacity: 0.5,
-                });
+                }));
               var n = a.series.push(
                 am5radar.RadarLineSeries.new(t, {
                   name: "Expense",
@@ -4966,12 +4710,12 @@ var KTChartsWidget25 = {
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
                 })
               );
-              n.strokes.template.setAll({ strokeOpacity: 0 }),
+              (n.strokes.template.setAll({ strokeOpacity: 0 }),
                 n.fills.template.setAll({
                   visible: !0,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                   fillOpacity: 0.5,
-                });
+                }));
               var d = a.radarContainer.children.push(
                 am5.Legend.new(t, {
                   width: 150,
@@ -4979,12 +4723,12 @@ var KTChartsWidget25 = {
                   centerY: am5.p50,
                 })
               );
-              d.data.setAll([s, n]),
+              (d.data.setAll([s, n]),
                 d.labels.template.setAll({
                   fontWeight: "600",
                   fontSize: 13,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
-                });
+                }));
               var m = [
                 { name: "Openlane", value1: 160.2, value2: 26.9 },
                 { name: "Yearin", value1: 120.1, value2: 50.5 },
@@ -5011,19 +4755,19 @@ var KTChartsWidget25 = {
                 { name: "Nam-zim", value1: 15.5, value2: 4.1 },
                 { name: "Y-corporation", value1: 14.2, value2: 11.3 },
               ];
-              s.data.setAll(m),
+              (s.data.setAll(m),
                 n.data.setAll(m),
                 r.data.setAll(m),
                 s.appear(1e3),
                 n.appear(1e3),
-                a.appear(1e3, 100);
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })(),
@@ -5045,14 +4789,14 @@ var KTChartsWidget25 = {
                     arrangeTooltips: !1,
                   })
                 );
-                a.set(
-                  "cursor",
-                  am5radar.RadarCursor.new(t, { behavior: "zoomX" })
-                ).lineY.set("visible", !1);
+                a.set("cursor", am5radar.RadarCursor.new(t, { behavior: "zoomX" })).lineY.set(
+                  "visible",
+                  !1
+                );
                 var l = am5radar.AxisRendererCircular.new(t, {
                   minGridDistance: 30,
                 });
-                l.labels.template.setAll({
+                (l.labels.template.setAll({
                   textType: "radial",
                   radius: 10,
                   paddingTop: 0,
@@ -5066,7 +4810,7 @@ var KTChartsWidget25 = {
                     location: 0.5,
                     strokeDasharray: [2, 2],
                     stroke: KTUtil.getCssVariableValue("--bs-gray-400"),
-                  });
+                  }));
                 var r = a.xAxes.push(
                     am5xy.CategoryAxis.new(t, {
                       maxDeviation: 0,
@@ -5078,17 +4822,15 @@ var KTChartsWidget25 = {
                     minGridDistance: 30,
                   }),
                   i = a.yAxes.push(am5xy.ValueAxis.new(t, { renderer: o }));
-                o.grid.template.setAll({
+                (o.grid.template.setAll({
                   strokeDasharray: [2, 2],
                   stroke: KTUtil.getCssVariableValue("--bs-gray-400"),
                 }),
                   o.labels.template.setAll({
                     fontWeight: "500",
                     fontSize: 12,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-700")
-                    ),
-                  });
+                    fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
+                  }));
                 var s = a.series.push(
                   am5radar.RadarLineSeries.new(t, {
                     name: "Revenue",
@@ -5099,12 +4841,12 @@ var KTChartsWidget25 = {
                     fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                   })
                 );
-                s.strokes.template.setAll({ strokeOpacity: 0 }),
+                (s.strokes.template.setAll({ strokeOpacity: 0 }),
                   s.fills.template.setAll({
                     visible: !0,
                     fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     fillOpacity: 0.5,
-                  });
+                  }));
                 var n = a.series.push(
                   am5radar.RadarLineSeries.new(t, {
                     name: "Expense",
@@ -5119,12 +4861,12 @@ var KTChartsWidget25 = {
                     fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
                   })
                 );
-                n.strokes.template.setAll({ strokeOpacity: 0 }),
+                (n.strokes.template.setAll({ strokeOpacity: 0 }),
                   n.fills.template.setAll({
                     visible: !0,
                     fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                     fillOpacity: 0.5,
-                  });
+                  }));
                 var d = a.radarContainer.children.push(
                   am5.Legend.new(t, {
                     width: 150,
@@ -5132,14 +4874,12 @@ var KTChartsWidget25 = {
                     centerY: am5.p50,
                   })
                 );
-                d.data.setAll([s, n]),
+                (d.data.setAll([s, n]),
                   d.labels.template.setAll({
                     fontWeight: "600",
                     fontSize: 13,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-700")
-                    ),
-                  });
+                    fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
+                  }));
                 var m = [
                   { name: "Openlane", value1: 160.2, value2: 66.9 },
                   { name: "Yearin", value1: 150.1, value2: 50.5 },
@@ -5166,28 +4906,28 @@ var KTChartsWidget25 = {
                   { name: "Nam-zim", value1: 15.5, value2: 4.1 },
                   { name: "Y-corporation", value1: 14.2, value2: 11.3 },
                 ];
-                s.data.setAll(m),
+                (s.data.setAll(m),
                   n.data.setAll(m),
                   r.data.setAll(m),
                   s.appear(1e3),
                   n.appear(1e3),
-                  a.appear(1e3, 100);
+                  a.appear(1e3, 100));
               };
-            am5.ready(function () {
+            (am5.ready(function () {
               a();
             }),
               KTThemeMode.on("kt.thememode.change", function () {
-                t.dispose(), a();
-              });
+                (t.dispose(), a());
+              }));
           }
         }
-      })();
+      })());
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget25),
+("undefined" != typeof module && (module.exports = KTChartsWidget25),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget25.init();
-  });
+  }));
 var KTChartsWidget26 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -5203,8 +4943,8 @@ var KTChartsWidget26 = (function () {
               {
                 name: t.getAttribute("data-kt-chart-info"),
                 data: [
-                  34.5, 34.5, 35, 35, 35.5, 35.5, 35, 35, 35.5, 35.5, 35, 35,
-                  34.5, 34.5, 35, 35, 35.5, 35.5, 35,
+                  34.5, 34.5, 35, 35, 35.5, 35.5, 35, 35, 35.5, 35.5, 35, 35, 34.5, 34.5, 35, 35,
+                  35.5, 35.5, 35,
                 ],
               },
             ],
@@ -5303,25 +5043,25 @@ var KTChartsWidget26 = (function () {
             },
             markers: { strokeColor: o, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, s)),
+        ((e.self = new ApexCharts(t, s)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget26),
+("undefined" != typeof module && (module.exports = KTChartsWidget26),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget26.init();
-  });
+  }));
 var KTChartsWidget27 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -5330,9 +5070,7 @@ var KTChartsWidget27 = (function () {
         var a = KTUtil.getCssVariableValue("--bs-gray-800"),
           l = KTUtil.getCssVariableValue("--bs-border-dashed-color"),
           r = {
-            series: [
-              { name: "Sessions", data: [12.478, 7.546, 6.083, 5.041, 4.42] },
-            ],
+            series: [{ name: "Sessions", data: [12.478, 7.546, 6.083, 5.041, 4.42] }],
             chart: {
               fontFamily: "inherit",
               type: "bar",
@@ -5402,25 +5140,25 @@ var KTChartsWidget27 = (function () {
               },
             },
           };
-        (e.self = new ApexCharts(t, r)),
+        ((e.self = new ApexCharts(t, r)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget27),
+("undefined" != typeof module && (module.exports = KTChartsWidget27),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget27.init();
-  });
+  }));
 var KTChartsWidget28 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -5434,10 +5172,7 @@ var KTChartsWidget28 = (function () {
             series: [
               {
                 name: "Links",
-                data: [
-                  190, 230, 230, 200, 200, 190, 190, 200, 200, 220, 220, 200,
-                  200, 210, 210,
-                ],
+                data: [190, 230, 230, 200, 200, 190, 190, 200, 200, 220, 220, 200, 200, 210, 210],
               },
             ],
             chart: {
@@ -5531,25 +5266,25 @@ var KTChartsWidget28 = (function () {
             },
             markers: { strokeColor: o, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, i)),
+        ((e.self = new ApexCharts(t, i)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget28),
+("undefined" != typeof module && (module.exports = KTChartsWidget28),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget28.init();
-  });
+  }));
 var KTChartsWidget29 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -5657,25 +5392,25 @@ var KTChartsWidget29 = (function () {
             },
             markers: { strokeColor: o, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, i)),
+        ((e.self = new ApexCharts(t, i)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget29),
+("undefined" != typeof module && (module.exports = KTChartsWidget29),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget29.init();
-  });
+  }));
 var KTChartsWidget3 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -5689,10 +5424,7 @@ var KTChartsWidget3 = (function () {
             series: [
               {
                 name: "Sales",
-                data: [
-                  18, 18, 20, 20, 18, 18, 22, 22, 20, 20, 18, 18, 20, 20, 18,
-                  18, 20, 20, 22,
-                ],
+                data: [18, 18, 20, 20, 18, 18, 22, 22, 20, 20, 18, 18, 20, 20, 18, 18, 20, 20, 22],
               },
             ],
             chart: {
@@ -5790,25 +5522,25 @@ var KTChartsWidget3 = (function () {
             },
             markers: { strokeColor: o, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, i)),
+        ((e.self = new ApexCharts(t, i)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget3),
+("undefined" != typeof module && (module.exports = KTChartsWidget3),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget3.init();
-  });
+  }));
 var KTChartsWidget30 = {
   init: function () {
     !(function () {
@@ -5836,7 +5568,7 @@ var KTChartsWidget30 = {
                     alignLabels: !1,
                   })
                 );
-              a.labels.template.setAll({
+              (a.labels.template.setAll({
                 fontWeight: "400",
                 fontSize: 13,
                 fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-500")),
@@ -5873,28 +5605,26 @@ var KTChartsWidget30 = {
                   {
                     value: 3,
                     category: "Six",
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-secondary")
-                    ),
+                    fill: am5.color(KTUtil.getCssVariableValue("--bs-secondary")),
                   },
                 ]),
-                a.appear(1e3, 100);
+                a.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget30),
+("undefined" != typeof module && (module.exports = KTChartsWidget30),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget30.init();
-  });
+  }));
 var KTChartsWidget31 = {
   init: function () {
     !(function () {
@@ -5904,7 +5634,7 @@ var KTChartsWidget31 = {
           var t,
             a,
             l = function () {
-              (a = am5.Root.new(e)).setThemes([am5themes_Animated.new(a)]),
+              ((a = am5.Root.new(e)).setThemes([am5themes_Animated.new(a)]),
                 (t = a.container.children.push(
                   am5radar.RadarChart.new(a, {
                     panX: !1,
@@ -5916,15 +5646,12 @@ var KTChartsWidget31 = {
                     arrangeTooltips: !1,
                   })
                 ))
-                  .set(
-                    "cursor",
-                    am5radar.RadarCursor.new(a, { behavior: "zoomX" })
-                  )
-                  .lineY.set("visible", !1);
+                  .set("cursor", am5radar.RadarCursor.new(a, { behavior: "zoomX" }))
+                  .lineY.set("visible", !1));
               var l = am5radar.AxisRendererCircular.new(a, {
                 minGridDistance: 30,
               });
-              l.labels.template.setAll({
+              (l.labels.template.setAll({
                 textType: "radial",
                 radius: 10,
                 paddingTop: 0,
@@ -5938,7 +5665,7 @@ var KTChartsWidget31 = {
                   location: 0.5,
                   strokeDasharray: [2, 2],
                   stroke: KTUtil.getCssVariableValue("--bs-gray-400"),
-                });
+                }));
               var r = t.xAxes.push(
                   am5xy.CategoryAxis.new(a, {
                     maxDeviation: 0,
@@ -5967,12 +5694,12 @@ var KTChartsWidget31 = {
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                 })
               );
-              s.strokes.template.setAll({ strokeOpacity: 0 }),
+              (s.strokes.template.setAll({ strokeOpacity: 0 }),
                 s.fills.template.setAll({
                   visible: !0,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                   fillOpacity: 0.5,
-                });
+                }));
               var n = t.series.push(
                 am5radar.RadarLineSeries.new(a, {
                   name: "Expense",
@@ -5987,12 +5714,12 @@ var KTChartsWidget31 = {
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
                 })
               );
-              n.strokes.template.setAll({ strokeOpacity: 0 }),
+              (n.strokes.template.setAll({ strokeOpacity: 0 }),
                 n.fills.template.setAll({
                   visible: !0,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
                   fillOpacity: 0.5,
-                });
+                }));
               var d = t.radarContainer.children.push(
                 am5.Legend.new(a, {
                   width: 150,
@@ -6000,12 +5727,12 @@ var KTChartsWidget31 = {
                   centerY: am5.p50,
                 })
               );
-              d.data.setAll([s, n]),
+              (d.data.setAll([s, n]),
                 d.labels.template.setAll({
                   fontWeight: "600",
                   fontSize: 13,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
-                });
+                }));
               var m = [
                 { name: "Openlane", value1: 160.2, value2: 26.9 },
                 { name: "Yearin", value1: 120.1, value2: 50.5 },
@@ -6032,28 +5759,28 @@ var KTChartsWidget31 = {
                 { name: "Nam-zim", value1: 15.5, value2: 4.1 },
                 { name: "Y-corporation", value1: 14.2, value2: 11.3 },
               ];
-              s.data.setAll(m),
+              (s.data.setAll(m),
                 n.data.setAll(m),
                 r.data.setAll(m),
                 s.appear(1e3),
                 n.appear(1e3),
-                t.appear(1e3, 100);
+                t.appear(1e3, 100));
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             l();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              a.dispose(), l();
-            });
+              (a.dispose(), l());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget31),
+("undefined" != typeof module && (module.exports = KTChartsWidget31),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget31.init();
-  });
+  }));
 var KTChartsWidget32 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -6140,13 +5867,13 @@ var KTChartsWidget32 = (function () {
           };
         e.self = new ApexCharts(o, d);
         var m = document.querySelector(t);
-        !0 === r &&
+        (!0 === r &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           m.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
@@ -6156,40 +5883,22 @@ var KTChartsWidget32 = (function () {
       var o = [25, 55, 35, 50, 45, 20, 31];
       l(t, "#kt_charts_widget_32_tab_2", "#kt_charts_widget_32_chart_2", o, !1);
       var i = [45, 15, 35, 70, 45, 50, 21];
-      l(a, "#kt_charts_widget_32_tab_3", "#kt_charts_widget_32_chart_3", i, !1),
+      (l(a, "#kt_charts_widget_32_tab_3", "#kt_charts_widget_32_chart_3", i, !1),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
-            l(
-              e,
-              "#kt_charts_widget_32_tab_1",
-              "#kt_charts_widget_32_chart_1",
-              r,
-              e.rendered
-            ),
-            l(
-              t,
-              "#kt_charts_widget_32_tab_2",
-              "#kt_charts_widget_32_chart_2",
-              o,
-              t.rendered
-            ),
-            l(
-              a,
-              "#kt_charts_widget_32_tab_3",
-              "#kt_charts_widget_32_chart_3",
-              i,
-              a.rendered
-            );
-        });
+            l(e, "#kt_charts_widget_32_tab_1", "#kt_charts_widget_32_chart_1", r, e.rendered),
+            l(t, "#kt_charts_widget_32_tab_2", "#kt_charts_widget_32_chart_2", o, t.rendered),
+            l(a, "#kt_charts_widget_32_tab_3", "#kt_charts_widget_32_chart_3", i, a.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget32),
+("undefined" != typeof module && (module.exports = KTChartsWidget32),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget32.init();
-  });
+  }));
 var KTChartsWidget33 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -6274,20 +5983,19 @@ var KTChartsWidget33 = (function () {
           };
         e.self = new ApexCharts(i, g);
         var f = document.querySelector(t);
-        !0 === o &&
+        (!0 === o &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           f.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
     init: function () {
       var i = [
-          2100, 3200, 3200, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 3e3,
-          3e3, 3250, 3250,
+          2100, 3200, 3200, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 3e3, 3e3, 3250, 3250,
         ],
         s = [
           "10AM",
@@ -6306,17 +6014,9 @@ var KTChartsWidget33 = (function () {
           "8PM",
           "9PM",
         ];
-      o(
-        e,
-        "#kt_charts_widget_33_tab_1",
-        "#kt_charts_widget_33_chart_1",
-        i,
-        s,
-        !0
-      );
+      o(e, "#kt_charts_widget_33_tab_1", "#kt_charts_widget_33_chart_1", i, s, !0);
       var n = [
-          2300, 2300, 2e3, 3200, 3200, 2800, 2400, 2400, 3100, 2900, 3100, 3100,
-          2600, 2600, 3200,
+          2300, 2300, 2e3, 3200, 3200, 2800, 2400, 2400, 3100, 2900, 3100, 3100, 2600, 2600, 3200,
         ],
         d = [
           "Apr 01",
@@ -6335,17 +6035,9 @@ var KTChartsWidget33 = (function () {
           "Apr 14",
           "Apr 15",
         ];
-      o(
-        t,
-        "#kt_charts_widget_33_tab_2",
-        "#kt_charts_widget_33_chart_2",
-        n,
-        d,
-        !1
-      );
+      o(t, "#kt_charts_widget_33_tab_2", "#kt_charts_widget_33_chart_2", n, d, !1);
       var m = [
-          2600, 3200, 2300, 2300, 2e3, 3200, 3100, 2900, 3200, 3200, 2600, 3100,
-          2800, 2400, 2400,
+          2600, 3200, 2300, 2300, 2e3, 3200, 3100, 2900, 3200, 3200, 2600, 3100, 2800, 2400, 2400,
         ],
         c = [
           "Apr 02",
@@ -6364,17 +6056,9 @@ var KTChartsWidget33 = (function () {
           "Apr 22",
           "Apr 24",
         ];
-      o(
-        a,
-        "#kt_charts_widget_33_tab_3",
-        "#kt_charts_widget_33_chart_3",
-        m,
-        c,
-        !1
-      );
+      o(a, "#kt_charts_widget_33_tab_3", "#kt_charts_widget_33_chart_3", m, c, !1);
       var g = [
-          1800, 1800, 2400, 2400, 3200, 3200, 3e3, 2100, 3200, 3300, 2400, 2400,
-          3e3, 3200, 3100,
+          1800, 1800, 2400, 2400, 3200, 3200, 3e3, 2100, 3200, 3300, 2400, 2400, 3e3, 3200, 3100,
         ],
         f = [
           "Jun 2021",
@@ -6393,17 +6077,9 @@ var KTChartsWidget33 = (function () {
           "Jul 2022",
           "Aug 2022",
         ];
-      o(
-        l,
-        "#kt_charts_widget_33_tab_4",
-        "#kt_charts_widget_33_chart_4",
-        g,
-        f,
-        !1
-      );
+      o(l, "#kt_charts_widget_33_tab_4", "#kt_charts_widget_33_chart_4", g, f, !1);
       var u = [
-          3e3, 2100, 3300, 3100, 1800, 1800, 2400, 2400, 3100, 3100, 2400, 2400,
-          3e3, 2400, 2800,
+          3e3, 2100, 3300, 3100, 1800, 1800, 2400, 2400, 3100, 3100, 2400, 2400, 3e3, 2400, 2800,
         ],
         h = [
           "Sep 2021",
@@ -6422,68 +6098,26 @@ var KTChartsWidget33 = (function () {
           "Oct 2022",
           "Nov 2022",
         ];
-      o(
-        r,
-        "#kt_charts_widget_33_tab_5",
-        "#kt_charts_widget_33_chart_5",
-        u,
-        h,
-        !1
-      ),
+      (o(r, "#kt_charts_widget_33_tab_5", "#kt_charts_widget_33_chart_5", u, h, !1),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
             r.rendered && r.self.destroy(),
-            o(
-              e,
-              "#kt_charts_widget_33_tab_1",
-              "#kt_charts_widget_33_chart_1",
-              i,
-              s,
-              e.rendered
-            ),
-            o(
-              t,
-              "#kt_charts_widget_33_tab_2",
-              "#kt_charts_widget_33_chart_2",
-              n,
-              d,
-              t.rendered
-            ),
-            o(
-              a,
-              "#kt_charts_widget_33_tab_3",
-              "#kt_charts_widget_33_chart_3",
-              m,
-              c,
-              a.rendered
-            ),
-            o(
-              l,
-              "#kt_charts_widget_33_tab_4",
-              "#kt_charts_widget_33_chart_4",
-              g,
-              f,
-              l.rendered
-            ),
-            o(
-              r,
-              "#kt_charts_widget_33_tab_5",
-              "#kt_charts_widget_33_chart_5",
-              u,
-              h,
-              r.rendered
-            );
-        });
+            o(e, "#kt_charts_widget_33_tab_1", "#kt_charts_widget_33_chart_1", i, s, e.rendered),
+            o(t, "#kt_charts_widget_33_tab_2", "#kt_charts_widget_33_chart_2", n, d, t.rendered),
+            o(a, "#kt_charts_widget_33_tab_3", "#kt_charts_widget_33_chart_3", m, c, a.rendered),
+            o(l, "#kt_charts_widget_33_tab_4", "#kt_charts_widget_33_chart_4", g, f, l.rendered),
+            o(r, "#kt_charts_widget_33_tab_5", "#kt_charts_widget_33_chart_5", u, h, r.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget33),
+("undefined" != typeof module && (module.exports = KTChartsWidget33),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget33.init();
-  });
+  }));
 var KTChartsWidget34 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -6568,20 +6202,19 @@ var KTChartsWidget34 = (function () {
           };
         e.self = new ApexCharts(i, g);
         var f = document.querySelector(t);
-        !0 === o &&
+        (!0 === o &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           f.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
     init: function () {
       var i = [
-          2100, 2800, 2800, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200,
-          2800, 2800, 3250, 3250,
+          2100, 2800, 2800, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 2800, 2800, 3250, 3250,
         ],
         s = [
           "10AM",
@@ -6600,17 +6233,9 @@ var KTChartsWidget34 = (function () {
           "8PM",
           "9PM",
         ];
-      o(
-        e,
-        "#kt_charts_widget_34_tab_1",
-        "#kt_charts_widget_34_chart_1",
-        i,
-        s,
-        !0
-      );
+      o(e, "#kt_charts_widget_34_tab_1", "#kt_charts_widget_34_chart_1", i, s, !0);
       var n = [
-          2300, 2300, 2e3, 3100, 3100, 2800, 2400, 2400, 3100, 2900, 3200, 3200,
-          2600, 2600, 3200,
+          2300, 2300, 2e3, 3100, 3100, 2800, 2400, 2400, 3100, 2900, 3200, 3200, 2600, 2600, 3200,
         ],
         d = [
           "Apr 01",
@@ -6629,17 +6254,9 @@ var KTChartsWidget34 = (function () {
           "Apr 14",
           "Apr 15",
         ];
-      o(
-        t,
-        "#kt_charts_widget_34_tab_2",
-        "#kt_charts_widget_34_chart_2",
-        n,
-        d,
-        !1
-      );
+      o(t, "#kt_charts_widget_34_tab_2", "#kt_charts_widget_34_chart_2", n, d, !1);
       var m = [
-          2600, 3400, 2300, 2300, 2e3, 3100, 3100, 2900, 3200, 3200, 2600, 3100,
-          2800, 2400, 2400,
+          2600, 3400, 2300, 2300, 2e3, 3100, 3100, 2900, 3200, 3200, 2600, 3100, 2800, 2400, 2400,
         ],
         c = [
           "Apr 02",
@@ -6658,17 +6275,9 @@ var KTChartsWidget34 = (function () {
           "Apr 22",
           "Apr 24",
         ];
-      o(
-        a,
-        "#kt_charts_widget_34_tab_3",
-        "#kt_charts_widget_34_chart_3",
-        m,
-        c,
-        !1
-      );
+      o(a, "#kt_charts_widget_34_tab_3", "#kt_charts_widget_34_chart_3", m, c, !1);
       var g = [
-          1800, 1800, 2400, 2400, 3100, 3100, 3e3, 2100, 3200, 3200, 2400, 2400,
-          3e3, 3200, 3100,
+          1800, 1800, 2400, 2400, 3100, 3100, 3e3, 2100, 3200, 3200, 2400, 2400, 3e3, 3200, 3100,
         ],
         f = [
           "Jun 2021",
@@ -6687,17 +6296,9 @@ var KTChartsWidget34 = (function () {
           "Jul 2022",
           "Aug 2022",
         ];
-      o(
-        l,
-        "#kt_charts_widget_34_tab_4",
-        "#kt_charts_widget_34_chart_4",
-        g,
-        f,
-        !1
-      );
+      o(l, "#kt_charts_widget_34_tab_4", "#kt_charts_widget_34_chart_4", g, f, !1);
       var u = [
-          3e3, 2100, 3200, 3200, 1800, 1800, 2400, 2400, 3100, 3100, 2400, 2400,
-          3e3, 2400, 2800,
+          3e3, 2100, 3200, 3200, 1800, 1800, 2400, 2400, 3100, 3100, 2400, 2400, 3e3, 2400, 2800,
         ],
         h = [
           "Sep 2021",
@@ -6716,68 +6317,26 @@ var KTChartsWidget34 = (function () {
           "Oct 2022",
           "Nov 2022",
         ];
-      o(
-        r,
-        "#kt_charts_widget_34_tab_5",
-        "#kt_charts_widget_34_chart_5",
-        u,
-        h,
-        !1
-      ),
+      (o(r, "#kt_charts_widget_34_tab_5", "#kt_charts_widget_34_chart_5", u, h, !1),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
             r.rendered && r.self.destroy(),
-            o(
-              e,
-              "#kt_charts_widget_34_tab_1",
-              "#kt_charts_widget_34_chart_1",
-              i,
-              s,
-              e.rendered
-            ),
-            o(
-              t,
-              "#kt_charts_widget_34_tab_2",
-              "#kt_charts_widget_34_chart_2",
-              n,
-              d,
-              t.rendered
-            ),
-            o(
-              a,
-              "#kt_charts_widget_34_tab_3",
-              "#kt_charts_widget_34_chart_3",
-              m,
-              c,
-              a.rendered
-            ),
-            o(
-              l,
-              "#kt_charts_widget_34_tab_4",
-              "#kt_charts_widget_34_chart_4",
-              g,
-              f,
-              l.rendered
-            ),
-            o(
-              r,
-              "#kt_charts_widget_34_tab_5",
-              "#kt_charts_widget_34_chart_5",
-              u,
-              h,
-              r.rendered
-            );
-        });
+            o(e, "#kt_charts_widget_34_tab_1", "#kt_charts_widget_34_chart_1", i, s, e.rendered),
+            o(t, "#kt_charts_widget_34_tab_2", "#kt_charts_widget_34_chart_2", n, d, t.rendered),
+            o(a, "#kt_charts_widget_34_tab_3", "#kt_charts_widget_34_chart_3", m, c, a.rendered),
+            o(l, "#kt_charts_widget_34_tab_4", "#kt_charts_widget_34_chart_4", g, f, l.rendered),
+            o(r, "#kt_charts_widget_34_tab_5", "#kt_charts_widget_34_chart_5", u, h, r.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget34),
+("undefined" != typeof module && (module.exports = KTChartsWidget34),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget34.init();
-  });
+  }));
 var KTChartsWidget35 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -6862,20 +6421,19 @@ var KTChartsWidget35 = (function () {
           };
         e.self = new ApexCharts(i, g);
         var f = document.querySelector(t);
-        !0 === o &&
+        (!0 === o &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           f.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
     init: function () {
       var i = [
-          2100, 3100, 3100, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200,
-          2800, 2800, 3250, 3250,
+          2100, 3100, 3100, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 2800, 2800, 3250, 3250,
         ],
         s = [
           "10AM",
@@ -6894,17 +6452,9 @@ var KTChartsWidget35 = (function () {
           "8PM",
           "9PM",
         ];
-      o(
-        e,
-        "#kt_charts_widget_35_tab_1",
-        "#kt_charts_widget_35_chart_1",
-        i,
-        s,
-        !0
-      );
+      o(e, "#kt_charts_widget_35_tab_1", "#kt_charts_widget_35_chart_1", i, s, !0);
       var n = [
-          2300, 2300, 2e3, 3200, 3200, 2800, 2400, 2400, 3100, 2900, 3200, 3200,
-          2600, 2600, 3200,
+          2300, 2300, 2e3, 3200, 3200, 2800, 2400, 2400, 3100, 2900, 3200, 3200, 2600, 2600, 3200,
         ],
         d = [
           "Apr 01",
@@ -6923,17 +6473,9 @@ var KTChartsWidget35 = (function () {
           "Apr 14",
           "Apr 15",
         ];
-      o(
-        t,
-        "#kt_charts_widget_35_tab_2",
-        "#kt_charts_widget_35_chart_2",
-        n,
-        d,
-        !1
-      );
+      o(t, "#kt_charts_widget_35_tab_2", "#kt_charts_widget_35_chart_2", n, d, !1);
       var m = [
-          2600, 3200, 2300, 2300, 2e3, 3200, 3100, 2900, 3400, 3400, 2600, 3200,
-          2800, 2400, 2400,
+          2600, 3200, 2300, 2300, 2e3, 3200, 3100, 2900, 3400, 3400, 2600, 3200, 2800, 2400, 2400,
         ],
         c = [
           "Apr 02",
@@ -6952,17 +6494,9 @@ var KTChartsWidget35 = (function () {
           "Apr 22",
           "Apr 24",
         ];
-      o(
-        a,
-        "#kt_charts_widget_35_tab_3",
-        "#kt_charts_widget_35_chart_3",
-        m,
-        c,
-        !1
-      );
+      o(a, "#kt_charts_widget_35_tab_3", "#kt_charts_widget_35_chart_3", m, c, !1);
       var g = [
-          1800, 1800, 2400, 2400, 3200, 3200, 3e3, 2100, 3200, 3200, 2400, 2400,
-          3e3, 3200, 3100,
+          1800, 1800, 2400, 2400, 3200, 3200, 3e3, 2100, 3200, 3200, 2400, 2400, 3e3, 3200, 3100,
         ],
         f = [
           "Jun 2021",
@@ -6981,17 +6515,9 @@ var KTChartsWidget35 = (function () {
           "Jul 2022",
           "Aug 2022",
         ];
-      o(
-        l,
-        "#kt_charts_widget_35_tab_4",
-        "#kt_charts_widget_35_chart_4",
-        g,
-        f,
-        !1
-      );
+      o(l, "#kt_charts_widget_35_tab_4", "#kt_charts_widget_35_chart_4", g, f, !1);
       var u = [
-          3200, 2100, 3200, 3200, 3200, 3500, 3e3, 2400, 3250, 2400, 2400, 3250,
-          3e3, 2400, 2800,
+          3200, 2100, 3200, 3200, 3200, 3500, 3e3, 2400, 3250, 2400, 2400, 3250, 3e3, 2400, 2800,
         ],
         h = [
           "Sep 2021",
@@ -7010,68 +6536,26 @@ var KTChartsWidget35 = (function () {
           "Oct 2022",
           "Nov 2022",
         ];
-      o(
-        r,
-        "#kt_charts_widget_35_tab_5",
-        "#kt_charts_widget_35_chart_5",
-        u,
-        h,
-        !1
-      ),
+      (o(r, "#kt_charts_widget_35_tab_5", "#kt_charts_widget_35_chart_5", u, h, !1),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
             r.rendered && r.self.destroy(),
-            o(
-              e,
-              "#kt_charts_widget_35_tab_1",
-              "#kt_charts_widget_35_chart_1",
-              i,
-              s,
-              e.rendered
-            ),
-            o(
-              t,
-              "#kt_charts_widget_35_tab_2",
-              "#kt_charts_widget_35_chart_2",
-              n,
-              d,
-              t.rendered
-            ),
-            o(
-              a,
-              "#kt_charts_widget_35_tab_3",
-              "#kt_charts_widget_35_chart_3",
-              m,
-              c,
-              a.rendered
-            ),
-            o(
-              l,
-              "#kt_charts_widget_35_tab_4",
-              "#kt_charts_widget_35_chart_4",
-              g,
-              f,
-              l.rendered
-            ),
-            o(
-              r,
-              "#kt_charts_widget_35_tab_5",
-              "#kt_charts_widget_35_chart_5",
-              u,
-              h,
-              r.rendered
-            );
-        });
+            o(e, "#kt_charts_widget_35_tab_1", "#kt_charts_widget_35_chart_1", i, s, e.rendered),
+            o(t, "#kt_charts_widget_35_tab_2", "#kt_charts_widget_35_chart_2", n, d, t.rendered),
+            o(a, "#kt_charts_widget_35_tab_3", "#kt_charts_widget_35_chart_3", m, c, a.rendered),
+            o(l, "#kt_charts_widget_35_tab_4", "#kt_charts_widget_35_chart_4", g, f, l.rendered),
+            o(r, "#kt_charts_widget_35_tab_5", "#kt_charts_widget_35_chart_5", u, h, r.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget35),
+("undefined" != typeof module && (module.exports = KTChartsWidget35),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget35.init();
-  });
+  }));
 var KTChartsWidget36 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -7087,16 +6571,13 @@ var KTChartsWidget36 = (function () {
             series: [
               {
                 name: "Inbound Calls",
-                data: [
-                  65, 80, 80, 60, 60, 45, 45, 80, 80, 70, 70, 90, 90, 80, 80,
-                  80, 60, 60, 50,
-                ],
+                data: [65, 80, 80, 60, 60, 45, 45, 80, 80, 70, 70, 90, 90, 80, 80, 80, 60, 60, 50],
               },
               {
                 name: "Outbound Calls",
                 data: [
-                  90, 110, 110, 95, 95, 85, 85, 95, 95, 115, 115, 100, 100, 115,
-                  115, 95, 95, 85, 85,
+                  90, 110, 110, 95, 95, 85, 85, 95, 95, 115, 115, 100, 100, 115, 115, 95, 95, 85,
+                  85,
                 ],
               },
             ],
@@ -7183,25 +6664,25 @@ var KTChartsWidget36 = (function () {
             },
             markers: { strokeColor: [o, s], strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, n)),
+        ((e.self = new ApexCharts(t, n)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget36),
+("undefined" != typeof module && (module.exports = KTChartsWidget36),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget36.init();
-  });
+  }));
 var KTChartsWidget37 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -7285,20 +6766,19 @@ var KTChartsWidget37 = (function () {
           };
         e.self = new ApexCharts(i, g);
         var f = document.querySelector(t);
-        !0 === o &&
+        (!0 === o &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           f.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
     init: function () {
       var o = [
-          2100, 3200, 3200, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 3e3,
-          3e3, 3250, 3250,
+          2100, 3200, 3200, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 3e3, 3e3, 3250, 3250,
         ],
         i = [
           "10AM",
@@ -7317,17 +6797,9 @@ var KTChartsWidget37 = (function () {
           "8PM",
           "9PM",
         ];
-      r(
-        e,
-        "#kt_charts_widget_37_tab_1",
-        "#kt_charts_widget_37_chart_1",
-        o,
-        i,
-        !0
-      );
+      r(e, "#kt_charts_widget_37_tab_1", "#kt_charts_widget_37_chart_1", o, i, !0);
       var s = [
-          2300, 2300, 2e3, 3200, 3200, 2800, 2400, 2400, 3100, 2900, 3100, 3100,
-          2600, 2600, 3200,
+          2300, 2300, 2e3, 3200, 3200, 2800, 2400, 2400, 3100, 2900, 3100, 3100, 2600, 2600, 3200,
         ],
         n = [
           "Apr 01",
@@ -7346,17 +6818,9 @@ var KTChartsWidget37 = (function () {
           "Apr 14",
           "Apr 15",
         ];
-      r(
-        t,
-        "#kt_charts_widget_37_tab_2",
-        "#kt_charts_widget_37_chart_2",
-        s,
-        n,
-        !1
-      );
+      r(t, "#kt_charts_widget_37_tab_2", "#kt_charts_widget_37_chart_2", s, n, !1);
       var d = [
-          2600, 3200, 2300, 2300, 2e3, 3200, 3100, 2900, 3200, 3200, 2600, 3100,
-          2800, 2400, 2400,
+          2600, 3200, 2300, 2300, 2e3, 3200, 3100, 2900, 3200, 3200, 2600, 3100, 2800, 2400, 2400,
         ],
         m = [
           "Apr 02",
@@ -7375,17 +6839,9 @@ var KTChartsWidget37 = (function () {
           "Apr 22",
           "Apr 24",
         ];
-      r(
-        a,
-        "#kt_charts_widget_37_tab_3",
-        "#kt_charts_widget_37_chart_3",
-        d,
-        m,
-        !1
-      );
+      r(a, "#kt_charts_widget_37_tab_3", "#kt_charts_widget_37_chart_3", d, m, !1);
       var c = [
-          1800, 1800, 2400, 2400, 3200, 3200, 3e3, 2100, 3200, 3300, 2400, 2400,
-          3e3, 3200, 3100,
+          1800, 1800, 2400, 2400, 3200, 3200, 3e3, 2100, 3200, 3300, 2400, 2400, 3e3, 3200, 3100,
         ],
         g = [
           "Jun 2021",
@@ -7404,59 +6860,24 @@ var KTChartsWidget37 = (function () {
           "Jul 2022",
           "Aug 2022",
         ];
-      r(
-        l,
-        "#kt_charts_widget_37_tab_4",
-        "#kt_charts_widget_37_chart_4",
-        c,
-        g,
-        !1
-      ),
+      (r(l, "#kt_charts_widget_37_tab_4", "#kt_charts_widget_37_chart_4", c, g, !1),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
-            r(
-              e,
-              "#kt_charts_widget_37_tab_1",
-              "#kt_charts_widget_37_chart_1",
-              o,
-              i,
-              e.rendered
-            ),
-            r(
-              t,
-              "#kt_charts_widget_37_tab_2",
-              "#kt_charts_widget_37_chart_2",
-              s,
-              n,
-              t.rendered
-            ),
-            r(
-              a,
-              "#kt_charts_widget_37_tab_3",
-              "#kt_charts_widget_37_chart_3",
-              d,
-              m,
-              a.rendered
-            ),
-            r(
-              l,
-              "#kt_charts_widget_37_tab_4",
-              "#kt_charts_widget_37_chart_4",
-              c,
-              g,
-              l.rendered
-            );
-        });
+            r(e, "#kt_charts_widget_37_tab_1", "#kt_charts_widget_37_chart_1", o, i, e.rendered),
+            r(t, "#kt_charts_widget_37_tab_2", "#kt_charts_widget_37_chart_2", s, n, t.rendered),
+            r(a, "#kt_charts_widget_37_tab_3", "#kt_charts_widget_37_chart_3", d, m, a.rendered),
+            r(l, "#kt_charts_widget_37_tab_4", "#kt_charts_widget_37_chart_4", c, g, l.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget37),
+("undefined" != typeof module && (module.exports = KTChartsWidget37),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget37.init();
-  });
+  }));
 var KTChartsWidget38 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -7466,9 +6887,7 @@ var KTChartsWidget38 = (function () {
           l = KTUtil.getCssVariableValue("--bs-gray-900"),
           r = KTUtil.getCssVariableValue("--bs-border-dashed-color"),
           o = {
-            series: [
-              { name: "LOI Issued", data: [54, 42, 75, 110, 23, 87, 50] },
-            ],
+            series: [{ name: "LOI Issued", data: [54, 42, 75, 110, 23, 87, 50] }],
             chart: {
               fontFamily: "inherit",
               type: "bar",
@@ -7546,25 +6965,25 @@ var KTChartsWidget38 = (function () {
               yaxis: { lines: { show: !0 } },
             },
           };
-        (e.self = new ApexCharts(t, o)),
+        ((e.self = new ApexCharts(t, o)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget38),
+("undefined" != typeof module && (module.exports = KTChartsWidget38),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget38.init();
-  });
+  }));
 var KTChartsWidget39 = {
   init: function () {
     !(function () {
@@ -7584,19 +7003,15 @@ var KTChartsWidget39 = {
                     })
                   ),
                   l = am5radar.AxisRendererCircular.new(t, {});
-                l.labels.template.setAll({ radius: 10 }),
+                (l.labels.template.setAll({ radius: 10 }),
                   l.grid.template.setAll({
-                    stroke: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-700")
-                    ),
-                  });
+                    stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
+                  }));
                 var r = am5radar.AxisRendererRadial.new(t, {
                   minGridDistance: 20,
                 });
                 r.grid.template.setAll({
-                  stroke: am5.color(
-                    KTUtil.getCssVariableValue("--bs-gray-700")
-                  ),
+                  stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
                 });
                 var o = a.xAxes.push(
                     am5xy.CategoryAxis.new(t, {
@@ -7606,19 +7021,15 @@ var KTChartsWidget39 = {
                       tooltip: am5.Tooltip.new(t, {}),
                     })
                   ),
-                  i = a.yAxes.push(
-                    am5xy.ValueAxis.new(t, { min: 0, max: 10, renderer: r })
-                  );
-                l.labels.template.setAll({
+                  i = a.yAxes.push(am5xy.ValueAxis.new(t, { min: 0, max: 10, renderer: r }));
+                (l.labels.template.setAll({
                   fontSize: 11,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-800")),
                 }),
                   r.labels.template.setAll({
                     fontSize: 11,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-800")
-                    ),
-                  });
+                    fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-800")),
+                  }));
                 var s = a.series.push(
                   am5radar.RadarColumnSeries.new(t, {
                     xAxis: o,
@@ -7675,27 +7086,24 @@ var KTChartsWidget39 = {
                     columnSettings: { fill: a.get("colors").next() },
                   },
                 ];
-                s.data.setAll(n),
-                  o.data.setAll(n),
-                  s.appear(1e3),
-                  a.appear(1e3, 100);
+                (s.data.setAll(n), o.data.setAll(n), s.appear(1e3), a.appear(1e3, 100));
               }
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget39),
+("undefined" != typeof module && (module.exports = KTChartsWidget39),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget39.init();
-  });
+  }));
 var KTChartsWidget4 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -7710,8 +7118,8 @@ var KTChartsWidget4 = (function () {
               {
                 name: "Sales",
                 data: [
-                  34.5, 34.5, 35, 35, 35.5, 35.5, 35, 35, 35.5, 35.5, 35, 35,
-                  34.5, 34.5, 35, 35, 35.5, 35.5, 35,
+                  34.5, 34.5, 35, 35, 35.5, 35.5, 35, 35, 35.5, 35.5, 35, 35, 34.5, 34.5, 35, 35,
+                  35.5, 35.5, 35,
                 ],
               },
             ],
@@ -7810,25 +7218,25 @@ var KTChartsWidget4 = (function () {
             },
             markers: { strokeColor: o, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, i)),
+        ((e.self = new ApexCharts(t, i)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget4),
+("undefined" != typeof module && (module.exports = KTChartsWidget4),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget4.init();
-  });
+  }));
 var KTChartsWidget40 = {
   init: function () {
     !(function () {
@@ -7848,19 +7256,15 @@ var KTChartsWidget40 = {
                     })
                   ),
                   l = am5radar.AxisRendererCircular.new(t, {});
-                l.labels.template.setAll({ radius: 10 }),
+                (l.labels.template.setAll({ radius: 10 }),
                   l.grid.template.setAll({
-                    stroke: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-700")
-                    ),
-                  });
+                    stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
+                  }));
                 var r = am5radar.AxisRendererRadial.new(t, {
                   minGridDistance: 20,
                 });
                 r.grid.template.setAll({
-                  stroke: am5.color(
-                    KTUtil.getCssVariableValue("--bs-gray-700")
-                  ),
+                  stroke: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
                 });
                 var o = a.xAxes.push(
                     am5xy.CategoryAxis.new(t, {
@@ -7870,19 +7274,15 @@ var KTChartsWidget40 = {
                       tooltip: am5.Tooltip.new(t, {}),
                     })
                   ),
-                  i = a.yAxes.push(
-                    am5xy.ValueAxis.new(t, { min: 0, max: 10, renderer: r })
-                  );
-                l.labels.template.setAll({
+                  i = a.yAxes.push(am5xy.ValueAxis.new(t, { min: 0, max: 10, renderer: r }));
+                (l.labels.template.setAll({
                   fontSize: 11,
                   fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-800")),
                 }),
                   r.labels.template.setAll({
                     fontSize: 11,
-                    fill: am5.color(
-                      KTUtil.getCssVariableValue("--bs-gray-800")
-                    ),
-                  });
+                    fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-800")),
+                  }));
                 var s = a.series.push(
                   am5radar.RadarColumnSeries.new(t, {
                     xAxis: o,
@@ -7939,27 +7339,24 @@ var KTChartsWidget40 = {
                     columnSettings: { fill: a.get("colors").next() },
                   },
                 ];
-                s.data.setAll(n),
-                  o.data.setAll(n),
-                  s.appear(1e3),
-                  a.appear(1e3, 100);
+                (s.data.setAll(n), o.data.setAll(n), s.appear(1e3), a.appear(1e3, 100));
               }
             };
-          am5.ready(function () {
+          (am5.ready(function () {
             a();
           }),
             KTThemeMode.on("kt.thememode.change", function () {
-              t.dispose(), a();
-            });
+              (t.dispose(), a());
+            }));
         }
       }
     })();
   },
 };
-"undefined" != typeof module && (module.exports = KTChartsWidget40),
+("undefined" != typeof module && (module.exports = KTChartsWidget40),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget40.init();
-  });
+  }));
 var KTChartsWidget41 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -8044,20 +7441,19 @@ var KTChartsWidget41 = (function () {
           };
         e.self = new ApexCharts(i, g);
         var f = document.querySelector(t);
-        !0 === o &&
+        (!0 === o &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           f.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
     init: function () {
       var i = [
-          2100, 3100, 3100, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200,
-          2800, 2800, 3250, 3250,
+          2100, 3100, 3100, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 2800, 2800, 3250, 3250,
         ],
         s = [
           "10AM",
@@ -8076,17 +7472,9 @@ var KTChartsWidget41 = (function () {
           "8PM",
           "9PM",
         ];
-      o(
-        e,
-        "#kt_charts_widget_41_tab_1",
-        "#kt_charts_widget_41_chart_1",
-        i,
-        s,
-        !0
-      );
+      o(e, "#kt_charts_widget_41_tab_1", "#kt_charts_widget_41_chart_1", i, s, !0);
       var n = [
-          2300, 2300, 2e3, 3200, 3200, 2800, 2400, 2400, 3100, 2900, 3200, 3200,
-          2600, 2600, 3200,
+          2300, 2300, 2e3, 3200, 3200, 2800, 2400, 2400, 3100, 2900, 3200, 3200, 2600, 2600, 3200,
         ],
         d = [
           "Apr 01",
@@ -8105,17 +7493,9 @@ var KTChartsWidget41 = (function () {
           "Apr 14",
           "Apr 15",
         ];
-      o(
-        t,
-        "#kt_charts_widget_41_tab_2",
-        "#kt_charts_widget_41_chart_2",
-        n,
-        d,
-        !1
-      );
+      o(t, "#kt_charts_widget_41_tab_2", "#kt_charts_widget_41_chart_2", n, d, !1);
       var m = [
-          2600, 3200, 2300, 2300, 2e3, 3200, 3100, 2900, 3400, 3400, 2600, 3200,
-          2800, 2400, 2400,
+          2600, 3200, 2300, 2300, 2e3, 3200, 3100, 2900, 3400, 3400, 2600, 3200, 2800, 2400, 2400,
         ],
         c = [
           "Apr 02",
@@ -8134,17 +7514,9 @@ var KTChartsWidget41 = (function () {
           "Apr 22",
           "Apr 24",
         ];
-      o(
-        a,
-        "#kt_charts_widget_41_tab_3",
-        "#kt_charts_widget_41_chart_3",
-        m,
-        c,
-        !1
-      );
+      o(a, "#kt_charts_widget_41_tab_3", "#kt_charts_widget_41_chart_3", m, c, !1);
       var g = [
-          1800, 1800, 2400, 2400, 3200, 3200, 3e3, 2100, 3200, 3200, 2400, 2400,
-          3e3, 3200, 3100,
+          1800, 1800, 2400, 2400, 3200, 3200, 3e3, 2100, 3200, 3200, 2400, 2400, 3e3, 3200, 3100,
         ],
         f = [
           "Jun 2021",
@@ -8163,17 +7535,9 @@ var KTChartsWidget41 = (function () {
           "Jul 2022",
           "Aug 2022",
         ];
-      o(
-        l,
-        "#kt_charts_widget_41_tab_4",
-        "#kt_charts_widget_41_chart_4",
-        g,
-        f,
-        !1
-      );
+      o(l, "#kt_charts_widget_41_tab_4", "#kt_charts_widget_41_chart_4", g, f, !1);
       var u = [
-          3200, 2100, 3200, 3200, 3200, 3500, 3e3, 2400, 3250, 2400, 2400, 3250,
-          3e3, 2400, 2800,
+          3200, 2100, 3200, 3200, 3200, 3500, 3e3, 2400, 3250, 2400, 2400, 3250, 3e3, 2400, 2800,
         ],
         h = [
           "Sep 2021",
@@ -8192,68 +7556,26 @@ var KTChartsWidget41 = (function () {
           "Oct 2022",
           "Nov 2022",
         ];
-      o(
-        r,
-        "#kt_charts_widget_41_tab_5",
-        "#kt_charts_widget_41_chart_5",
-        u,
-        h,
-        !1
-      ),
+      (o(r, "#kt_charts_widget_41_tab_5", "#kt_charts_widget_41_chart_5", u, h, !1),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
             r.rendered && r.self.destroy(),
-            o(
-              e,
-              "#kt_charts_widget_41_tab_1",
-              "#kt_charts_widget_41_chart_1",
-              i,
-              s,
-              e.rendered
-            ),
-            o(
-              t,
-              "#kt_charts_widget_41_tab_2",
-              "#kt_charts_widget_41_chart_2",
-              n,
-              d,
-              t.rendered
-            ),
-            o(
-              a,
-              "#kt_charts_widget_41_tab_3",
-              "#kt_charts_widget_41_chart_3",
-              m,
-              c,
-              a.rendered
-            ),
-            o(
-              l,
-              "#kt_charts_widget_41_tab_4",
-              "#kt_charts_widget_41_chart_4",
-              g,
-              f,
-              l.rendered
-            ),
-            o(
-              r,
-              "#kt_charts_widget_41_tab_5",
-              "#kt_charts_widget_41_chart_5",
-              u,
-              h,
-              r.rendered
-            );
-        });
+            o(e, "#kt_charts_widget_41_tab_1", "#kt_charts_widget_41_chart_1", i, s, e.rendered),
+            o(t, "#kt_charts_widget_41_tab_2", "#kt_charts_widget_41_chart_2", n, d, t.rendered),
+            o(a, "#kt_charts_widget_41_tab_3", "#kt_charts_widget_41_chart_3", m, c, a.rendered),
+            o(l, "#kt_charts_widget_41_tab_4", "#kt_charts_widget_41_chart_4", g, f, l.rendered),
+            o(r, "#kt_charts_widget_41_tab_5", "#kt_charts_widget_41_chart_5", u, h, r.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget41),
+("undefined" != typeof module && (module.exports = KTChartsWidget41),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget41.init();
-  });
+  }));
 var KTChartsWidget42 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -8345,25 +7667,25 @@ var KTChartsWidget42 = (function () {
             },
             markers: { strokeColor: [o, i], strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, s)),
+        ((e.self = new ApexCharts(t, s)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget42),
+("undefined" != typeof module && (module.exports = KTChartsWidget42),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget42.init();
-  });
+  }));
 var KTChartsWidget43 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -8448,25 +7770,25 @@ var KTChartsWidget43 = (function () {
             colors: [s],
             markers: { colors: s, strokeColor: i, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, n)),
+        ((e.self = new ApexCharts(t, n)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget43),
+("undefined" != typeof module && (module.exports = KTChartsWidget43),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget43.init();
-  });
+  }));
 var KTChartsWidget44 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -8479,9 +7801,7 @@ var KTChartsWidget44 = (function () {
           i = KTUtil.getCssVariableValue("--bs-" + a),
           s = KTUtil.getCssVariableValue("--bs-" + a + "-light"),
           n = {
-            series: [
-              { name: "Overview", data: [20, 37, 22, 45, 20, 50, 25, 57, 40] },
-            ],
+            series: [{ name: "Overview", data: [20, 37, 22, 45, 20, 50, 25, 57, 40] }],
             chart: {
               fontFamily: "inherit",
               type: "area",
@@ -8496,17 +7816,7 @@ var KTChartsWidget44 = (function () {
             fill: { type: "solid", opacity: 1 },
             stroke: { curve: "smooth", show: !0, width: 3, colors: [i] },
             xaxis: {
-              categories: [
-                "Apr",
-                "May",
-                "Jun",
-                "Jul",
-                "Aug",
-                "Sep",
-                "Oct",
-                "Nov",
-                "Dec",
-              ],
+              categories: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
               axisBorder: { show: !1 },
               axisTicks: { show: !1 },
               labels: { show: !1, style: { colors: r, fontSize: "12px" } },
@@ -8546,25 +7856,25 @@ var KTChartsWidget44 = (function () {
             colors: [s],
             markers: { colors: s, strokeColor: i, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, n)),
+        ((e.self = new ApexCharts(t, n)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget44),
+("undefined" != typeof module && (module.exports = KTChartsWidget44),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget44.init();
-  });
+  }));
 var KTChartsWidget45 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -8640,25 +7950,25 @@ var KTChartsWidget45 = (function () {
             colors: [s],
             markers: { colors: s, strokeColor: i, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(t, n)),
+        ((e.self = new ApexCharts(t, n)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget45),
+("undefined" != typeof module && (module.exports = KTChartsWidget45),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget45.init();
-  });
+  }));
 var KTChartsWidget46 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -8674,16 +7984,12 @@ var KTChartsWidget46 = (function () {
             series: [
               {
                 name: "Subscribed",
-                data: [
-                  20, 30, 20, 40, 60, 75, 65, 18, 10, 5, 15, 40, 60, 18, 35, 55,
-                  20,
-                ],
+                data: [20, 30, 20, 40, 60, 75, 65, 18, 10, 5, 15, 40, 60, 18, 35, 55, 20],
               },
               {
                 name: "Unsubscribed",
                 data: [
-                  -20, -15, -5, -20, -30, -15, -10, -8, -5, -5, -10, -25, -15,
-                  -5, -10, -5, -15,
+                  -20, -15, -5, -20, -30, -15, -10, -8, -5, -5, -10, -25, -15, -5, -10, -5, -15,
                 ],
               },
             ],
@@ -8764,25 +8070,25 @@ var KTChartsWidget46 = (function () {
               yaxis: { lines: { show: !0 } },
             },
           };
-        (e.self = new ApexCharts(t, i)),
+        ((e.self = new ApexCharts(t, i)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget46),
+("undefined" != typeof module && (module.exports = KTChartsWidget46),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget46.init();
-  });
+  }));
 var KTChartsWidget47 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -8794,10 +8100,7 @@ var KTChartsWidget47 = (function () {
             series: [
               {
                 name: "Sales",
-                data: [
-                  5, 5, 15, 15, 19, 16, 27, 24, 34, 25, 40, 30, 19, 17, 22, 10,
-                  14, 14,
-                ],
+                data: [5, 5, 15, 15, 19, 16, 27, 24, 34, 25, 40, 30, 19, 17, 22, 10, 14, 14],
               },
             ],
             chart: {
@@ -8842,25 +8145,25 @@ var KTChartsWidget47 = (function () {
             grid: { yaxis: { lines: { show: !1 } } },
             markers: { strokeColor: l, strokeWidth: 2 },
           };
-        (e.self = new ApexCharts(t, r)),
+        ((e.self = new ApexCharts(t, r)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget47),
+("undefined" != typeof module && (module.exports = KTChartsWidget47),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget47.init();
-  });
+  }));
 var KTChartsWidget48 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -8872,10 +8175,7 @@ var KTChartsWidget48 = (function () {
             series: [
               {
                 name: "Sales",
-                data: [
-                  5, 5, 15, 15, 19, 16, 27, 24, 34, 25, 40, 30, 19, 17, 22, 10,
-                  14, 14,
-                ],
+                data: [5, 5, 15, 15, 19, 16, 27, 24, 34, 25, 40, 30, 19, 17, 22, 10, 14, 14],
               },
             ],
             chart: {
@@ -8920,25 +8220,25 @@ var KTChartsWidget48 = (function () {
             grid: { yaxis: { lines: { show: !1 } } },
             markers: { strokeColor: l, strokeWidth: 2 },
           };
-        (e.self = new ApexCharts(t, r)),
+        ((e.self = new ApexCharts(t, r)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget48),
+("undefined" != typeof module && (module.exports = KTChartsWidget48),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget48.init();
-  });
+  }));
 var KTChartsWidget5 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -8958,15 +8258,7 @@ var KTChartsWidget5 = (function () {
             },
             dataLabels: { enabled: !1 },
             legend: { show: !1 },
-            colors: [
-              "#3E97FF",
-              "#F1416C",
-              "#50CD89",
-              "#FFC700",
-              "#7239EA",
-              "#50CDCD",
-              "#3F4254",
-            ],
+            colors: ["#3E97FF", "#F1416C", "#50CD89", "#FFC700", "#7239EA", "#50CDCD", "#3F4254"],
             xaxis: {
               categories: [
                 "Phones",
@@ -9008,25 +8300,25 @@ var KTChartsWidget5 = (function () {
               strokeDashArray: 4,
             },
           };
-        (e.self = new ApexCharts(t, l)),
+        ((e.self = new ApexCharts(t, l)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget5),
+("undefined" != typeof module && (module.exports = KTChartsWidget5),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget5.init();
-  });
+  }));
 var KTChartsWidget6 = (function () {
   var e = { self: null, rendered: !1 },
     t = function (e) {
@@ -9064,13 +8356,7 @@ var KTChartsWidget6 = (function () {
             legend: { show: !1 },
             colors: ["#3E97FF", "#F1416C", "#50CD89", "#FFC700", "#7239EA"],
             xaxis: {
-              categories: [
-                "ECR - 90%",
-                "FGI - 82%",
-                "EOQ - 75%",
-                "FMG - 60%",
-                "PLG - 50%",
-              ],
+              categories: ["ECR - 90%", "FGI - 82%", "EOQ - 75%", "FMG - 60%", "PLG - 50%"],
               labels: {
                 formatter: function (e) {
                   return e + "K";
@@ -9111,25 +8397,25 @@ var KTChartsWidget6 = (function () {
               },
             },
           };
-        (e.self = new ApexCharts(t, r)),
+        ((e.self = new ApexCharts(t, r)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(e),
+      (t(e),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t(e);
-        });
+          (e.rendered && e.self.destroy(), t(e));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget6),
+("undefined" != typeof module && (module.exports = KTChartsWidget6),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget6.init();
-  });
+  }));
 var KTChartsWidget7 = (function () {
   var e = function (e) {
     var t = document.querySelector(e);
@@ -9202,24 +8488,24 @@ var KTChartsWidget7 = (function () {
         o = new ApexCharts(t, r),
         i = !1,
         s = document.querySelector(tabSelector);
-      !0 === initByDefault && (o.render(), (i = !0)),
+      (!0 === initByDefault && (o.render(), (i = !0)),
         s.addEventListener("shown.bs.tab", function (e) {
           0 == i && (o.render(), (i = !0));
         }),
-        (o = new ApexCharts(t, r)).render();
+        (o = new ApexCharts(t, r)).render());
     }
   };
   return {
     init: function () {
-      e("#kt_chart_widget_7_tab_1"),
+      (e("#kt_chart_widget_7_tab_1"),
         e("#kt_chart_widget_7_tab_2"),
         e("#kt_chart_widget_7_tab_3"),
-        e("#kt_chart_widget_7_tab_4");
+        e("#kt_chart_widget_7_tab_4"));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget7),
-  KTUtil.onDOMContentLoaded(function () {});
+("undefined" != typeof module && (module.exports = KTChartsWidget7),
+  KTUtil.onDOMContentLoaded(function () {}));
 var KTChartsWidget8 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -9316,13 +8602,13 @@ var KTChartsWidget8 = (function () {
           };
         e.self = new ApexCharts(o, n);
         var d = document.querySelector(t);
-        !0 === r &&
+        (!0 === r &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           d.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
@@ -9343,45 +8629,21 @@ var KTChartsWidget8 = (function () {
           [[500, 500, 30]],
           [[600, 250, 28]],
         ];
-      a(
-        e,
-        "#kt_chart_widget_8_week_toggle",
-        "#kt_chart_widget_8_week_chart",
-        l,
-        !1
-      ),
-        a(
-          t,
-          "#kt_chart_widget_8_month_toggle",
-          "#kt_chart_widget_8_month_chart",
-          r,
-          !0
-        );
+      (a(e, "#kt_chart_widget_8_week_toggle", "#kt_chart_widget_8_week_chart", l, !1),
+        a(t, "#kt_chart_widget_8_month_toggle", "#kt_chart_widget_8_month_chart", r, !0));
       KTThemeMode.on("kt.thememode.change", function () {
-        e.rendered && e.self.destroy(),
+        (e.rendered && e.self.destroy(),
           t.rendered && t.self.destroy(),
-          a(
-            e,
-            "#kt_chart_widget_8_week_toggle",
-            "#kt_chart_widget_8_week_chart",
-            l,
-            e.rendered
-          ),
-          a(
-            t,
-            "#kt_chart_widget_8_month_toggle",
-            "#kt_chart_widget_8_month_chart",
-            r,
-            t.rendered
-          );
+          a(e, "#kt_chart_widget_8_week_toggle", "#kt_chart_widget_8_week_chart", l, e.rendered),
+          a(t, "#kt_chart_widget_8_month_toggle", "#kt_chart_widget_8_month_chart", r, t.rendered));
       });
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget8),
+("undefined" != typeof module && (module.exports = KTChartsWidget8),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget8.init();
-  });
+  }));
 var KTChartsWidget9 = (function () {
   var e = { self: null, rendered: !1 },
     t = function () {
@@ -9409,15 +8671,7 @@ var KTChartsWidget9 = (function () {
             fill: { type: "solid", opacity: 1 },
             stroke: { curve: "smooth", colors: [o] },
             xaxis: {
-              categories: [
-                "",
-                "06 Sep",
-                "13 Sep",
-                "20 Sep",
-                "27 Sep",
-                "30 Sep",
-                "",
-              ],
+              categories: ["", "06 Sep", "13 Sep", "20 Sep", "27 Sep", "30 Sep", ""],
               axisBorder: { show: !1 },
               axisTicks: { show: !1 },
               labels: { style: { colors: l, fontSize: "12px" } },
@@ -9473,60 +8727,51 @@ var KTChartsWidget9 = (function () {
               strokeWidth: 3,
             },
           };
-        (e.self = new ApexCharts(t, s)),
+        ((e.self = new ApexCharts(t, s)),
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
-          }, 200);
+            (e.self.render(), (e.rendered = !0));
+          }, 200));
       }
     };
   return {
     init: function () {
-      t(),
+      (t(),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(), t();
-        });
+          (e.rendered && e.self.destroy(), t());
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTChartsWidget9),
+("undefined" != typeof module && (module.exports = KTChartsWidget9),
   KTUtil.onDOMContentLoaded(function () {
     KTChartsWidget9.init();
-  });
+  }));
 var KTPlayersWidget1 = {
   init: function () {
-    KTUtil.on(
-      document.body,
-      '[data-kt-element="list-play-button"]',
-      "click",
-      function (e) {
-        var t = this,
-          a = document.querySelector('[data-kt-element="audio-track-1"]'),
-          l = this.querySelector('[data-kt-element="list-play-icon"]'),
-          r = this.querySelector('[data-kt-element="list-pause-icon"]');
-        r.classList.contains("d-none")
-          ? (a.play(), l.classList.add("d-none"), r.classList.remove("d-none"))
-          : (a.pause(),
-            l.classList.remove("d-none"),
-            r.classList.add("d-none")),
-          [].slice
-            .call(
-              document.querySelectorAll('[data-kt-element="list-play-button"]')
-            )
-            .map(function (e) {
-              if (e !== t) {
-                var a = e.querySelector('[data-kt-element="list-play-icon"]'),
-                  l = e.querySelector('[data-kt-element="list-pause-icon"]');
-                a.classList.remove("d-none"), l.classList.add("d-none");
-              }
-            });
-      }
-    );
+    KTUtil.on(document.body, '[data-kt-element="list-play-button"]', "click", function (e) {
+      var t = this,
+        a = document.querySelector('[data-kt-element="audio-track-1"]'),
+        l = this.querySelector('[data-kt-element="list-play-icon"]'),
+        r = this.querySelector('[data-kt-element="list-pause-icon"]');
+      (r.classList.contains("d-none")
+        ? (a.play(), l.classList.add("d-none"), r.classList.remove("d-none"))
+        : (a.pause(), l.classList.remove("d-none"), r.classList.add("d-none")),
+        [].slice
+          .call(document.querySelectorAll('[data-kt-element="list-play-button"]'))
+          .map(function (e) {
+            if (e !== t) {
+              var a = e.querySelector('[data-kt-element="list-play-icon"]'),
+                l = e.querySelector('[data-kt-element="list-pause-icon"]');
+              (a.classList.remove("d-none"), l.classList.add("d-none"));
+            }
+          }));
+    });
   },
 };
-"undefined" != typeof module && (module.exports = KTPlayersWidget1),
+("undefined" != typeof module && (module.exports = KTPlayersWidget1),
   window.addEventListener("load", function () {
     KTPlayersWidget1.init();
-  });
+  }));
 var KTPlayersWidget2 = (function () {
   var e = function () {
     var e = document.getElementById("kt_player_widget_2");
@@ -9547,21 +8792,16 @@ var KTPlayersWidget2 = (function () {
           return parseInt((e / 60) % 60) + ":" + (t < 10 ? "0" : "") + t;
         };
       r.innerHTML = g(t.duration);
-      t.addEventListener("timeupdate", function () {
-        (l.innerHTML = g(t.currentTime)),
+      (t.addEventListener("timeupdate", function () {
+        ((l.innerHTML = g(t.currentTime)),
           (a.value = (t.currentTime / t.duration) * 100),
-          this.ended &&
-            (i.classList.remove("d-none"), s.classList.add("d-none"));
+          this.ended && (i.classList.remove("d-none"), s.classList.add("d-none")));
       }),
         o.addEventListener("click", function () {
           t.duration > 0 && !t.paused
-            ? (t.pause(),
-              i.classList.remove("d-none"),
-              s.classList.add("d-none"))
+            ? (t.pause(), i.classList.remove("d-none"), s.classList.add("d-none"))
             : t.readyState >= 2 &&
-              (t.play(),
-              i.classList.add("d-none"),
-              s.classList.remove("d-none"));
+              (t.play(), i.classList.add("d-none"), s.classList.remove("d-none"));
         }),
         n.addEventListener("click", function () {
           t.readyState >= 2 &&
@@ -9592,11 +8832,11 @@ var KTPlayersWidget2 = (function () {
             s.classList.remove("d-none"));
         }),
         a.addEventListener("change", function () {
-          (t.currentTime = a.value),
+          ((t.currentTime = a.value),
             i.classList.add("d-none"),
             s.classList.remove("d-none"),
-            t.play();
-        });
+            t.play());
+        }));
     }
   };
   return {
@@ -9605,10 +8845,10 @@ var KTPlayersWidget2 = (function () {
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTPlayersWidget2),
+("undefined" != typeof module && (module.exports = KTPlayersWidget2),
   window.addEventListener("load", function () {
     KTPlayersWidget2.init();
-  });
+  }));
 var KTSlidersWidget1 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -9644,10 +8884,10 @@ var KTSlidersWidget1 = (function () {
             stroke: { lineCap: "round" },
             labels: ["Progress"],
           };
-        (e.self = new ApexCharts(l, i)),
+        ((e.self = new ApexCharts(l, i)),
           e.self.render(),
           (e.rendered = !0),
-          l.classList.add("initialized");
+          l.classList.add("initialized"));
       }
     };
   return {
@@ -9656,24 +8896,24 @@ var KTSlidersWidget1 = (function () {
       var r = document.querySelector("#kt_sliders_widget_1_slider");
       r &&
         (r.addEventListener("slid.bs.carousel", function (e) {
-          1 === e.to && l(t, "#kt_slider_widget_1_chart_2", 55),
-            2 === e.to && l(a, "#kt_slider_widget_1_chart_3", 25);
+          (1 === e.to && l(t, "#kt_slider_widget_1_chart_2", 55),
+            2 === e.to && l(a, "#kt_slider_widget_1_chart_3", 25));
         }),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && (e.self.destroy(), (e.rendered = !1)),
+          (e.rendered && (e.self.destroy(), (e.rendered = !1)),
             t.rendered && (t.self.destroy(), (t.rendered = !1)),
             a.rendered && (a.self.destroy(), (a.rendered = !1)),
             l(e, "#kt_slider_widget_1_chart_1", 76),
             l(t, "#kt_slider_widget_1_chart_2", 55),
-            l(a, "#kt_slider_widget_1_chart_3", 25);
+            l(a, "#kt_slider_widget_1_chart_3", 25));
         }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTSlidersWidget1),
+("undefined" != typeof module && (module.exports = KTSlidersWidget1),
   KTUtil.onDOMContentLoaded(function () {
     KTSlidersWidget1.init();
-  });
+  }));
 var KTSlidersWidget3 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -9764,10 +9004,10 @@ var KTSlidersWidget3 = (function () {
             },
             markers: { strokeColor: n, strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(r, d)),
+        ((e.self = new ApexCharts(r, d)),
           e.self.render(),
           (e.rendered = !0),
-          r.classList.add("initialized");
+          r.classList.add("initialized"));
       }
     };
   return {
@@ -9781,18 +9021,18 @@ var KTSlidersWidget3 = (function () {
           1 === e.to && a(t, "#kt_sliders_widget_3_chart_2", "primary", r);
         }),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && (e.self.destroy(), (e.rendered = !1)),
+          (e.rendered && (e.self.destroy(), (e.rendered = !1)),
             t.rendered && (t.self.destroy(), (t.rendered = !1)),
             a(e, "#kt_sliders_widget_3_chart_1", "danger", l),
-            a(t, "#kt_sliders_widget_3_chart_2", "primary", r);
+            a(t, "#kt_sliders_widget_3_chart_2", "primary", r));
         }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTSlidersWidget3),
+("undefined" != typeof module && (module.exports = KTSlidersWidget3),
   KTUtil.onDOMContentLoaded(function () {
     KTSlidersWidget3.init();
-  });
+  }));
 var KTSlidersWidget7 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -9828,10 +9068,10 @@ var KTSlidersWidget7 = (function () {
             stroke: { lineCap: "round" },
             labels: ["Progress"],
           };
-        (e.self = new ApexCharts(l, i)),
+        ((e.self = new ApexCharts(l, i)),
           e.self.render(),
           (e.rendered = !0),
-          l.classList.add("initialized");
+          l.classList.add("initialized"));
       }
     };
   return {
@@ -9840,87 +9080,179 @@ var KTSlidersWidget7 = (function () {
       var r = document.querySelector("#kt_sliders_widget_7_slider");
       r &&
         (r.addEventListener("slid.bs.carousel", function (e) {
-          1 === e.to && l(t, "#kt_slider_widget_7_chart_2", 55),
-            2 === e.to && l(a, "#kt_slider_widget_7_chart_3", 25);
+          (1 === e.to && l(t, "#kt_slider_widget_7_chart_2", 55),
+            2 === e.to && l(a, "#kt_slider_widget_7_chart_3", 25));
         }),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && (e.self.destroy(), (e.rendered = !1)),
+          (e.rendered && (e.self.destroy(), (e.rendered = !1)),
             t.rendered && (t.self.destroy(), (t.rendered = !1)),
             a.rendered && (a.self.destroy(), (a.rendered = !1)),
             l(e, "#kt_slider_widget_7_chart_1", 76),
             l(t, "#kt_slider_widget_7_chart_2", 55),
-            l(a, "#kt_slider_widget_7_chart_3", 25);
+            l(a, "#kt_slider_widget_7_chart_3", 25));
         }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTSlidersWidget7),
+("undefined" != typeof module && (module.exports = KTSlidersWidget7),
   KTUtil.onDOMContentLoaded(function () {
     KTSlidersWidget7.init();
-  });
+  }));
 var KTTimelineWidget1 = (function () {
   const e = () => {
-      document
-        .querySelectorAll('[data-kt-timeline-widget-1="tab"]')
-        .forEach((e) => {
-          e.addEventListener("shown.bs.tab", (a) => {
-            "#kt_timeline_widget_1_tab_week" === e.getAttribute("href") &&
+      document.querySelectorAll('[data-kt-timeline-widget-1="tab"]').forEach((e) => {
+        e.addEventListener("shown.bs.tab", (a) => {
+          ("#kt_timeline_widget_1_tab_week" === e.getAttribute("href") &&
+            (() => {
+              const e = document.querySelector("#kt_timeline_widget_1_2");
+              if (!e) return;
+              if (e.innerHTML) return;
+              var a = Date.now(),
+                l = e.getAttribute("data-kt-timeline-widget-1-image-root"),
+                r = new vis.DataSet([
+                  { id: 1, content: "Research", order: 1 },
+                  { id: 2, content: "Phase 2.6 QA", order: 2 },
+                  { id: 3, content: "UI Design", order: 3 },
+                  { id: 4, content: "Development", order: 4 },
+                ]),
+                o = new vis.DataSet([
+                  {
+                    id: 1,
+                    group: 1,
+                    start: a,
+                    end: moment(a).add(7, "days"),
+                    content: "Framework",
+                    progress: "71%",
+                    color: "primary",
+                    users: ["avatars/300-6.jpg", "avatars/300-1.jpg"],
+                  },
+                  {
+                    id: 2,
+                    group: 2,
+                    start: moment(a).add(7, "days"),
+                    end: moment(a).add(14, "days"),
+                    content: "Accessibility",
+                    progress: "84%",
+                    color: "success",
+                    users: ["avatars/300-2.jpg"],
+                  },
+                  {
+                    id: 3,
+                    group: 3,
+                    start: moment(a).add(3, "days"),
+                    end: moment(a).add(20, "days"),
+                    content: "Microsites",
+                    progress: "69%",
+                    color: "danger",
+                    users: ["avatars/300-5.jpg", "avatars/300-20.jpg"],
+                  },
+                  {
+                    id: 4,
+                    group: 4,
+                    start: moment(a).add(10, "days"),
+                    end: moment(a).add(21, "days"),
+                    content: "Deployment",
+                    progress: "74%",
+                    color: "info",
+                    users: ["avatars/300-23.jpg", "avatars/300-12.jpg", "avatars/300-9.jpg"],
+                  },
+                ]),
+                i = {
+                  zoomable: !1,
+                  moveable: !1,
+                  selectable: !1,
+                  margin: { item: { horizontal: 10, vertical: 35 } },
+                  showCurrentTime: !1,
+                  xss: {
+                    disabled: !1,
+                    filterOptions: {
+                      whiteList: {
+                        div: ["class", "style"],
+                        img: ["data-kt-timeline-avatar-src", "alt"],
+                        a: ["href", "class"],
+                      },
+                    },
+                  },
+                  template: function (e) {
+                    const t = e.users;
+                    let a = "";
+                    return (
+                      t.forEach((e) => {
+                        a += `<div class="symbol symbol-circle symbol-25px"><img data-kt-timeline-avatar-src="${
+                          l + e
+                        }" alt="" /></div>`;
+                      }),
+                      `<div class="rounded-pill bg-light-${e.color} d-flex align-items-center position-relative h-40px w-100 p-2 overflow-hidden">\n                    <div class="position-absolute rounded-pill d-block bg-${e.color} start-0 top-0 h-100 z-index-1" style="width: ${e.progress};"></div>\n        \n                    <div class="d-flex align-items-center position-relative z-index-2">\n                        <div class="symbol-group symbol-hover flex-nowrap me-3">\n                            ${a}\n                        </div>\n        \n                        <a href="#" class="fw-bold text-white text-hover-dark">${e.content}</a>\n                    </div>\n        \n                    <div class="d-flex flex-center bg-body rounded-pill fs-7 fw-bolder ms-auto h-100 px-3 position-relative z-index-2">\n                        ${e.progress}\n                    </div>\n                </div>        \n                `
+                    );
+                  },
+                  onInitialDrawComplete: function () {
+                    t();
+                    const a = e.closest('[data-kt-timeline-widget-1-blockui="true"]'),
+                      l = KTBlockUI.getInstance(a);
+                    l.isBlocked() &&
+                      setTimeout(() => {
+                        l.release();
+                      }, 1e3);
+                  },
+                };
+              const s = new vis.Timeline(e, o, r, i);
+              s.on("currentTimeTick", () => {
+                s.off("currentTimeTick");
+              });
+            })(),
+            "#kt_timeline_widget_1_tab_month" === e.getAttribute("href") &&
               (() => {
-                const e = document.querySelector("#kt_timeline_widget_1_2");
+                const e = document.querySelector("#kt_timeline_widget_1_3");
                 if (!e) return;
                 if (e.innerHTML) return;
                 var a = Date.now(),
                   l = e.getAttribute("data-kt-timeline-widget-1-image-root"),
                   r = new vis.DataSet([
-                    { id: 1, content: "Research", order: 1 },
-                    { id: 2, content: "Phase 2.6 QA", order: 2 },
-                    { id: 3, content: "UI Design", order: 3 },
-                    { id: 4, content: "Development", order: 4 },
+                    { id: "research", content: "Research", order: 1 },
+                    { id: "qa", content: "Phase 2.6 QA", order: 2 },
+                    { id: "ui", content: "UI Design", order: 3 },
+                    { id: "dev", content: "Development", order: 4 },
                   ]),
                   o = new vis.DataSet([
                     {
                       id: 1,
-                      group: 1,
+                      group: "research",
                       start: a,
-                      end: moment(a).add(7, "days"),
-                      content: "Framework",
-                      progress: "71%",
+                      end: moment(a).add(2, "months"),
+                      content: "Tags",
+                      progress: "79%",
                       color: "primary",
                       users: ["avatars/300-6.jpg", "avatars/300-1.jpg"],
                     },
                     {
                       id: 2,
-                      group: 2,
-                      start: moment(a).add(7, "days"),
-                      end: moment(a).add(14, "days"),
-                      content: "Accessibility",
-                      progress: "84%",
+                      group: "qa",
+                      start: moment(a).add(0.5, "months"),
+                      end: moment(a).add(5, "months"),
+                      content: "Testing",
+                      progress: "64%",
                       color: "success",
                       users: ["avatars/300-2.jpg"],
                     },
                     {
                       id: 3,
-                      group: 3,
-                      start: moment(a).add(3, "days"),
-                      end: moment(a).add(20, "days"),
-                      content: "Microsites",
-                      progress: "69%",
+                      group: "ui",
+                      start: moment(a).add(2, "months"),
+                      end: moment(a).add(6.5, "months"),
+                      content: "Media",
+                      progress: "82%",
                       color: "danger",
                       users: ["avatars/300-5.jpg", "avatars/300-20.jpg"],
                     },
                     {
                       id: 4,
-                      group: 4,
-                      start: moment(a).add(10, "days"),
-                      end: moment(a).add(21, "days"),
-                      content: "Deployment",
-                      progress: "74%",
+                      group: "dev",
+                      start: moment(a).add(4, "months"),
+                      end: moment(a).add(7, "months"),
+                      content: "Plugins",
+                      progress: "58%",
                       color: "info",
-                      users: [
-                        "avatars/300-23.jpg",
-                        "avatars/300-12.jpg",
-                        "avatars/300-9.jpg",
-                      ],
+                      users: ["avatars/300-23.jpg", "avatars/300-12.jpg", "avatars/300-9.jpg"],
                     },
                   ]),
                   i = {
@@ -9953,9 +9285,7 @@ var KTTimelineWidget1 = (function () {
                     },
                     onInitialDrawComplete: function () {
                       t();
-                      const a = e.closest(
-                          '[data-kt-timeline-widget-1-blockui="true"]'
-                        ),
+                      const a = e.closest('[data-kt-timeline-widget-1-blockui="true"]'),
                         l = KTBlockUI.getInstance(a);
                       l.isBlocked() &&
                         setTimeout(() => {
@@ -9967,125 +9297,21 @@ var KTTimelineWidget1 = (function () {
                 s.on("currentTimeTick", () => {
                   s.off("currentTimeTick");
                 });
-              })(),
-              "#kt_timeline_widget_1_tab_month" === e.getAttribute("href") &&
-                (() => {
-                  const e = document.querySelector("#kt_timeline_widget_1_3");
-                  if (!e) return;
-                  if (e.innerHTML) return;
-                  var a = Date.now(),
-                    l = e.getAttribute("data-kt-timeline-widget-1-image-root"),
-                    r = new vis.DataSet([
-                      { id: "research", content: "Research", order: 1 },
-                      { id: "qa", content: "Phase 2.6 QA", order: 2 },
-                      { id: "ui", content: "UI Design", order: 3 },
-                      { id: "dev", content: "Development", order: 4 },
-                    ]),
-                    o = new vis.DataSet([
-                      {
-                        id: 1,
-                        group: "research",
-                        start: a,
-                        end: moment(a).add(2, "months"),
-                        content: "Tags",
-                        progress: "79%",
-                        color: "primary",
-                        users: ["avatars/300-6.jpg", "avatars/300-1.jpg"],
-                      },
-                      {
-                        id: 2,
-                        group: "qa",
-                        start: moment(a).add(0.5, "months"),
-                        end: moment(a).add(5, "months"),
-                        content: "Testing",
-                        progress: "64%",
-                        color: "success",
-                        users: ["avatars/300-2.jpg"],
-                      },
-                      {
-                        id: 3,
-                        group: "ui",
-                        start: moment(a).add(2, "months"),
-                        end: moment(a).add(6.5, "months"),
-                        content: "Media",
-                        progress: "82%",
-                        color: "danger",
-                        users: ["avatars/300-5.jpg", "avatars/300-20.jpg"],
-                      },
-                      {
-                        id: 4,
-                        group: "dev",
-                        start: moment(a).add(4, "months"),
-                        end: moment(a).add(7, "months"),
-                        content: "Plugins",
-                        progress: "58%",
-                        color: "info",
-                        users: [
-                          "avatars/300-23.jpg",
-                          "avatars/300-12.jpg",
-                          "avatars/300-9.jpg",
-                        ],
-                      },
-                    ]),
-                    i = {
-                      zoomable: !1,
-                      moveable: !1,
-                      selectable: !1,
-                      margin: { item: { horizontal: 10, vertical: 35 } },
-                      showCurrentTime: !1,
-                      xss: {
-                        disabled: !1,
-                        filterOptions: {
-                          whiteList: {
-                            div: ["class", "style"],
-                            img: ["data-kt-timeline-avatar-src", "alt"],
-                            a: ["href", "class"],
-                          },
-                        },
-                      },
-                      template: function (e) {
-                        const t = e.users;
-                        let a = "";
-                        return (
-                          t.forEach((e) => {
-                            a += `<div class="symbol symbol-circle symbol-25px"><img data-kt-timeline-avatar-src="${
-                              l + e
-                            }" alt="" /></div>`;
-                          }),
-                          `<div class="rounded-pill bg-light-${e.color} d-flex align-items-center position-relative h-40px w-100 p-2 overflow-hidden">\n                    <div class="position-absolute rounded-pill d-block bg-${e.color} start-0 top-0 h-100 z-index-1" style="width: ${e.progress};"></div>\n        \n                    <div class="d-flex align-items-center position-relative z-index-2">\n                        <div class="symbol-group symbol-hover flex-nowrap me-3">\n                            ${a}\n                        </div>\n        \n                        <a href="#" class="fw-bold text-white text-hover-dark">${e.content}</a>\n                    </div>\n        \n                    <div class="d-flex flex-center bg-body rounded-pill fs-7 fw-bolder ms-auto h-100 px-3 position-relative z-index-2">\n                        ${e.progress}\n                    </div>\n                </div>        \n                `
-                        );
-                      },
-                      onInitialDrawComplete: function () {
-                        t();
-                        const a = e.closest(
-                            '[data-kt-timeline-widget-1-blockui="true"]'
-                          ),
-                          l = KTBlockUI.getInstance(a);
-                        l.isBlocked() &&
-                          setTimeout(() => {
-                            l.release();
-                          }, 1e3);
-                      },
-                    };
-                  const s = new vis.Timeline(e, o, r, i);
-                  s.on("currentTimeTick", () => {
-                    s.off("currentTimeTick");
-                  });
-                })();
-          });
+              })());
         });
+      });
     },
     t = () => {
       const e = document.querySelectorAll("[data-kt-timeline-avatar-src]");
       e &&
         e.forEach((e) => {
-          e.setAttribute("src", e.getAttribute("data-kt-timeline-avatar-src")),
-            e.removeAttribute("data-kt-timeline-avatar-src");
+          (e.setAttribute("src", e.getAttribute("data-kt-timeline-avatar-src")),
+            e.removeAttribute("data-kt-timeline-avatar-src"));
         });
     };
   return {
     init: function () {
-      (() => {
+      ((() => {
         const e = document.querySelector("#kt_timeline_widget_1_1");
         if (!e) return;
         if (e.innerHTML) return;
@@ -10136,11 +9362,7 @@ var KTTimelineWidget1 = (function () {
               content: "Products module",
               progress: "75%",
               color: "info",
-              users: [
-                "avatars/300-23.jpg",
-                "avatars/300-12.jpg",
-                "avatars/300-9.jpg",
-              ],
+              users: ["avatars/300-23.jpg", "avatars/300-12.jpg", "avatars/300-9.jpg"],
             },
           ]),
           i = {
@@ -10186,19 +9408,17 @@ var KTTimelineWidget1 = (function () {
           s.off("currentTimeTick");
         });
       })(),
-        document
-          .querySelectorAll('[data-kt-timeline-widget-1-blockui="true"]')
-          .forEach((e) => {
-            new KTBlockUI(e, { overlayClass: "bg-body" }).block();
-          }),
-        e();
+        document.querySelectorAll('[data-kt-timeline-widget-1-blockui="true"]').forEach((e) => {
+          new KTBlockUI(e, { overlayClass: "bg-body" }).block();
+        }),
+        e());
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTTimelineWidget1),
+("undefined" != typeof module && (module.exports = KTTimelineWidget1),
   KTUtil.onDOMContentLoaded(function () {
     KTTimelineWidget1.init();
-  });
+  }));
 var KTTimelineWidget2 = {
   init: function () {
     var e;
@@ -10224,73 +9444,165 @@ var KTTimelineWidget2 = {
       });
   },
 };
-"undefined" != typeof module && (module.exports = KTTimelineWidget2),
+("undefined" != typeof module && (module.exports = KTTimelineWidget2),
   KTUtil.onDOMContentLoaded(function () {
     KTTimelineWidget2.init();
-  });
+  }));
 var KTTimelineWidget4 = (function () {
   const e = () => {
-      document
-        .querySelectorAll('[data-kt-timeline-widget-4="tab"]')
-        .forEach((e) => {
-          e.addEventListener("shown.bs.tab", (a) => {
-            "#kt_timeline_widget_4_tab_week" === e.getAttribute("href") &&
+      document.querySelectorAll('[data-kt-timeline-widget-4="tab"]').forEach((e) => {
+        e.addEventListener("shown.bs.tab", (a) => {
+          ("#kt_timeline_widget_4_tab_week" === e.getAttribute("href") &&
+            (() => {
+              const e = document.querySelector("#kt_timeline_widget_4_2");
+              if (!e) return;
+              if (e.innerHTML) return;
+              var a = Date.now(),
+                l = e.getAttribute("data-kt-timeline-widget-4-image-root"),
+                r = new vis.DataSet([
+                  { id: 1, content: "Research", order: 1 },
+                  { id: 2, content: "Phase 2.6 QA", order: 2 },
+                  { id: 3, content: "UI Design", order: 3 },
+                  { id: 4, content: "Development", order: 4 },
+                ]),
+                o = new vis.DataSet([
+                  {
+                    id: 1,
+                    group: 1,
+                    start: a,
+                    end: moment(a).add(7, "days"),
+                    content: "Framework",
+                    progress: "71%",
+                    color: "primary",
+                    users: ["avatars/300-6.jpg", "avatars/300-1.jpg"],
+                  },
+                  {
+                    id: 2,
+                    group: 2,
+                    start: moment(a).add(7, "days"),
+                    end: moment(a).add(14, "days"),
+                    content: "Accessibility",
+                    progress: "84%",
+                    color: "success",
+                    users: ["avatars/300-2.jpg"],
+                  },
+                  {
+                    id: 3,
+                    group: 3,
+                    start: moment(a).add(3, "days"),
+                    end: moment(a).add(20, "days"),
+                    content: "Microsites",
+                    progress: "69%",
+                    color: "danger",
+                    users: ["avatars/300-5.jpg", "avatars/300-20.jpg"],
+                  },
+                  {
+                    id: 4,
+                    group: 4,
+                    start: moment(a).add(10, "days"),
+                    end: moment(a).add(21, "days"),
+                    content: "Deployment",
+                    progress: "74%",
+                    color: "info",
+                    users: ["avatars/300-23.jpg", "avatars/300-12.jpg", "avatars/300-9.jpg"],
+                  },
+                ]),
+                i = {
+                  zoomable: !1,
+                  moveable: !1,
+                  selectable: !1,
+                  margin: { item: { horizontal: 10, vertical: 35 } },
+                  showCurrentTime: !1,
+                  xss: {
+                    disabled: !1,
+                    filterOptions: {
+                      whiteList: {
+                        div: ["class", "style"],
+                        img: ["data-kt-timeline-avatar-src", "alt"],
+                        a: ["href", "class"],
+                      },
+                    },
+                  },
+                  template: function (e) {
+                    const t = e.users;
+                    let a = "";
+                    return (
+                      t.forEach((e) => {
+                        a += `<div class="symbol symbol-circle symbol-25px"><img data-kt-timeline-avatar-src="${
+                          l + e
+                        }" alt="" /></div>`;
+                      }),
+                      `<div class="rounded-pill bg-light-${e.color} d-flex align-items-center position-relative h-40px w-100 p-2 overflow-hidden">\n                    <div class="position-absolute rounded-pill d-block bg-${e.color} start-0 top-0 h-100 z-index-1" style="width: ${e.progress};"></div>\n        \n                    <div class="d-flex align-items-center position-relative z-index-2">\n                        <div class="symbol-group symbol-hover flex-nowrap me-3">\n                            ${a}\n                        </div>\n        \n                        <a href="#" class="fw-bold text-white text-hover-dark">${e.content}</a>\n                    </div>\n        \n                    <div class="d-flex flex-center bg-body rounded-pill fs-7 fw-bolder ms-auto h-100 px-3 position-relative z-index-2">\n                        ${e.progress}\n                    </div>\n                </div>        \n                `
+                    );
+                  },
+                  onInitialDrawComplete: function () {
+                    t();
+                    const a = e.closest('[data-kt-timeline-widget-4-blockui="true"]'),
+                      l = KTBlockUI.getInstance(a);
+                    l.isBlocked() &&
+                      setTimeout(() => {
+                        l.release();
+                      }, 1e3);
+                  },
+                };
+              const s = new vis.Timeline(e, o, r, i);
+              s.on("currentTimeTick", () => {
+                s.off("currentTimeTick");
+              });
+            })(),
+            "#kt_timeline_widget_4_tab_month" === e.getAttribute("href") &&
               (() => {
-                const e = document.querySelector("#kt_timeline_widget_4_2");
+                const e = document.querySelector("#kt_timeline_widget_4_3");
                 if (!e) return;
                 if (e.innerHTML) return;
                 var a = Date.now(),
                   l = e.getAttribute("data-kt-timeline-widget-4-image-root"),
                   r = new vis.DataSet([
-                    { id: 1, content: "Research", order: 1 },
-                    { id: 2, content: "Phase 2.6 QA", order: 2 },
-                    { id: 3, content: "UI Design", order: 3 },
-                    { id: 4, content: "Development", order: 4 },
+                    { id: "research", content: "Research", order: 1 },
+                    { id: "qa", content: "Phase 2.6 QA", order: 2 },
+                    { id: "ui", content: "UI Design", order: 3 },
+                    { id: "dev", content: "Development", order: 4 },
                   ]),
                   o = new vis.DataSet([
                     {
                       id: 1,
-                      group: 1,
+                      group: "research",
                       start: a,
-                      end: moment(a).add(7, "days"),
-                      content: "Framework",
-                      progress: "71%",
+                      end: moment(a).add(2, "months"),
+                      content: "Tags",
+                      progress: "79%",
                       color: "primary",
                       users: ["avatars/300-6.jpg", "avatars/300-1.jpg"],
                     },
                     {
                       id: 2,
-                      group: 2,
-                      start: moment(a).add(7, "days"),
-                      end: moment(a).add(14, "days"),
-                      content: "Accessibility",
-                      progress: "84%",
+                      group: "qa",
+                      start: moment(a).add(0.5, "months"),
+                      end: moment(a).add(5, "months"),
+                      content: "Testing",
+                      progress: "64%",
                       color: "success",
                       users: ["avatars/300-2.jpg"],
                     },
                     {
                       id: 3,
-                      group: 3,
-                      start: moment(a).add(3, "days"),
-                      end: moment(a).add(20, "days"),
-                      content: "Microsites",
-                      progress: "69%",
+                      group: "ui",
+                      start: moment(a).add(2, "months"),
+                      end: moment(a).add(6.5, "months"),
+                      content: "Media",
+                      progress: "82%",
                       color: "danger",
                       users: ["avatars/300-5.jpg", "avatars/300-20.jpg"],
                     },
                     {
                       id: 4,
-                      group: 4,
-                      start: moment(a).add(10, "days"),
-                      end: moment(a).add(21, "days"),
-                      content: "Deployment",
-                      progress: "74%",
+                      group: "dev",
+                      start: moment(a).add(4, "months"),
+                      end: moment(a).add(7, "months"),
+                      content: "Plugins",
+                      progress: "58%",
                       color: "info",
-                      users: [
-                        "avatars/300-23.jpg",
-                        "avatars/300-12.jpg",
-                        "avatars/300-9.jpg",
-                      ],
+                      users: ["avatars/300-23.jpg", "avatars/300-12.jpg", "avatars/300-9.jpg"],
                     },
                   ]),
                   i = {
@@ -10323,9 +9635,7 @@ var KTTimelineWidget4 = (function () {
                     },
                     onInitialDrawComplete: function () {
                       t();
-                      const a = e.closest(
-                          '[data-kt-timeline-widget-4-blockui="true"]'
-                        ),
+                      const a = e.closest('[data-kt-timeline-widget-4-blockui="true"]'),
                         l = KTBlockUI.getInstance(a);
                       l.isBlocked() &&
                         setTimeout(() => {
@@ -10338,228 +9648,118 @@ var KTTimelineWidget4 = (function () {
                   s.off("currentTimeTick");
                 });
               })(),
-              "#kt_timeline_widget_4_tab_month" === e.getAttribute("href") &&
-                (() => {
-                  const e = document.querySelector("#kt_timeline_widget_4_3");
-                  if (!e) return;
-                  if (e.innerHTML) return;
-                  var a = Date.now(),
-                    l = e.getAttribute("data-kt-timeline-widget-4-image-root"),
-                    r = new vis.DataSet([
-                      { id: "research", content: "Research", order: 1 },
-                      { id: "qa", content: "Phase 2.6 QA", order: 2 },
-                      { id: "ui", content: "UI Design", order: 3 },
-                      { id: "dev", content: "Development", order: 4 },
-                    ]),
-                    o = new vis.DataSet([
-                      {
-                        id: 1,
-                        group: "research",
-                        start: a,
-                        end: moment(a).add(2, "months"),
-                        content: "Tags",
-                        progress: "79%",
-                        color: "primary",
-                        users: ["avatars/300-6.jpg", "avatars/300-1.jpg"],
-                      },
-                      {
-                        id: 2,
-                        group: "qa",
-                        start: moment(a).add(0.5, "months"),
-                        end: moment(a).add(5, "months"),
-                        content: "Testing",
-                        progress: "64%",
-                        color: "success",
-                        users: ["avatars/300-2.jpg"],
-                      },
-                      {
-                        id: 3,
-                        group: "ui",
-                        start: moment(a).add(2, "months"),
-                        end: moment(a).add(6.5, "months"),
-                        content: "Media",
-                        progress: "82%",
-                        color: "danger",
-                        users: ["avatars/300-5.jpg", "avatars/300-20.jpg"],
-                      },
-                      {
-                        id: 4,
-                        group: "dev",
-                        start: moment(a).add(4, "months"),
-                        end: moment(a).add(7, "months"),
-                        content: "Plugins",
-                        progress: "58%",
-                        color: "info",
-                        users: [
-                          "avatars/300-23.jpg",
-                          "avatars/300-12.jpg",
-                          "avatars/300-9.jpg",
-                        ],
-                      },
-                    ]),
-                    i = {
-                      zoomable: !1,
-                      moveable: !1,
-                      selectable: !1,
-                      margin: { item: { horizontal: 10, vertical: 35 } },
-                      showCurrentTime: !1,
-                      xss: {
-                        disabled: !1,
-                        filterOptions: {
-                          whiteList: {
-                            div: ["class", "style"],
-                            img: ["data-kt-timeline-avatar-src", "alt"],
-                            a: ["href", "class"],
-                          },
+            "#kt_timeline_widget_4_tab_2022" === e.getAttribute("href") &&
+              (() => {
+                const e = document.querySelector("#kt_timeline_widget_4_4");
+                if (!e) return;
+                if (e.innerHTML) return;
+                var a = Date.now(),
+                  l = e.getAttribute("data-kt-timeline-widget-4-image-root"),
+                  r = new vis.DataSet([
+                    { id: "research", content: "Research", order: 1 },
+                    { id: "qa", content: "Phase 2.6 QA", order: 2 },
+                    { id: "ui", content: "UI Design", order: 3 },
+                    { id: "dev", content: "Development", order: 4 },
+                  ]),
+                  o = new vis.DataSet([
+                    {
+                      id: 1,
+                      group: "research",
+                      start: a,
+                      end: moment(a).add(2, "months"),
+                      content: "Tags",
+                      progress: "51%",
+                      color: "primary",
+                      users: ["avatars/300-7.jpg", "avatars/300-2.jpg"],
+                    },
+                    {
+                      id: 2,
+                      group: "qa",
+                      start: moment(a).add(0.5, "months"),
+                      end: moment(a).add(5, "months"),
+                      content: "Testing",
+                      progress: "64%",
+                      color: "success",
+                      users: ["avatars/300-2.jpg"],
+                    },
+                    {
+                      id: 3,
+                      group: "ui",
+                      start: moment(a).add(2, "months"),
+                      end: moment(a).add(6.5, "months"),
+                      content: "Media",
+                      progress: "54%",
+                      color: "danger",
+                      users: ["avatars/300-5.jpg", "avatars/300-21.jpg"],
+                    },
+                    {
+                      id: 4,
+                      group: "dev",
+                      start: moment(a).add(4, "months"),
+                      end: moment(a).add(7, "months"),
+                      content: "Plugins",
+                      progress: "348%",
+                      color: "info",
+                      users: ["avatars/300-3.jpg", "avatars/300-11.jpg", "avatars/300-13.jpg"],
+                    },
+                  ]),
+                  i = {
+                    zoomable: !1,
+                    moveable: !1,
+                    selectable: !1,
+                    margin: { item: { horizontal: 10, vertical: 35 } },
+                    showCurrentTime: !1,
+                    xss: {
+                      disabled: !1,
+                      filterOptions: {
+                        whiteList: {
+                          div: ["class", "style"],
+                          img: ["data-kt-timeline-avatar-src", "alt"],
+                          a: ["href", "class"],
                         },
                       },
-                      template: function (e) {
-                        const t = e.users;
-                        let a = "";
-                        return (
-                          t.forEach((e) => {
-                            a += `<div class="symbol symbol-circle symbol-25px"><img data-kt-timeline-avatar-src="${
-                              l + e
-                            }" alt="" /></div>`;
-                          }),
-                          `<div class="rounded-pill bg-light-${e.color} d-flex align-items-center position-relative h-40px w-100 p-2 overflow-hidden">\n                    <div class="position-absolute rounded-pill d-block bg-${e.color} start-0 top-0 h-100 z-index-1" style="width: ${e.progress};"></div>\n        \n                    <div class="d-flex align-items-center position-relative z-index-2">\n                        <div class="symbol-group symbol-hover flex-nowrap me-3">\n                            ${a}\n                        </div>\n        \n                        <a href="#" class="fw-bold text-white text-hover-dark">${e.content}</a>\n                    </div>\n        \n                    <div class="d-flex flex-center bg-body rounded-pill fs-7 fw-bolder ms-auto h-100 px-3 position-relative z-index-2">\n                        ${e.progress}\n                    </div>\n                </div>        \n                `
-                        );
-                      },
-                      onInitialDrawComplete: function () {
-                        t();
-                        const a = e.closest(
-                            '[data-kt-timeline-widget-4-blockui="true"]'
-                          ),
-                          l = KTBlockUI.getInstance(a);
-                        l.isBlocked() &&
-                          setTimeout(() => {
-                            l.release();
-                          }, 1e3);
-                      },
-                    };
-                  const s = new vis.Timeline(e, o, r, i);
-                  s.on("currentTimeTick", () => {
-                    s.off("currentTimeTick");
-                  });
-                })(),
-              "#kt_timeline_widget_4_tab_2022" === e.getAttribute("href") &&
-                (() => {
-                  const e = document.querySelector("#kt_timeline_widget_4_4");
-                  if (!e) return;
-                  if (e.innerHTML) return;
-                  var a = Date.now(),
-                    l = e.getAttribute("data-kt-timeline-widget-4-image-root"),
-                    r = new vis.DataSet([
-                      { id: "research", content: "Research", order: 1 },
-                      { id: "qa", content: "Phase 2.6 QA", order: 2 },
-                      { id: "ui", content: "UI Design", order: 3 },
-                      { id: "dev", content: "Development", order: 4 },
-                    ]),
-                    o = new vis.DataSet([
-                      {
-                        id: 1,
-                        group: "research",
-                        start: a,
-                        end: moment(a).add(2, "months"),
-                        content: "Tags",
-                        progress: "51%",
-                        color: "primary",
-                        users: ["avatars/300-7.jpg", "avatars/300-2.jpg"],
-                      },
-                      {
-                        id: 2,
-                        group: "qa",
-                        start: moment(a).add(0.5, "months"),
-                        end: moment(a).add(5, "months"),
-                        content: "Testing",
-                        progress: "64%",
-                        color: "success",
-                        users: ["avatars/300-2.jpg"],
-                      },
-                      {
-                        id: 3,
-                        group: "ui",
-                        start: moment(a).add(2, "months"),
-                        end: moment(a).add(6.5, "months"),
-                        content: "Media",
-                        progress: "54%",
-                        color: "danger",
-                        users: ["avatars/300-5.jpg", "avatars/300-21.jpg"],
-                      },
-                      {
-                        id: 4,
-                        group: "dev",
-                        start: moment(a).add(4, "months"),
-                        end: moment(a).add(7, "months"),
-                        content: "Plugins",
-                        progress: "348%",
-                        color: "info",
-                        users: [
-                          "avatars/300-3.jpg",
-                          "avatars/300-11.jpg",
-                          "avatars/300-13.jpg",
-                        ],
-                      },
-                    ]),
-                    i = {
-                      zoomable: !1,
-                      moveable: !1,
-                      selectable: !1,
-                      margin: { item: { horizontal: 10, vertical: 35 } },
-                      showCurrentTime: !1,
-                      xss: {
-                        disabled: !1,
-                        filterOptions: {
-                          whiteList: {
-                            div: ["class", "style"],
-                            img: ["data-kt-timeline-avatar-src", "alt"],
-                            a: ["href", "class"],
-                          },
-                        },
-                      },
-                      template: function (e) {
-                        const t = e.users;
-                        let a = "";
-                        return (
-                          t.forEach((e) => {
-                            a += `<div class="symbol symbol-circle symbol-25px"><img data-kt-timeline-avatar-src="${
-                              l + e
-                            }" alt="" /></div>`;
-                          }),
-                          `<div class="rounded-pill bg-light-${e.color} d-flex align-items-center position-relative h-40px w-100 p-2 overflow-hidden">\n                    <div class="position-absolute rounded-pill d-block bg-${e.color} start-0 top-0 h-100 z-index-1" style="width: ${e.progress};"></div>\n        \n                    <div class="d-flex align-items-center position-relative z-index-2">\n                        <div class="symbol-group symbol-hover flex-nowrap me-3">\n                            ${a}\n                        </div>\n        \n                        <a href="#" class="fw-bold text-white text-hover-dark">${e.content}</a>\n                    </div>\n        \n                    <div class="d-flex flex-center bg-body rounded-pill fs-7 fw-bolder ms-auto h-100 px-3 position-relative z-index-2">\n                        ${e.progress}\n                    </div>\n                </div>        \n                `
-                        );
-                      },
-                      onInitialDrawComplete: function () {
-                        t();
-                        const a = e.closest(
-                            '[data-kt-timeline-widget-4-blockui="true"]'
-                          ),
-                          l = KTBlockUI.getInstance(a);
-                        l.isBlocked() &&
-                          setTimeout(() => {
-                            l.release();
-                          }, 1e3);
-                      },
-                    };
-                  const s = new vis.Timeline(e, o, r, i);
-                  s.on("currentTimeTick", () => {
-                    s.off("currentTimeTick");
-                  });
-                })();
-          });
+                    },
+                    template: function (e) {
+                      const t = e.users;
+                      let a = "";
+                      return (
+                        t.forEach((e) => {
+                          a += `<div class="symbol symbol-circle symbol-25px"><img data-kt-timeline-avatar-src="${
+                            l + e
+                          }" alt="" /></div>`;
+                        }),
+                        `<div class="rounded-pill bg-light-${e.color} d-flex align-items-center position-relative h-40px w-100 p-2 overflow-hidden">\n                    <div class="position-absolute rounded-pill d-block bg-${e.color} start-0 top-0 h-100 z-index-1" style="width: ${e.progress};"></div>\n        \n                    <div class="d-flex align-items-center position-relative z-index-2">\n                        <div class="symbol-group symbol-hover flex-nowrap me-3">\n                            ${a}\n                        </div>\n        \n                        <a href="#" class="fw-bold text-white text-hover-dark">${e.content}</a>\n                    </div>\n        \n                    <div class="d-flex flex-center bg-body rounded-pill fs-7 fw-bolder ms-auto h-100 px-3 position-relative z-index-2">\n                        ${e.progress}\n                    </div>\n                </div>        \n                `
+                      );
+                    },
+                    onInitialDrawComplete: function () {
+                      t();
+                      const a = e.closest('[data-kt-timeline-widget-4-blockui="true"]'),
+                        l = KTBlockUI.getInstance(a);
+                      l.isBlocked() &&
+                        setTimeout(() => {
+                          l.release();
+                        }, 1e3);
+                    },
+                  };
+                const s = new vis.Timeline(e, o, r, i);
+                s.on("currentTimeTick", () => {
+                  s.off("currentTimeTick");
+                });
+              })());
         });
+      });
     },
     t = () => {
       const e = document.querySelectorAll("[data-kt-timeline-avatar-src]");
       e &&
         e.forEach((e) => {
-          e.setAttribute("src", e.getAttribute("data-kt-timeline-avatar-src")),
-            e.removeAttribute("data-kt-timeline-avatar-src");
+          (e.setAttribute("src", e.getAttribute("data-kt-timeline-avatar-src")),
+            e.removeAttribute("data-kt-timeline-avatar-src"));
         });
     };
   return {
     init: function () {
-      (() => {
+      ((() => {
         const e = document.querySelector("#kt_timeline_widget_4_1");
         if (!e) return;
         if (e.innerHTML) return;
@@ -10610,11 +9810,7 @@ var KTTimelineWidget4 = (function () {
               content: "Products module",
               progress: "75%",
               color: "info",
-              users: [
-                "avatars/300-23.jpg",
-                "avatars/300-12.jpg",
-                "avatars/300-9.jpg",
-              ],
+              users: ["avatars/300-23.jpg", "avatars/300-12.jpg", "avatars/300-9.jpg"],
             },
           ]),
           i = {
@@ -10660,19 +9856,17 @@ var KTTimelineWidget4 = (function () {
           s.off("currentTimeTick");
         });
       })(),
-        document
-          .querySelectorAll('[data-kt-timeline-widget-4-blockui="true"]')
-          .forEach((e) => {
-            new KTBlockUI(e, { overlayClass: "bg-body" }).block();
-          }),
-        e();
+        document.querySelectorAll('[data-kt-timeline-widget-4-blockui="true"]').forEach((e) => {
+          new KTBlockUI(e, { overlayClass: "bg-body" }).block();
+        }),
+        e());
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTTimelineWidget4),
+("undefined" != typeof module && (module.exports = KTTimelineWidget4),
   KTUtil.onDOMContentLoaded(function () {
     KTTimelineWidget4.init();
-  });
+  }));
 var KTTablesWidget14 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -10726,11 +9920,11 @@ var KTTablesWidget14 = (function () {
             colors: [d],
             markers: { colors: [d], strokeColor: [n], strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(r, m)),
+        ((e.self = new ApexCharts(r, m)),
           !0 === l &&
             setTimeout(function () {
-              e.self.render(), (e.rendered = !0);
-            }, 200);
+              (e.self.render(), (e.rendered = !0));
+            }, 200));
       }
     };
   return {
@@ -10744,9 +9938,9 @@ var KTTablesWidget14 = (function () {
       var d = [24, 3, 5, 19, 3, 7, 25, 14, 5, 14, 2, 8, 5, 17];
       o(l, "#kt_table_widget_14_chart_4", d, !0);
       var m = [3, 23, 1, 19, 3, 17, 3, 9, 25, 4, 2, 18, 25, 3];
-      o(r, "#kt_table_widget_14_chart_5", m, !0),
+      (o(r, "#kt_table_widget_14_chart_5", m, !0),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
@@ -10755,15 +9949,15 @@ var KTTablesWidget14 = (function () {
             o(t, "#kt_table_widget_14_chart_2", s, t.rendered),
             o(a, "#kt_table_widget_14_chart_3", n, a.rendered),
             o(l, "#kt_table_widget_14_chart_4", d, l.rendered),
-            o(r, "#kt_table_widget_14_chart_5", m, r.rendered);
-        });
+            o(r, "#kt_table_widget_14_chart_5", m, r.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTTablesWidget14),
+("undefined" != typeof module && (module.exports = KTTablesWidget14),
   KTUtil.onDOMContentLoaded(function () {
     KTTablesWidget14.init();
-  });
+  }));
 var KTTablesWidget15 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -10817,11 +10011,11 @@ var KTTablesWidget15 = (function () {
             colors: [d],
             markers: { colors: [d], strokeColor: [n], strokeWidth: 3 },
           };
-        (e.self = new ApexCharts(r, m)),
+        ((e.self = new ApexCharts(r, m)),
           !0 === l &&
             setTimeout(function () {
-              e.self.render(), (e.rendered = !0);
-            }, 200);
+              (e.self.render(), (e.rendered = !0));
+            }, 200));
       }
     };
   return {
@@ -10835,9 +10029,9 @@ var KTTablesWidget15 = (function () {
       var d = [24, 3, 5, 19, 3, 7, 25, 14, 5, 14, 2, 8, 5, 17];
       o(l, "#kt_table_widget_15_chart_4", d, !0);
       var m = [3, 23, 1, 19, 3, 17, 3, 9, 25, 4, 2, 18, 25, 3];
-      o(r, "#kt_table_widget_15_chart_5", m, !0),
+      (o(r, "#kt_table_widget_15_chart_5", m, !0),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
@@ -10846,15 +10040,15 @@ var KTTablesWidget15 = (function () {
             o(t, "#kt_table_widget_15_chart_2", s, t.rendered),
             o(a, "#kt_table_widget_15_chart_3", n, a.rendered),
             o(l, "#kt_table_widget_15_chart_4", d, l.rendered),
-            o(r, "#kt_table_widget_15_chart_5", m, r.rendered);
-        });
+            o(r, "#kt_table_widget_15_chart_5", m, r.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTTablesWidget15),
+("undefined" != typeof module && (module.exports = KTTablesWidget15),
   KTUtil.onDOMContentLoaded(function () {
     KTTablesWidget15.init();
-  });
+  }));
 var KTTablesWidget16 = (function () {
   var e = { self: null, rendered: !1 },
     t = { self: null, rendered: !1 },
@@ -10927,179 +10121,59 @@ var KTTablesWidget16 = (function () {
           };
         e.self = new ApexCharts(o, c);
         var g = document.querySelector(t);
-        !0 === r &&
+        (!0 === r &&
           setTimeout(function () {
-            e.self.render(), (e.rendered = !0);
+            (e.self.render(), (e.rendered = !0));
           }, 200),
           g.addEventListener("shown.bs.tab", function (t) {
             !1 === e.rendered && (e.self.render(), (e.rendered = !0));
-          });
+          }));
       }
     };
   return {
     init: function () {
       var w = [16, 10, 15, 21, 6, 11, 5, 23, 5, 11, 18, 7, 21, 13];
-      v(
-        e,
-        "#kt_stats_widget_16_tab_link_1",
-        "#kt_table_widget_16_chart_1_1",
-        w,
-        !0
-      );
+      v(e, "#kt_stats_widget_16_tab_link_1", "#kt_table_widget_16_chart_1_1", w, !0);
       var T = [8, 5, 16, 3, 23, 16, 11, 15, 3, 11, 15, 7, 17, 9];
-      v(
-        t,
-        "#kt_stats_widget_16_tab_link_1",
-        "#kt_table_widget_16_chart_1_2",
-        T,
-        !0
-      );
+      v(t, "#kt_stats_widget_16_tab_link_1", "#kt_table_widget_16_chart_1_2", T, !0);
       var k = [8, 6, 16, 3, 23, 16, 11, 14, 3, 11, 15, 8, 17, 9];
-      v(
-        a,
-        "#kt_stats_widget_16_tab_link_1",
-        "#kt_table_widget_16_chart_1_3",
-        k,
-        !0
-      );
+      v(a, "#kt_stats_widget_16_tab_link_1", "#kt_table_widget_16_chart_1_3", k, !0);
       var x = [12, 5, 23, 12, 21, 9, 17, 20, 4, 24, 9, 13, 18, 9];
-      v(
-        l,
-        "#kt_stats_widget_16_tab_link_1",
-        "#kt_table_widget_16_chart_1_4",
-        x,
-        !0
-      );
+      v(l, "#kt_stats_widget_16_tab_link_1", "#kt_table_widget_16_chart_1_4", x, !0);
       var A = [13, 10, 15, 21, 6, 11, 5, 21, 5, 12, 18, 7, 21, 13];
-      v(
-        r,
-        "#kt_stats_widget_16_tab_link_2",
-        "#kt_table_widget_16_chart_2_1",
-        A,
-        !1
-      );
+      v(r, "#kt_stats_widget_16_tab_link_2", "#kt_table_widget_16_chart_2_1", A, !1);
       var C = [13, 5, 21, 12, 21, 9, 17, 20, 4, 23, 9, 17, 21, 7];
-      v(
-        o,
-        "#kt_stats_widget_16_tab_link_2",
-        "#kt_table_widget_16_chart_2_2",
-        C,
-        !1
-      );
+      v(o, "#kt_stats_widget_16_tab_link_2", "#kt_table_widget_16_chart_2_2", C, !1);
       var K = [8, 10, 14, 21, 6, 31, 5, 21, 5, 11, 15, 7, 23, 13];
-      v(
-        i,
-        "#kt_stats_widget_16_tab_link_2",
-        "#kt_table_widget_16_chart_2_3",
-        K,
-        !1
-      );
+      v(i, "#kt_stats_widget_16_tab_link_2", "#kt_table_widget_16_chart_2_3", K, !1);
       var V = [6, 10, 12, 21, 6, 11, 7, 23, 5, 12, 18, 7, 21, 15];
-      v(
-        s,
-        "#kt_stats_widget_16_tab_link_2",
-        "#kt_table_widget_16_chart_2_4",
-        V,
-        !1
-      );
+      v(s, "#kt_stats_widget_16_tab_link_2", "#kt_table_widget_16_chart_2_4", V, !1);
       var S = [7, 10, 5, 21, 6, 11, 5, 23, 5, 11, 18, 7, 21, 13];
-      v(
-        n,
-        "#kt_stats_widget_16_tab_link_3",
-        "#kt_table_widget_16_chart_3_1",
-        S,
-        !1
-      );
+      v(n, "#kt_stats_widget_16_tab_link_3", "#kt_table_widget_16_chart_3_1", S, !1);
       var U = [8, 5, 16, 2, 19, 9, 17, 21, 4, 24, 4, 13, 21, 5];
-      v(
-        d,
-        "#kt_stats_widget_16_tab_link_3",
-        "#kt_table_widget_16_chart_3_2",
-        U,
-        !1
-      );
+      v(d, "#kt_stats_widget_16_tab_link_3", "#kt_table_widget_16_chart_3_2", U, !1);
       var M = [15, 10, 12, 21, 6, 11, 23, 11, 5, 12, 18, 7, 21, 15];
-      v(
-        m,
-        "#kt_stats_widget_16_tab_link_3",
-        "#kt_table_widget_16_chart_3_3",
-        M,
-        !1
-      );
+      v(m, "#kt_stats_widget_16_tab_link_3", "#kt_table_widget_16_chart_3_3", M, !1);
       var W = [3, 9, 12, 23, 6, 11, 7, 23, 5, 12, 14, 7, 21, 8];
-      v(
-        c,
-        "#kt_stats_widget_16_tab_link_3",
-        "#kt_table_widget_16_chart_3_4",
-        W,
-        !1
-      );
+      v(c, "#kt_stats_widget_16_tab_link_3", "#kt_table_widget_16_chart_3_4", W, !1);
       var L = [9, 14, 15, 21, 8, 11, 5, 23, 5, 11, 18, 5, 23, 8];
-      v(
-        g,
-        "#kt_stats_widget_16_tab_link_4",
-        "#kt_table_widget_16_chart_4_1",
-        L,
-        !1
-      );
+      v(g, "#kt_stats_widget_16_tab_link_4", "#kt_table_widget_16_chart_4_1", L, !1);
       var z = [7, 5, 23, 12, 21, 9, 17, 15, 4, 24, 9, 17, 21, 7];
-      v(
-        f,
-        "#kt_stats_widget_16_tab_link_4",
-        "#kt_table_widget_16_chart_4_2",
-        z,
-        !1
-      );
+      v(f, "#kt_stats_widget_16_tab_link_4", "#kt_table_widget_16_chart_4_2", z, !1);
       var D = [8, 10, 14, 21, 6, 31, 8, 23, 5, 3, 14, 7, 21, 12];
-      v(
-        u,
-        "#kt_stats_widget_16_tab_link_4",
-        "#kt_table_widget_16_chart_4_3",
-        D,
-        !1
-      );
+      v(u, "#kt_stats_widget_16_tab_link_4", "#kt_table_widget_16_chart_4_3", D, !1);
       var O = [6, 12, 12, 19, 6, 11, 7, 23, 5, 12, 18, 7, 21, 15];
-      v(
-        h,
-        "#kt_stats_widget_16_tab_link_4",
-        "#kt_table_widget_16_chart_4_4",
-        O,
-        !1
-      );
+      v(h, "#kt_stats_widget_16_tab_link_4", "#kt_table_widget_16_chart_4_4", O, !1);
       var F = [5, 10, 15, 21, 6, 11, 5, 23, 5, 11, 17, 7, 21, 13];
-      v(
-        p,
-        "#kt_stats_widget_16_tab_link_5",
-        "#kt_table_widget_16_chart_5_1",
-        F,
-        !1
-      );
+      v(p, "#kt_stats_widget_16_tab_link_5", "#kt_table_widget_16_chart_5_1", F, !1);
       var I = [4, 5, 23, 12, 21, 9, 17, 15, 4, 24, 9, 17, 21, 7];
-      v(
-        y,
-        "#kt_stats_widget_16_tab_link_5",
-        "#kt_table_widget_16_chart_5_2",
-        I,
-        !1
-      );
+      v(y, "#kt_stats_widget_16_tab_link_5", "#kt_table_widget_16_chart_5_2", I, !1);
       var P = [7, 10, 14, 21, 6, 31, 5, 23, 5, 11, 15, 7, 21, 17];
-      v(
-        _,
-        "#kt_stats_widget_16_tab_link_5",
-        "#kt_table_widget_16_chart_5_3",
-        P,
-        !1
-      );
+      v(_, "#kt_stats_widget_16_tab_link_5", "#kt_table_widget_16_chart_5_3", P, !1);
       var R = [3, 10, 12, 23, 6, 11, 7, 22, 5, 12, 18, 7, 21, 14];
-      v(
-        b,
-        "#kt_stats_widget_16_tab_link_5",
-        "#kt_table_widget_16_chart_5_4",
-        R,
-        !1
-      ),
+      (v(b, "#kt_stats_widget_16_tab_link_5", "#kt_table_widget_16_chart_5_4", R, !1),
         KTThemeMode.on("kt.thememode.change", function () {
-          e.rendered && e.self.destroy(),
+          (e.rendered && e.self.destroy(),
             t.rendered && t.self.destroy(),
             a.rendered && a.self.destroy(),
             l.rendered && l.self.destroy(),
@@ -11119,160 +10193,38 @@ var KTTablesWidget16 = (function () {
             y.rendered && y.self.destroy(),
             _.rendered && _.self.destroy(),
             b.rendered && b.self.destroy(),
-            v(
-              e,
-              "#kt_stats_widget_16_tab_link_1",
-              "#kt_table_widget_16_chart_1_1",
-              w,
-              e.rendered
-            ),
-            v(
-              t,
-              "#kt_stats_widget_16_tab_link_1",
-              "#kt_table_widget_16_chart_1_2",
-              T,
-              t.rendered
-            ),
-            v(
-              a,
-              "#kt_stats_widget_16_tab_link_1",
-              "#kt_table_widget_16_chart_1_3",
-              k,
-              a.rendered
-            ),
-            v(
-              l,
-              "#kt_stats_widget_16_tab_link_1",
-              "#kt_table_widget_16_chart_1_4",
-              x,
-              l.rendered
-            ),
-            v(
-              r,
-              "#kt_stats_widget_16_tab_link_2",
-              "#kt_table_widget_16_chart_2_1",
-              A,
-              r.rendered
-            ),
-            v(
-              o,
-              "#kt_stats_widget_16_tab_link_2",
-              "#kt_table_widget_16_chart_2_2",
-              C,
-              o.rendered
-            ),
-            v(
-              i,
-              "#kt_stats_widget_16_tab_link_2",
-              "#kt_table_widget_16_chart_2_3",
-              K,
-              i.rendered
-            ),
-            v(
-              s,
-              "#kt_stats_widget_16_tab_link_2",
-              "#kt_table_widget_16_chart_2_4",
-              V,
-              s.rendered
-            ),
-            v(
-              n,
-              "#kt_stats_widget_16_tab_link_3",
-              "#kt_table_widget_16_chart_3_1",
-              S,
-              n.rendered
-            ),
-            v(
-              d,
-              "#kt_stats_widget_16_tab_link_3",
-              "#kt_table_widget_16_chart_3_2",
-              U,
-              d.rendered
-            ),
-            v(
-              m,
-              "#kt_stats_widget_16_tab_link_3",
-              "#kt_table_widget_16_chart_3_3",
-              M,
-              m.rendered
-            ),
-            v(
-              c,
-              "#kt_stats_widget_16_tab_link_3",
-              "#kt_table_widget_16_chart_3_4",
-              W,
-              c.rendered
-            ),
-            v(
-              g,
-              "#kt_stats_widget_16_tab_link_4",
-              "#kt_table_widget_16_chart_4_1",
-              L,
-              g.rendered
-            ),
-            v(
-              f,
-              "#kt_stats_widget_16_tab_link_4",
-              "#kt_table_widget_16_chart_4_2",
-              z,
-              f.rendered
-            ),
-            v(
-              u,
-              "#kt_stats_widget_16_tab_link_4",
-              "#kt_table_widget_16_chart_4_3",
-              D,
-              u.rendered
-            ),
-            v(
-              h,
-              "#kt_stats_widget_16_tab_link_4",
-              "#kt_table_widget_16_chart_4_4",
-              O,
-              h.rendered
-            ),
-            v(
-              p,
-              "#kt_stats_widget_16_tab_link_5",
-              "#kt_table_widget_16_chart_5_1",
-              F,
-              p.rendered
-            ),
-            v(
-              y,
-              "#kt_stats_widget_16_tab_link_5",
-              "#kt_table_widget_16_chart_5_2",
-              I,
-              y.rendered
-            ),
-            v(
-              _,
-              "#kt_stats_widget_16_tab_link_5",
-              "#kt_table_widget_16_chart_5_3",
-              P,
-              _.rendered
-            ),
-            v(
-              b,
-              "#kt_stats_widget_16_tab_link_5",
-              "#kt_table_widget_16_chart_5_4",
-              R,
-              b.rendered
-            );
-        });
+            v(e, "#kt_stats_widget_16_tab_link_1", "#kt_table_widget_16_chart_1_1", w, e.rendered),
+            v(t, "#kt_stats_widget_16_tab_link_1", "#kt_table_widget_16_chart_1_2", T, t.rendered),
+            v(a, "#kt_stats_widget_16_tab_link_1", "#kt_table_widget_16_chart_1_3", k, a.rendered),
+            v(l, "#kt_stats_widget_16_tab_link_1", "#kt_table_widget_16_chart_1_4", x, l.rendered),
+            v(r, "#kt_stats_widget_16_tab_link_2", "#kt_table_widget_16_chart_2_1", A, r.rendered),
+            v(o, "#kt_stats_widget_16_tab_link_2", "#kt_table_widget_16_chart_2_2", C, o.rendered),
+            v(i, "#kt_stats_widget_16_tab_link_2", "#kt_table_widget_16_chart_2_3", K, i.rendered),
+            v(s, "#kt_stats_widget_16_tab_link_2", "#kt_table_widget_16_chart_2_4", V, s.rendered),
+            v(n, "#kt_stats_widget_16_tab_link_3", "#kt_table_widget_16_chart_3_1", S, n.rendered),
+            v(d, "#kt_stats_widget_16_tab_link_3", "#kt_table_widget_16_chart_3_2", U, d.rendered),
+            v(m, "#kt_stats_widget_16_tab_link_3", "#kt_table_widget_16_chart_3_3", M, m.rendered),
+            v(c, "#kt_stats_widget_16_tab_link_3", "#kt_table_widget_16_chart_3_4", W, c.rendered),
+            v(g, "#kt_stats_widget_16_tab_link_4", "#kt_table_widget_16_chart_4_1", L, g.rendered),
+            v(f, "#kt_stats_widget_16_tab_link_4", "#kt_table_widget_16_chart_4_2", z, f.rendered),
+            v(u, "#kt_stats_widget_16_tab_link_4", "#kt_table_widget_16_chart_4_3", D, u.rendered),
+            v(h, "#kt_stats_widget_16_tab_link_4", "#kt_table_widget_16_chart_4_4", O, h.rendered),
+            v(p, "#kt_stats_widget_16_tab_link_5", "#kt_table_widget_16_chart_5_1", F, p.rendered),
+            v(y, "#kt_stats_widget_16_tab_link_5", "#kt_table_widget_16_chart_5_2", I, y.rendered),
+            v(_, "#kt_stats_widget_16_tab_link_5", "#kt_table_widget_16_chart_5_3", P, _.rendered),
+            v(b, "#kt_stats_widget_16_tab_link_5", "#kt_table_widget_16_chart_5_4", R, b.rendered));
+        }));
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTTablesWidget16),
+("undefined" != typeof module && (module.exports = KTTablesWidget16),
   KTUtil.onDOMContentLoaded(function () {
     KTTablesWidget16.init();
-  });
+  }));
 var KTTablesWidget3 = (function () {
   var e, t;
   const a = () => {
-    const e = document.querySelector(
-      '[data-kt-table-widget-3="filter_status"]'
-    );
+    const e = document.querySelector('[data-kt-table-widget-3="filter_status"]');
     $(e).on("select2:select", function (e) {
       const a = $(this).val();
       "Show All" === a ? t.search("").draw() : t.search(a).draw();
@@ -11295,12 +10247,12 @@ var KTTablesWidget3 = (function () {
           e.forEach((l) => {
             l.addEventListener("click", (r) => {
               const o = l.getAttribute("data-kt-table-widget-3-value");
-              e.forEach((e) => {
-                e.classList.remove(...a), e.classList.add("text-muted");
+              (e.forEach((e) => {
+                (e.classList.remove(...a), e.classList.add("text-muted"));
               }),
                 l.classList.remove("text-muted"),
                 l.classList.add(...a),
-                "Show All" === o ? t.search("").draw() : t.search(o).draw();
+                "Show All" === o ? t.search("").draw() : t.search(o).draw());
             });
           });
         })(),
@@ -11308,16 +10260,14 @@ var KTTablesWidget3 = (function () {
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTTablesWidget3),
+("undefined" != typeof module && (module.exports = KTTablesWidget3),
   KTUtil.onDOMContentLoaded(function () {
     KTTablesWidget3.init();
-  });
+  }));
 var KTTablesWidget4 = (function () {
   var e, t, a;
   const l = () => {
-      const e = document.querySelector(
-        '[data-kt-table-widget-4="filter_status"]'
-      );
+      const e = document.querySelector('[data-kt-table-widget-4="filter_status"]');
       $(e).on("select2:select", function (e) {
         const a = $(this).val();
         "Show All" === a ? t.search("").draw() : t.search(a).draw();
@@ -11371,13 +10321,11 @@ var KTTablesWidget4 = (function () {
       },
     ],
     o = () => {
-      const e = document.querySelectorAll(
-          '[data-kt-table-widget-4="expand_row"]'
-        ),
+      const e = document.querySelectorAll('[data-kt-table-widget-4="expand_row"]'),
         t = [3, 1, 3, 1, 2, 1];
       e.forEach((e, a) => {
         e.addEventListener("click", (l) => {
-          l.stopImmediatePropagation(), l.preventDefault();
+          (l.stopImmediatePropagation(), l.preventDefault());
           const o = e.closest("tr"),
             s = ["isOpen", "border-bottom-0"],
             n = [];
@@ -11386,13 +10334,11 @@ var KTTablesWidget4 = (function () {
             for (
               ;
               o.nextSibling &&
-              "subtable_template" ===
-                o.nextSibling.getAttribute("data-kt-table-widget-4");
-
+              "subtable_template" === o.nextSibling.getAttribute("data-kt-table-widget-4");
             )
               o.nextSibling.parentNode.removeChild(o.nextSibling);
-            o.classList.remove(...s), e.classList.remove("active");
-          } else i(n, o), o.classList.add(...s), e.classList.add("active");
+            (o.classList.remove(...s), e.classList.remove("active"));
+          } else (i(n, o), o.classList.add(...s), e.classList.add("active"));
         });
       });
     },
@@ -11401,51 +10347,41 @@ var KTTablesWidget4 = (function () {
         const i = a.cloneNode(!0),
           s = i.querySelector('[data-kt-table-widget-4="template_image"]'),
           n = i.querySelector('[data-kt-table-widget-4="template_name"]'),
-          d = i.querySelector(
-            '[data-kt-table-widget-4="template_description"]'
-          ),
+          d = i.querySelector('[data-kt-table-widget-4="template_description"]'),
           m = i.querySelector('[data-kt-table-widget-4="template_cost"]'),
           c = i.querySelector('[data-kt-table-widget-4="template_qty"]'),
           g = i.querySelector('[data-kt-table-widget-4="template_total"]'),
           f = i.querySelector('[data-kt-table-widget-4="template_stock"]'),
           u = s.getAttribute("data-kt-src-path");
-        s.setAttribute("src", u + r.image + ".png"),
+        (s.setAttribute("src", u + r.image + ".png"),
           (n.innerText = r.name),
           (d.innerText = r.description),
           (m.innerText = r.cost),
           (c.innerText = r.qty),
           (g.innerText = r.total),
           r.stock > 10
-            ? (f.innerHTML =
-                '<div class="badge badge-light-success">In Stock</div>')
-            : (f.innerHTML =
-                '<div class="badge badge-light-warning">Low Stock</div>'),
-          1 === t.length || t.length;
+            ? (f.innerHTML = '<div class="badge badge-light-success">In Stock</div>')
+            : (f.innerHTML = '<div class="badge badge-light-warning">Low Stock</div>'),
+          1 === t.length || t.length);
         e.querySelector("tbody").insertBefore(i, l.nextSibling);
       });
     },
     s = () => {
-      document
-        .querySelectorAll('[data-kt-table-widget-4="subtable_template"]')
-        .forEach((e) => {
-          e.parentNode.removeChild(e);
-        });
+      document.querySelectorAll('[data-kt-table-widget-4="subtable_template"]').forEach((e) => {
+        e.parentNode.removeChild(e);
+      });
       e.querySelectorAll("tbody tr").forEach((e) => {
-        e.classList.remove("isOpen"),
+        (e.classList.remove("isOpen"),
           e.querySelector('[data-kt-table-widget-4="expand_row"]') &&
-            e
-              .querySelector('[data-kt-table-widget-4="expand_row"]')
-              .classList.remove("active");
+            e.querySelector('[data-kt-table-widget-4="expand_row"]').classList.remove("active"));
       });
     };
   return {
     init: function () {
       (e = document.querySelector("#kt_table_widget_4_table")) &&
         ((() => {
-          const l = document.querySelector(
-            '[data-kt-table-widget-4="subtable_template"]'
-          );
-          (a = l.cloneNode(!0)).classList.remove("d-none"),
+          const l = document.querySelector('[data-kt-table-widget-4="subtable_template"]');
+          ((a = l.cloneNode(!0)).classList.remove("d-none"),
             l.parentNode.removeChild(l),
             (t = $(e).DataTable({
               info: !1,
@@ -11459,8 +10395,8 @@ var KTTablesWidget4 = (function () {
                 { orderable: !1, targets: 6 },
               ],
             })).on("draw", function () {
-              s(), o();
-            });
+              (s(), o());
+            }));
         })(),
         document
           .querySelector('[data-kt-table-widget-4="search"]')
@@ -11472,16 +10408,14 @@ var KTTablesWidget4 = (function () {
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTTablesWidget4),
+("undefined" != typeof module && (module.exports = KTTablesWidget4),
   KTUtil.onDOMContentLoaded(function () {
     KTTablesWidget4.init();
-  });
+  }));
 var KTTablesWidget5 = (function () {
   var e, t;
   const a = () => {
-    const e = document.querySelector(
-      '[data-kt-table-widget-5="filter_status"]'
-    );
+    const e = document.querySelector('[data-kt-table-widget-5="filter_status"]');
     $(e).on("select2:select", function (e) {
       const a = $(this).val();
       "Show All" === a ? t.search("").draw() : t.search(a).draw();
@@ -11507,7 +10441,7 @@ var KTTablesWidget5 = (function () {
     },
   };
 })();
-"undefined" != typeof module && (module.exports = KTTablesWidget5),
+("undefined" != typeof module && (module.exports = KTTablesWidget5),
   KTUtil.onDOMContentLoaded(function () {
     KTTablesWidget5.init();
-  });
+  }));

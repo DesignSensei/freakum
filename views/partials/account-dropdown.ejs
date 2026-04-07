@@ -9,17 +9,11 @@
   <div class="input-dropdown-toggle w-dropdown-toggle">
     <div class="greeting">
       <% if (user) { %> Hi,
-      <span class="user-name"><%= user.firstName %></span> <% } else { %>
-      Account <% } %>
+      <span class="user-name"><%= user.firstName %></span> <% } else { %> Account <% } %>
     </div>
     <div style="transform: rotateZ(0deg)" class="custom-dropdown-arrow">
       <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-        <path
-          d="M1 1L6 6L11 1"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
+        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
     </div>
   </div>
@@ -29,17 +23,13 @@
         <% if (user) { %>
         <!-- LOGGED IN -->
         <div role="listitem" class="w-dyn-item">
-          <a href="/profile" class="link-2 w-inline-block"
-            ><div>My Profile</div></a
-          >
+          <a href="/profile" class="link-2 w-inline-block"><div>My Profile</div></a>
         </div>
         <div role="listitem" class="w-dyn-item">
           <a href="/orders" class="link-2 w-inline-block"><div>Orders</div></a>
         </div>
         <div role="listitem" class="w-dyn-item">
-          <a href="#" id="logout-button" class="link-2 w-inline-block">
-            Log out
-          </a>
+          <a href="#" class="link-2 w-inline-block logout-button"> Log out </a>
         </div>
         <% } else { %>
         <!-- LOGGED OUT -->

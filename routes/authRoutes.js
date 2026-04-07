@@ -19,7 +19,7 @@ router.get("/auth/google", passport.authenticate("google", { scope: ["profile", 
 router.get(
   "/auth/google/callback",
   passport.authenticate("google", { session: true }),
-  (req, res, next) => {
+  (req, res) => {
     if (!req.user) {
       return res.status(401).json({ success: false, message: "Googlee authentication failed" });
     }

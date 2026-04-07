@@ -8,26 +8,22 @@ const logger = require("../../utils/logger");
 exports.getProducts = async (req, res) => {
   try {
     // Extract query parameters from URL
-    const { page = 1, pageSize = 10, search = "", status = "all" } = req.query;
+    const { search = "", status = "all" } = req.query;
 
-    logger.info("API: Fetching products", { page, pageSize, search, status });
+    logger.info("API: Fetching all products", { search, status });
 
     // Get filtered and paginated products from service
     const result = await ProductService.getProductsPaginated({
-      page: parseInt(page),
-      pageSize: parseInt(pageSize),
       search,
       status,
+      paginate: false,
     });
 
     // Send JSON response
     res.json({
       success: true,
       products: result.products,
-      totalPages: result.totalPages,
-      currentPage: result.currentPage,
       totalProducts: result.totalProducts,
-      pageSize: result.pageSize,
     });
   } catch (error) {
     logger.error("Error fetching products via API:", error);

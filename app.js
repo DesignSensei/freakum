@@ -3,30 +3,28 @@
 const path = require("path");
 require("dotenv").config();
 
+// Core Libraries
 const express = require("express");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
-const csurf = require("csurf");
+const { csrfSync } = require("csrf-sync");
 const expressLayouts = require("express-ejs-layouts");
 const { MongoStore } = require("connect-mongo");
-const mongoose = require("mongoose");
 
+// Pre-defined modules
 const connectDB = require("./config/db");
 const logger = require("./utils/logger");
 
 // Routes
+const pageRoutes = require("./routes/pageRoutes");
 const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/admin/adminRoutes");
 const productRoutes = require("./routes/admin/productRoutes");
-// const categoryRoutes = require("./routes/categoryRoutes");
 const shopRoutes = require("./routes/shopRoutes");
 
 // API Routes
 const apiProductRoutes = require("./routes/api/productRoutes");
-
-// Connect to database
-connectDB();
 
 /* ---------- Initialize App ---------- */
 const app = express();
@@ -67,7 +65,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      client: mongoose.connection.getClient(),
+      mongoUrl: process.env.MONGO_URI,
       collectionName: "sessions",
     }),
     cookie: {
@@ -87,28 +85,23 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 /* ---------- CSRF Middleware ---------- */
-const csrfProtection = csurf();
-app.use((req, res, next) => {
-  if (req.path === "/logout" && req.method === "POST") {
-    return next(); // Skip CSRF for logout endpoint
-  }
+const { generateToken, csrfSynchronisedProtection } = csrfSync();
 
-  // Apply CSRF to everything else
-  csrfProtection(req, res, next);
-});
+app.use(csrfSynchronisedProtection);
 
 /* ---------- Locals available to all views ---------- */
 app.use((req, res, next) => {
-  res.locals.csrfToken = typeof req.csrfToken === "function" ? req.csrfToken() : "";
+  res.locals.csrfToken = generateToken(req);
   res.locals.error = "Session expired or form tampered with. Please retry.";
   res.locals.user = req.user || null;
   next();
 });
 
 /* ---------- Mount Routes ---------- */
-app.use("/admin", adminRoutes);
 app.use("/admin/products", productRoutes);
-// app.use("/admin/categories", categoryRoutes);
+app.use("/admin", adminRoutes);
+
+app.use(pageRoutes);
 app.use(authRoutes);
 app.use(shopRoutes);
 
@@ -156,5 +149,13 @@ app.use((err, req, res, next) => {
   });
 });
 
-/* ---------- Start server ---------- */
-app.listen(PORT, () => logger.info(`Server running on http://localhost:${PORT}`));
+/* ---------- Start server & Connect to database ---------- */
+(async () => {
+  try {
+    await connectDB();
+    app.listen(PORT, () => logger.info(`Server running on http://localhost:${PORT}`));
+  } catch (err) {
+    logger.error("Startup failed:", err);
+    process.exit(1);
+  }
+})();

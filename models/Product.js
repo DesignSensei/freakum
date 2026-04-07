@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      trim: true, // ← ADDED
+      trim: true,
     },
 
     slug: {
@@ -37,31 +37,81 @@ const productSchema = new mongoose.Schema(
       default: "",
     },
 
-    stock: {
+    price: {
       type: Number,
       required: true,
+      set: toMoney,
+    },
+
+    discountOption: {
+      type: String,
+      enum: ["none", "percentage", "fixed"],
+      default: "none",
+    },
+
+    discountPercebtage: {
+      type: Number,
+      min: 0,
+      max: 100,
       default: 0,
     },
 
-    sizes: {
+    discountedPrice: {
+      type: Number,
+      set: toMoney,
+      default: null,
+    },
+
+    currency: {
+      type: String,
+      default: "NGN",
+    },
+
+    thumbnail: {
+      type: String,
+    },
+
+    gallery: {
       type: [String],
-      enum: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"],
       default: [],
     },
 
-    colors: {
+    variations: [
+      {
+        size: { type: String, enum: ["XS", "S", "M", "L", "XL", "2XL", "3XL"] },
+        color: { type: String },
+        stock: { type: Number, min: 0, default: 0 },
+        sku: {
+          type: String,
+          trim: true,
+          sparse: true,
+          index: true,
+        },
+      },
+    ],
+
+    categories: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
+      },
+    ],
+
+    tags: {
       type: [String],
       default: [],
+      index: true,
+    },
+
+    meta: {
+      title: { type: String, trim: true },
+      description: { type: String, trim: true },
+      keywords: { type: String, trim: true },
     },
 
     fabric: {
       type: String,
       default: "",
-    },
-
-    careInstructions: {
-      type: [String],
-      default: [],
     },
 
     gender: {
@@ -70,51 +120,34 @@ const productSchema = new mongoose.Schema(
       default: "Unisex",
     },
 
-    weight: {
-      type: Number,
-      default: 0,
-    },
-
-    basePrice: {
-      type: Number,
-      required: true,
-      set: toMoney, // Format price before saving
-    },
-
-    currency: {
+    status: {
       type: String,
-      default: "NGN",
+      enum: ["active", "inactive", "draft", "scheduled"],
+      default: "draft",
+      index: true,
     },
 
-    // Link to one or more categories
-    categories: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Category",
-        required: true,
-      },
-    ],
-
-    // Array of image URLs
-    images: {
-      type: [String],
-      default: [],
+    publishDate: {
+      type: Date,
+      default: null,
+      index: true,
     },
 
-    active: {
-      type: Boolean,
-      default: true,
+    active: { type: Boolean, default: true },
+
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+      indx: true,
     },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 // Auto-generate slug if missing
-productSchema.pre("validate", function (next) {
+productSchema.pre("validate", function () {
   if (!this.slug && this.name) this.slug = slugify(this.name);
-  next();
 });
 
 // Text index for search

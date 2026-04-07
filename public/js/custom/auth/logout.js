@@ -1,24 +1,28 @@
 // public/js/custom/auth/logout.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  const logoutBtn = document.getElementById("logout-button");
+  const logoutBtns = document.querySelectorAll(".logout-button");
 
-  if (!logoutBtn) return;
+  if (!logoutBtns.length) return;
 
-  logoutBtn.addEventListener("click", async (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute("content");
 
-    try {
-      await fetch("/logout", {
-        method: "POST",
-        credentials: "include",
-      });
-    } catch (err) {
-      console.error("Logout error:", err);
-    }
+  logoutBtns.forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
 
-    // Always redirect to /shop after logout attempt
-    window.location.replace("/login");
+      try {
+        await fetch("/logout", {
+          method: "POST",
+          credentials: "include",
+          headers: { "X-CSRF-Token": token || "" },
+        });
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+
+      window.location.replace("/login");
+    });
   });
 });

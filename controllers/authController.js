@@ -1,5 +1,6 @@
 // controllers/authController.js
 
+const User = require("../models/User");
 const AuthService = require("../services/authService");
 const logger = require("../utils/logger");
 const passport = require("passport");
@@ -343,6 +344,8 @@ exports.postResendTwoFactor = async (req, res, next) => {
 
 // Handle logout
 exports.postLogout = (req, res) => {
+  const role = req.user?.role;
+
   // Passport's logout function
   req.logout((error) => {
     if (error) {
@@ -361,11 +364,8 @@ exports.postLogout = (req, res) => {
       res.clearCookie("connect.sid", { path: "/" });
       res.clearCookie("jwt", { path: "/" });
 
-      // Check user role
-      const role = req.user && req.user.role;
-
       // Return JSON, NOT redirect
-      return res.status(200).json({ success: true, role: role });
+      return res.status(200).json({ success: true, role });
     });
   });
 };

@@ -1,11 +1,8 @@
 <!-- views/auth/two-factor.ejs -->
 
 <!-- Form Column -->
-<div
-  data-w-id="9fa109aa-712e-b709-7fec-65d08001e45f"
-  class="content-center-tablet"
-  style="opacity: 0; transform: translate3d(0, 10%, 0) scale3d(1, 1, 1)"
->
+<div data-w-id="9fa109aa-712e-b709-7fec-65d08001e45f" class="content-center-tablet"
+  style="opacity: 0; transform: translate3d(0, 10%, 0) scale3d(1, 1, 1)">
   <h2 class="display-8 mg-top-default" style="color: rgb(14, 24, 16); margin-bottom: 20px">
     Two-Factor Verification
   </h2>
@@ -26,19 +23,10 @@
       <!-- OTP Input -->
       <div class="inner-container _487px _100-tablet">
         <div class="otp-container">
-          <% for (let i = 0; i < 6; i++) { %>
-          <input
-            class="otp-input"
-            type="text"
-            inputmode="numeric"
-            pattern="[0-9]"
-            maxlength="1"
-            name="digit<%= i %>"
-            autocomplete="one-time-code"
-            aria-label="Digit <%= i+1 %>"
-            required
-          />
-          <% } %>
+          <% for (let i=0; i < 6; i++) { %>
+            <input class="otp-input" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" name="digit<%= i %>"
+              autocomplete="one-time-code" aria-label="Digit <%= i+1 %>" required />
+            <% } %>
         </div>
       </div>
 
@@ -50,11 +38,7 @@
 
     <p class="paragraph-large" style="text-align: center; margin-top: 20px">
       Didn't get an email?
-      <button
-        type="button"
-        id="resend-btn"
-        class="primary-link"
-        style="
+      <button type="button" id="resend-btn" class="primary-link" style="
           text-decoration: none;
           color: #6a14f2;
           background: none;
@@ -62,8 +46,7 @@
           padding: 0;
           cursor: pointer;
           display: inline;
-        "
-      >
+        ">
         Resend
       </button>
     </p>

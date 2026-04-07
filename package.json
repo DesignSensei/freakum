@@ -1,11 +1,11 @@
 {
-  "name": "freakum",
+  "name": "kottin",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon node app.js"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,7 @@
     "connect-flash": "^0.1.1",
     "connect-mongo": "^6.0.0",
     "cookie-parser": "^1.4.7",
-    "csurf": "^1.2.2",
+    "csrf-sync": "^4.2.1",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "eslint-config-prettier": "^10.1.8",
@@ -30,6 +30,7 @@
     "geoip-country": "^5.0.202511282342",
     "mongo-store": "^0.0.2",
     "mongoose": "^9.0.0",
+    "multer": "^2.0.2",
     "nodemailer": "^7.0.5",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
@@ -37,9 +38,6 @@
     "winston": "^3.18.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.28.3",
-    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
-    "@babel/plugin-transform-optional-chaining": "^7.28.5",
     "nodemon": "^3.1.11",
     "prettier-plugin-ejs": "^1.0.3"
   }

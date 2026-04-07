@@ -13,7 +13,7 @@ function slugify(s) {
 
 const categorySchema = new mongoose.Schema(
   {
-    // Display name, e.g "Bullet Vibrators"
+    // Display name, e.g "Black Tees"
     name: {
       type: String,
       required: true,
@@ -21,7 +21,7 @@ const categorySchema = new mongoose.Schema(
       trim: true,
     },
 
-    // URL idenitfier, e,g "bullet-vibrators" and is always unique
+    // URL idenitfier, e,g "black-tees" and is always unique
     slug: {
       type: String,
       required: true,
@@ -30,8 +30,8 @@ const categorySchema = new mongoose.Schema(
       trim: true,
     },
 
-    // Parent category for nesting, e.g "Bullet Vibrators" is a category but a child of "Vibrators & Massagers"
-    // Null for top-level (e.g. “Vibrators & Massagers”)
+    // Parent category for nesting if needed in future
+    // Null for top-level categories (e.g. "Essentials", "T-Shirts")
     parent: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category",
@@ -57,9 +57,8 @@ const categorySchema = new mongoose.Schema(
 );
 
 // Auto-generate slug from name if missing
-categorySchema.pre("validate", function (next) {
+categorySchema.pre("validate", function () {
   if (!this.slug && this.name) this.slug = slugify(this.name);
-  next();
 });
 
 // Check if this is a parent category
@@ -81,7 +80,11 @@ categorySchema.methods.getPath = async function () {
 
   while (current.path) {
     current = await this.model("Category").findById(current.parent);
-    if (current) path.unshift(current.name);
+    if (current) {
+      path.unshift(current.name);
+    } else {
+      break;
+    }
   }
 
   return path;
