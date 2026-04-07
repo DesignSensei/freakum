@@ -49,7 +49,7 @@ const productSchema = new mongoose.Schema(
       default: "none",
     },
 
-    discountPercebtage: {
+    discountPercentage: {
       type: Number,
       min: 0,
       max: 100,
